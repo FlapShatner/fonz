@@ -13,8 +13,10 @@
   "@shopify/hydrogen-react": "^2024.4.1",
   "@shopify/storefront-api-client": "^0.3.4",
   "next": "14.2.3",
+  "pkce": "^1.0.0-beta2",
   "react": "^18",
-  "react-dom": "^18"
+  "react-dom": "^18",
+  "usehooks-ts": "^3.1.0"
  },
  "devDependencies": {
   "@shopify/api-codegen-preset": "^0.0.7",
