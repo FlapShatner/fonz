@@ -1,31 +1,40 @@
 'use client'
-import { useLocalStorage } from 'usehooks-ts'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { getToken } from '../lib/token'
+import { getToken, exchangeToken } from '../actions/token'
+import { getCustomer } from '../actions/customer'
+import Loading from '../common/loading'
+import { Customer } from '../types/customer-types'
 
 function Auth() {
- const [codeVerifier, setCodeVerifier] = useLocalStorage('code_verifier', '')
+ const [customer, setCustomer] = useState<Customer>()
+ const [loading, setLoading] = useState(true)
  const searchParams = useSearchParams()
  const code = searchParams.get('code')
 
- console.log('code', code, 'verifier', codeVerifier)
+ console.log('code', code)
  useEffect(() => {
-  if (code && codeVerifier) {
-   const sendRequest = async () => {
-    const data = await fetch('/api/token', {
-     method: 'POST',
-     body: JSON.stringify({ code, codeVerifier }),
-    })
-    console.log('data', data)
-    const json = await data.json()
-    console.log('json', json)
+  setLoading(true)
+  if (code) {
+   const sendReq = async () => {
+    const data = await getToken(code)
+    if (data.status === 'success') {
+     const result = await exchangeToken()
+     if (result.status === 'success') {
+      const customer = await getCustomer()
+      if (customer.status === 'success') {
+       console.log('customer success')
+       setCustomer(customer.data?.customer as Customer)
+       setLoading(false)
+      }
+     }
+    }
    }
-   sendRequest()
+   sendReq()
   }
- }, [code, codeVerifier])
+ }, [])
 
- return <div>Auth</div>
+ return <div className='flex justify-center items-center h-96 w-full m-auto'>{loading ? <Loading /> : customer && `Signed in as ${customer.displayName}`}</div>
 }
 
 export default Auth

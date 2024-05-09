@@ -8,6 +8,7 @@ const config: Config = {
     'bg-primary': '#0D0E0F',
     'bg-secondary': '#1A1A1A',
     'bg-tertiary': '#222222',
+    announce: '#181818',
     accent: '#d2ac53',
     'accent-bright': '#FCC000',
     'accent-tr': '#d2ac5344',
@@ -21,10 +22,6 @@ const config: Config = {
     icon: '#898989',
     backdrop: '#1a1a1a75',
     'backdrop-dark': '#1a1a1ad3',
-   },
-   backgroundImage: {
-    'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-    'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
    },
   },
  },

@@ -1,8 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { cn } from './utils'
+import { Open_Sans, Smooch } from 'next/font/google'
 import './globals.css'
+import Header from './header'
+import Footer from './footer'
 
-const inter = Inter({ subsets: ['latin'] })
+export const open_sans = Open_Sans({ subsets: ['latin'], display: 'swap', variable: '--font-open-sans' })
+export const smooch = Smooch({ weight: '400', subsets: ['latin'], display: 'swap', variable: '--font-smooch' })
 
 export const metadata: Metadata = {
  title: 'FonzAI - AI design playground',
@@ -16,7 +20,11 @@ export default function RootLayout({
 }>) {
  return (
   <html lang='en'>
-   <body className={inter.className}>{children}</body>
+   <body className={cn('h-screen flex flex-col justify-between', open_sans.className)}>
+    <Header />
+    {children}
+    <Footer />
+   </body>
   </html>
  )
 }

@@ -1,11 +1,11 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { useLocalStorage } from 'usehooks-ts'
 import { Shop } from '@shopify/hydrogen-react/storefront-api-types'
 import { useRouter } from 'next/navigation'
-import { reqUrl } from './lib/auth'
+import { reqUrl } from './lib/customerAccess'
+import Header from './header'
+import FonzApp from './fonz/fonz-app'
 export default function Home() {
- const [codeVerifier, setCodeVerifier] = useLocalStorage('code_verifier', '')
  const [shop, setShop] = useState<Shop | null>(null)
  const [url, setUrl] = useState<string>('')
  const router = useRouter()
@@ -20,7 +20,6 @@ export default function Home() {
   const getUrl = async () => {
    const url = await reqUrl()
    setUrl(url.reqUrl)
-   setCodeVerifier(url.verifier)
    console.log(url)
   }
   getUrl()
@@ -28,10 +27,8 @@ export default function Home() {
  }, [])
 
  return (
-  <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-   <h1 className='text-4xl font-bold'>HEYO!</h1>
-   <div onClick={() => router.push(url)}>Sign in</div>
-   <div className='p-2 border border-border'>{shop && shop.name}</div>
+  <main className='h-full'>
+   <FonzApp />
   </main>
  )
 }
