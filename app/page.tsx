@@ -1,33 +1,42 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { Shop } from '@shopify/hydrogen-react/storefront-api-types'
 import { useRouter } from 'next/navigation'
 import { reqUrl } from './lib/customerAccess'
-import Header from './header'
+import { getShop } from './storefront-api/shop'
+import { getProduct } from './storefront-api/product'
+import { DevTools } from 'jotai-devtools'
 import FonzApp from './fonz/fonz-app'
+import { useAtom } from 'jotai'
+import { productAtom } from './state/product-atoms'
 export default function Home() {
- const [shop, setShop] = useState<Shop | null>(null)
+ const [product, setProduct] = useAtom(productAtom)
+ const [shop, setShop] = useState(null)
  const [url, setUrl] = useState<string>('')
- const router = useRouter()
 
  useEffect(() => {
   const fetchShop = async () => {
-   const shop = await fetch('/api/shop')
-   const json = await shop.json()
-   //    console.log(json)
-   setShop(json.data.shop)
+   const shop = await getShop()
+   setShop(shop)
+   console.log('shop:', shop)
   }
   const getUrl = async () => {
    const url = await reqUrl()
    setUrl(url.reqUrl)
    console.log(url)
   }
+  const fetchProduct = async () => {
+   const product = await getProduct()
+   setProduct(product)
+   console.log('product:', product)
+  }
+  fetchProduct()
   getUrl()
   fetchShop()
  }, [])
 
  return (
   <main className='h-full'>
+   <DevTools />
    <FonzApp />
   </main>
  )

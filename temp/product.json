@@ -1,0 +1,945 @@
+{
+ "handle": "ai-designed-custom-decal",
+ "title": "AI Designed Custom Decal",
+ "variants": {
+  "edges": [
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650238980179",
+     "title": "Decal 3\"",
+     "price": {
+      "amount": "10.99"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698381176915",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381209683",
+       "key": "aspectratio",
+       "value": "1:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381242451",
+       "key": "idcode",
+       "value": "de"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239012947",
+     "title": "Decal 4\"",
+     "price": {
+      "amount": "11.99"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698381275219",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381307987",
+       "key": "aspectratio",
+       "value": "1:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381340755",
+       "key": "idcode",
+       "value": "de"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239045715",
+     "title": "Decal 5\"",
+     "price": {
+      "amount": "12.49"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698381373523",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381406291",
+       "key": "aspectratio",
+       "value": "1:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381439059",
+       "key": "idcode",
+       "value": "de"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239078483",
+     "title": "Decal 6\"",
+     "price": {
+      "amount": "14.49"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698381471827",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381504595",
+       "key": "aspectratio",
+       "value": "1:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381537363",
+       "key": "idcode",
+       "value": "de"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239111251",
+     "title": "Decal 7\"",
+     "price": {
+      "amount": "15.49"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698381570131",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381602899",
+       "key": "aspectratio",
+       "value": "1:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381635667",
+       "key": "idcode",
+       "value": "de"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239144019",
+     "title": "Decal 8\"",
+     "price": {
+      "amount": "16.49"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698381668435",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381701203",
+       "key": "aspectratio",
+       "value": "1:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381733971",
+       "key": "idcode",
+       "value": "de"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239176787",
+     "title": "Decal 10\"",
+     "price": {
+      "amount": "18.49"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698381766739",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381799507",
+       "key": "aspectratio",
+       "value": "1:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381832275",
+       "key": "idcode",
+       "value": "de"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239209555",
+     "title": "Decal 12\"",
+     "price": {
+      "amount": "20.49"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698381865043",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381897811",
+       "key": "aspectratio",
+       "value": "1:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381930579",
+       "key": "idcode",
+       "value": "de"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239242323",
+     "title": "Decal 15\"",
+     "price": {
+      "amount": "23.49"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698381963347",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698381996115",
+       "key": "aspectratio",
+       "value": "1:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698382028883",
+       "key": "idcode",
+       "value": "de"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239275091",
+     "title": "Decal 18\"",
+     "price": {
+      "amount": "29.99"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698382061651",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698382094419",
+       "key": "aspectratio",
+       "value": "1:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698382127187",
+       "key": "idcode",
+       "value": "de"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239307859",
+     "title": "Print 11\"x14\" Vertical",
+     "price": {
+      "amount": "20.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698389008467",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698389041235",
+       "key": "aspectratio",
+       "value": "4:5"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698389074003",
+       "key": "idcode",
+       "value": "dp"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239340627",
+     "title": "Print 11\"x14\" Horizontal",
+     "price": {
+      "amount": "20.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698389106771",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698389139539",
+       "key": "aspectratio",
+       "value": "5:4"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698389172307",
+       "key": "idcode",
+       "value": "dp"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239373395",
+     "title": "Print 16\"x20\" Vertical",
+     "price": {
+      "amount": "24.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698389205075",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698389237843",
+       "key": "aspectratio",
+       "value": "4:5"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698389270611",
+       "key": "idcode",
+       "value": "dp"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239406163",
+     "title": "Print 16\"x20\" Horizontal",
+     "price": {
+      "amount": "24.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698389303379",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698389336147",
+       "key": "aspectratio",
+       "value": "5:4"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698389368915",
+       "key": "idcode",
+       "value": "dp"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239438931",
+     "title": "Print 18\"x24\" Vertical",
+     "price": {
+      "amount": "28.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698389401683",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698389434451",
+       "key": "aspectratio",
+       "value": "3:4"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698389467219",
+       "key": "idcode",
+       "value": "dp"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239471699",
+     "title": "Print 18\"x24\" Horizontal",
+     "price": {
+      "amount": "28.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698389499987",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698389532755",
+       "key": "aspectratio",
+       "value": "4:3"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698389565523",
+       "key": "idcode",
+       "value": "dp"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239504467",
+     "title": "Print 24\"x36\" Vertical",
+     "price": {
+      "amount": "32.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698389598291",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698389631059",
+       "key": "aspectratio",
+       "value": "2:3"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698389663827",
+       "key": "idcode",
+       "value": "dp"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239537235",
+     "title": "Print 24\"x36\" Horizontal",
+     "price": {
+      "amount": "32.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698389696595",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698389729363",
+       "key": "aspectratio",
+       "value": "3:2"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698389762131",
+       "key": "idcode",
+       "value": "dp"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239570003",
+     "title": "Banner 2'x4'",
+     "price": {
+      "amount": "80.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698409095251",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698409128019",
+       "key": "aspectratio",
+       "value": "2:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698409160787",
+       "key": "idcode",
+       "value": "ba"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239602771",
+     "title": "Banner 2'x5'",
+     "price": {
+      "amount": "85.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698409193555",
+       "key": "isgrid",
+       "value": "false"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698409226323",
+       "key": "aspectratio",
+       "value": "5:2"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698409259091",
+       "key": "idcode",
+       "value": "ba"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239635539",
+     "title": "Banner 2'x6'",
+     "price": {
+      "amount": "90.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698409291859",
+       "key": "isgrid",
+       "value": "false"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698409324627",
+       "key": "aspectratio",
+       "value": "3:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698409357395",
+       "key": "idcode",
+       "value": "ba"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239668307",
+     "title": "Banner 2'x8'",
+     "price": {
+      "amount": "95.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698409390163",
+       "key": "isgrid",
+       "value": "false"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698409422931",
+       "key": "aspectratio",
+       "value": "4:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698409455699",
+       "key": "idcode",
+       "value": "ba"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239701075",
+     "title": "Banner 3'x4'",
+     "price": {
+      "amount": "90.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698409488467",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698409521235",
+       "key": "aspectratio",
+       "value": "4:3"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698409554003",
+       "key": "idcode",
+       "value": "ba"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239733843",
+     "title": "Banner 3'x5'",
+     "price": {
+      "amount": "95.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698409619539",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698409652307",
+       "key": "aspectratio",
+       "value": "5:3"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698409685075",
+       "key": "idcode",
+       "value": "ba"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239766611",
+     "title": "Banner 3'x6'",
+     "price": {
+      "amount": "100.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698409717843",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698409750611",
+       "key": "aspectratio",
+       "value": "2:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698409783379",
+       "key": "idcode",
+       "value": "ba"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239799379",
+     "title": "Banner 3'x8'",
+     "price": {
+      "amount": "105.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698422825043",
+       "key": "isgrid",
+       "value": "false"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698422857811",
+       "key": "aspectratio",
+       "value": "8:3"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698422890579",
+       "key": "idcode",
+       "value": "ba"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239832147",
+     "title": "Banner 3'x10'",
+     "price": {
+      "amount": "115.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698422923347",
+       "key": "isgrid",
+       "value": "false"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698422956115",
+       "key": "aspectratio",
+       "value": "10:3"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698422988883",
+       "key": "idcode",
+       "value": "ba"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239864915",
+     "title": "Banner 3'x12'",
+     "price": {
+      "amount": "125.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698423021651",
+       "key": "isgrid",
+       "value": "false"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698423054419",
+       "key": "aspectratio",
+       "value": "4:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698423087187",
+       "key": "idcode",
+       "value": "ba"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239897683",
+     "title": "Banner 4'x4'",
+     "price": {
+      "amount": "120.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698423119955",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698423152723",
+       "key": "aspectratio",
+       "value": "1:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698423185491",
+       "key": "idcode",
+       "value": "ba"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239930451",
+     "title": "Banner 4'x5'",
+     "price": {
+      "amount": "125.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698423218259",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698423251027",
+       "key": "aspectratio",
+       "value": "5:4"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698423283795",
+       "key": "idcode",
+       "value": "ba"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239963219",
+     "title": "Banner 4'x6'",
+     "price": {
+      "amount": "130.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698423316563",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698423349331",
+       "key": "aspectratio",
+       "value": "3:2"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698423382099",
+       "key": "idcode",
+       "value": "ba"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650239995987",
+     "title": "Banner 4'x8'",
+     "price": {
+      "amount": "140.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698423414867",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698423447635",
+       "key": "aspectratio",
+       "value": "2:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698423480403",
+       "key": "idcode",
+       "value": "ba"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650240028755",
+     "title": "Banner 4'x10'",
+     "price": {
+      "amount": "160.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698423513171",
+       "key": "isgrid",
+       "value": "false"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698423545939",
+       "key": "aspectratio",
+       "value": "5:2"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698423578707",
+       "key": "idcode",
+       "value": "ba"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41650240061523",
+     "title": "Banner 4'x12'",
+     "price": {
+      "amount": "15.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698423611475",
+       "key": "isgrid",
+       "value": "false"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698423644243",
+       "key": "aspectratio",
+       "value": "3:1"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698423677011",
+       "key": "idcode",
+       "value": "ba"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41655300587603",
+     "title": "Mailbox 18.75\"x8\" Standard",
+     "price": {
+      "amount": "95.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698429870163",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698429902931",
+       "key": "aspectratio",
+       "value": "7:3"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698429935699",
+       "key": "idcode",
+       "value": "mb"
+      }
+     ]
+    }
+   },
+   {
+    "node": {
+     "id": "gid://shopify/ProductVariant/41655300620371",
+     "title": "Mailbox 21\"x11\" XL",
+     "price": {
+      "amount": "145.0"
+     },
+     "metafields": [
+      {
+       "id": "gid://shopify/Metafield/31698429968467",
+       "key": "isgrid",
+       "value": "true"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698430001235",
+       "key": "aspectratio",
+       "value": "21:11"
+      },
+      {
+       "id": "gid://shopify/Metafield/31698430034003",
+       "key": "idcode",
+       "value": "mb"
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "id": "gid://shopify/Product/7250203869267"
+}
