@@ -1,15 +1,14 @@
 import React from 'react'
-import Controls from './controls'
+import Controls from './controls/controls'
 import ImageBox from './imagebox'
 import History from './history'
 
 function FonzApp() {
  return (
-  <div className='h-full'>
-   <div className='w-full flex'>
-    <Controls />
-    <ImageBox />
-   </div>
+  <div className='h-app w-full flex'>
+   <Controls />
+   <ImageBox />
+
    <History />
   </div>
  )

@@ -1,34 +1,34 @@
 import { client } from '../lib/storefront-api-client'
-
-const productHandle = process.env.NEXT_PUBLIC_PRODUCT_HANDLE
+import { formFactors } from '../data/form-factors'
 
 const productQuery = `
-query MyQuery($identifiers: [HasMetafieldsIdentifier!] = {namespace: "custom", key: ""}, $handle: String = "ai-designed-custom-decal") {
-    product(handle: $handle) {
-      handle
-      title
-      variants(first: 40) {
-        edges {
-          node {
+query MyQuery($identifiers: [HasMetafieldsIdentifier!] = {namespace: "custom", key: ""}, $handle: String = "") {
+  product(handle: $handle) {
+    handle
+    title
+    variants(first: 36) {
+      edges {
+        node {
+          id
+          title
+          price {
+            amount
+          }
+          metafields(identifiers: $identifiers) {
             id
-            title
-            price {
-              amount
-            }
-            metafields(identifiers: $identifiers) {
-              id
-              key
-              value
-            }
+            key
+            value
           }
         }
       }
-      id
     }
+    id
   }
+}
 `
 
-export const getProduct = async () => {
+export const getProduct = async (id: string) => {
+ const productHandle = formFactors.find((h) => h.id === id)?.handle
  const { data, errors, extensions } = await client.request(productQuery, {
   variables: {
    identifiers: [

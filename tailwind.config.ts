@@ -23,6 +23,10 @@ const config: Config = {
     backdrop: '#1a1a1a75',
     'backdrop-dark': '#1a1a1ad3',
    },
+   height: {
+    app: 'var(--app-height)',
+    main: 'var(--main-sect-height)',
+   },
   },
  },
  plugins: [],

@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { reqUrl } from './lib/customerAccess'
 import { getShop } from './storefront-api/shop'
-import { getProduct } from './storefront-api/product'
+import { getProduct } from './storefront-api/products'
 import { DevTools } from 'jotai-devtools'
-import FonzApp from './fonz/fonz-app'
+import FonzApp from './ui/fonz-app'
 import { useAtom } from 'jotai'
 import { productAtom } from './state/product-atoms'
 export default function Home() {
@@ -24,8 +24,9 @@ export default function Home() {
    setUrl(url.reqUrl)
    console.log(url)
   }
+  const id = 'dp'
   const fetchProduct = async () => {
-   const product = await getProduct()
+   const product = await getProduct(id)
    setProduct(product)
    console.log('product:', product)
   }
@@ -35,7 +36,7 @@ export default function Home() {
  }, [])
 
  return (
-  <main className='h-full'>
+  <main className='h-app'>
    <DevTools />
    <FonzApp />
   </main>

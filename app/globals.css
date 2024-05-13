@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+:root {
+  --app-height: calc(100vh - 34px - 60px);
+  --main-sect-height: calc(var(--app-height) - 10rem)
+}
 
 body {
   color: rgb(255, 254, 250);

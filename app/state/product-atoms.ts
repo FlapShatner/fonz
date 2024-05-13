@@ -26,3 +26,9 @@ export const productAtom = atom({
   ],
  },
 })
+
+export const selectedFFAtom = atom({
+ id: '',
+ label: 'Choose a product type',
+ handle: '',
+})

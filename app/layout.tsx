@@ -19,8 +19,10 @@ export default function RootLayout({
  children: React.ReactNode
 }>) {
  return (
-  <html lang='en'>
-   <body className={cn('h-[100vh] flex flex-col justify-between', open_sans.className)}>
+  <html
+   className='h-full'
+   lang='en'>
+   <body className={cn('flex flex-col justify-between h-full', open_sans.className)}>
     <Header />
     {children}
     <Footer />
