@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useAtom } from 'jotai'
+import { cn } from '@/app/utils'
 import Chevron from '@/app/icons/chevron'
 import FormFactorItem from './ff-item'
 import { productAtom, selectedFFAtom } from '../../state/product-atoms'
@@ -8,7 +9,9 @@ import { formFactors } from '../../data/form-factors'
 const FormFactorSelect = () => {
  const [selectedFF, setSelectedFF] = useAtom(selectedFFAtom)
  const [open, setOpen] = useState(false)
- const handleClick = () => setOpen(!open)
+ const handleClick = () => {
+  setOpen(!open)
+ }
  return (
   <div className='relative'>
    <div

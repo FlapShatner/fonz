@@ -15,15 +15,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
  children,
+ viewer,
 }: Readonly<{
  children: React.ReactNode
+ viewer: React.ReactNode
 }>) {
  return (
   <html
    className='h-full'
    lang='en'>
-   <body className={cn('flex flex-col justify-between h-full', open_sans.className)}>
+   <body className={cn('flex flex-col justify-between h-full relative', open_sans.className)}>
     <Header />
+    {viewer}
     {children}
     <Footer />
    </body>

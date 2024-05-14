@@ -1,6 +1,9 @@
 import React from 'react'
+import { getProduct } from '@/app/storefront-api/products'
 import { useAtom } from 'jotai'
-import { selectedFFAtom } from '../../state/product-atoms'
+import { selectedFFAtom, productAtom } from '../../state/product-atoms'
+import { get } from 'http'
+
 type FormFactorItemProps = {
  formFactor: {
   id: string
@@ -11,11 +14,14 @@ type FormFactorItemProps = {
 }
 
 function FormFactorItem({ formFactor, setOpen }: FormFactorItemProps) {
+ const [product, setProduct] = useAtom(productAtom)
  const [selectedFF, setSelectedFF] = useAtom(selectedFFAtom)
- const handleSelect = () => {
+ const handleSelect = async () => {
+  setProduct(await getProduct(formFactor.id))
   setSelectedFF(formFactor)
   setOpen(false)
  }
+ console.log(product)
  return (
   <div
    onClick={handleSelect}

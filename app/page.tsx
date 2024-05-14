@@ -1,13 +1,13 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { reqUrl } from './lib/customerAccess'
 import { getShop } from './storefront-api/shop'
 import { getProduct } from './storefront-api/products'
-import { DevTools } from 'jotai-devtools'
 import FonzApp from './ui/fonz-app'
 import { useAtom } from 'jotai'
+import { useAtomsDebugValue } from 'jotai-devtools'
 import { productAtom } from './state/product-atoms'
+import Link from 'next/link'
 export default function Home() {
  const [product, setProduct] = useAtom(productAtom)
  const [shop, setShop] = useState(null)
@@ -24,21 +24,18 @@ export default function Home() {
    setUrl(url.reqUrl)
    console.log(url)
   }
-  const id = 'dp'
-  const fetchProduct = async () => {
-   const product = await getProduct(id)
-   setProduct(product)
-   console.log('product:', product)
-  }
-  fetchProduct()
   getUrl()
   fetchShop()
  }, [])
 
  return (
   <main className='h-app'>
-   <DevTools />
    <FonzApp />
+   {/* <Link
+    className='absolute left-5 bottom-5 border border-border'
+    href='/viewer'>
+    Viewer
+   </Link> */}
   </main>
  )
 }

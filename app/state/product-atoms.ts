@@ -1,6 +1,8 @@
 import { atom } from 'jotai'
 import { ProductType } from '../types/product-types'
 
+export const viewOpenAtom = atom(false)
+
 export const productAtom = atom({
  id: '',
  title: '',
