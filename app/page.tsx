@@ -2,14 +2,9 @@
 import { useEffect, useState } from 'react'
 import { reqUrl } from './lib/customerAccess'
 import { getShop } from './storefront-api/shop'
-import { getProduct } from './storefront-api/products'
 import FonzApp from './ui/fonz-app'
-import { useAtom } from 'jotai'
 import { useAtomsDebugValue } from 'jotai-devtools'
-import { productAtom } from './state/product-atoms'
-import Link from 'next/link'
 export default function Home() {
- const [product, setProduct] = useAtom(productAtom)
  const [shop, setShop] = useState(null)
  const [url, setUrl] = useState<string>('')
 
@@ -28,14 +23,15 @@ export default function Home() {
   fetchShop()
  }, [])
 
+ const DebugAtoms = () => {
+  useAtomsDebugValue()
+  return null
+ }
+
  return (
   <main className='h-app'>
    <FonzApp />
-   {/* <Link
-    className='absolute left-5 bottom-5 border border-border'
-    href='/viewer'>
-    Viewer
-   </Link> */}
+   <DebugAtoms />
   </main>
  )
 }

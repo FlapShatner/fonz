@@ -6,11 +6,20 @@ query MyQuery($identifiers: [HasMetafieldsIdentifier!] = {namespace: "custom", k
   product(handle: $handle) {
     handle
     title
+    options(first:40){
+      id
+      name
+      values
+    }
     variants(first: 36) {
       edges {
         node {
           id
           title
+          selectedOptions {
+            name
+            value
+          }
           price {
             amount
           }

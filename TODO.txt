@@ -1,2 +1,3 @@
-connect to storefront api
-connect to customer account api
+Add interactive size picker for banner and print:
+ horizontal and vertical pickers change the size of sides of a rectangle div
+

@@ -1,7 +1,7 @@
 import React from 'react'
 import { getProduct } from '@/app/storefront-api/products'
 import { useAtom } from 'jotai'
-import { selectedFFAtom, productAtom } from '../../state/product-atoms'
+import { selectedFFAtom, productAtom } from '../../state/atoms'
 import { get } from 'http'
 
 type FormFactorItemProps = {

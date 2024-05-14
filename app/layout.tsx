@@ -15,7 +15,6 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
  children,
- viewer,
 }: Readonly<{
  children: React.ReactNode
  viewer: React.ReactNode
@@ -26,7 +25,6 @@ export default function RootLayout({
    lang='en'>
    <body className={cn('flex flex-col justify-between h-full relative', open_sans.className)}>
     <Header />
-    {viewer}
     {children}
     <Footer />
    </body>

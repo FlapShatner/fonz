@@ -11,6 +11,7 @@ export type ProductType = {
 export type VariantType = {
  id: string
  title: string
+ selectedOptions: SelectedOptionType[]
  metafields: MetafieldType[]
  price: PriceType
 }
@@ -24,4 +25,9 @@ export type PriceType = {
 }
 export type VariantNodeType = {
  node: VariantType
+}
+
+export type SelectedOptionType = {
+ name: string
+ value: string
 }
