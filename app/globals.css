@@ -4,7 +4,7 @@
 
 
 :root {
-  --app-height: calc(100vh - 34px - 60px);
+  --app-height: calc(100vh - 60px);
   --main-sect-height: calc(var(--app-height) - 10rem)
 }
 
@@ -12,6 +12,12 @@ body {
   color: rgb(255, 254, 250);
   background: hsl(210, 7%, 5%);
 }
+
+.handle {
+  background-color: #d2ac53 !important;
+}
+
+
 
 @layer utilities {
   .text-balance {

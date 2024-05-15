@@ -27,7 +27,9 @@ function SecVarSelect() {
  }
 
  return (
-  <div className='relative'>
+  <div
+   ref={ref}
+   className='relative'>
    <div
     onClick={handleClick}
     className='bg-bg-tertiary mx-2 mt-2 py-2 px-2 rounded-md flex items-center justify-between pr-4 cursor-pointer'>
@@ -35,9 +37,7 @@ function SecVarSelect() {
     <Chevron className='-rotate-90' />
    </div>
    {sizeFiltered.length > 1 && secVarOpen && (
-    <div
-     ref={ref}
-     className='bg-bg-tertiary m-2 rounded-md absolute right-0 left-0 z-10'>
+    <div className='bg-bg-tertiary m-2 rounded-md absolute right-0 left-0 z-10'>
      {sizeFiltered.map((s) => (
       <SecItem
        key={s.node.id}

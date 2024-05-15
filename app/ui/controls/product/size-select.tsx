@@ -29,7 +29,9 @@ function SizeSelect() {
  }
 
  return (
-  <div className='relative'>
+  <div
+   ref={ref}
+   className='relative'>
    <div
     onClick={handleClick}
     className='bg-bg-tertiary mx-2 mt-2 py-2 px-2 rounded-md flex items-center justify-between pr-4 cursor-pointer'>
@@ -37,9 +39,7 @@ function SizeSelect() {
     <Chevron className='-rotate-90' />
    </div>
    {sizeOpen && (
-    <div
-     ref={ref}
-     className='bg-bg-tertiary m-2 rounded-md absolute right-0 left-0 z-20'>
+    <div className='bg-bg-tertiary m-2 rounded-md absolute right-0 left-0 z-20'>
      {sizeValues &&
       sizeValues.map((s) => (
        <SizeItem

@@ -26,7 +26,6 @@ export default function RootLayout({
    <body className={cn('flex flex-col justify-between h-full relative', open_sans.className)}>
     <Header />
     {children}
-    <Footer />
    </body>
   </html>
  )

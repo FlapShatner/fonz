@@ -114,6 +114,8 @@ export const selectedStyleAtom = atom({
  img: '/none',
 })
 
+export const promptAtom = atom('')
+
 export const ffOpenAtom = atom(false)
 export const sizeOpenAtom = atom(false)
 export const secVarOpenAtom = atom(false)
