@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAtom } from 'jotai'
-import { selectedSizeAtom, productAtom, sizeFilteredAtom } from '@/app/state/atoms'
+import { selectedSizeAtom, productAtom, sizeFilteredAtom, showSecVarAtom } from '@/app/state/atoms'
 
 type SizeItemProps = {
  size: string
@@ -10,14 +10,17 @@ function SizeItem({ size, setOpen }: SizeItemProps) {
  const [product, setProduct] = useAtom(productAtom)
  const [selectedSize, setSelectedSize] = useAtom(selectedSizeAtom)
  const [sizeFiltered, setSizeFiltered] = useAtom(sizeFilteredAtom)
+ const [showSecVar, setShowSecVar] = useAtom(showSecVarAtom)
  const variants = product.variants.edges
 
+ const filtered = variants.filter((variant) => variant.node.selectedOptions.some((option) => option.value === size))
  const handleSelect = async () => {
+  setSizeFiltered(filtered)
   setSelectedSize(size)
-  setSizeFiltered(variants.filter((variant) => variant.node.selectedOptions.some((option) => option.value === size)))
+  setShowSecVar(true)
   setOpen(false)
+  console.log('filtered', filtered)
  }
- console.log('sizeFiltered', sizeFiltered)
  return (
   <div
    onClick={handleSelect}

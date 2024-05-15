@@ -1,5 +1,5 @@
 import React from 'react'
-import Controls from './controls/controls'
+import Controls from './controls/product/controls'
 import ImageBox from './imagebox'
 import History from './history'
 

@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Chevron from '@/app/icons/chevron'
+import SizeItem from './size-item'
+import { useOnClickOutside } from 'usehooks-ts'
 import { useAtom } from 'jotai'
-import { productAtom, selectedSizeAtom, ffOpenAtom, sizeOpenAtom, secVarOpenAtom } from '@/app/state/atoms'
+import { productAtom, selectedSizeAtom, ffOpenAtom, sizeOpenAtom, selectedSecVarAtom, secVarDefault, secVarOpenAtom } from '@/app/state/atoms'
 
-function SecVarSelect() {
+function SizeSelect() {
+ const ref = useRef(null)
  const [product, setProduct] = useAtom(productAtom)
  const [selectedSize, setSelectedSize] = useAtom(selectedSizeAtom)
+ const [selectedSecVar, setSelectedSecVar] = useAtom(selectedSecVarAtom)
  const [ffOpen, setFFOpen] = useAtom(ffOpenAtom)
  const [sizeOpen, setSizeOpen] = useAtom(sizeOpenAtom)
  const [secVarOpen, setSecVarOpen] = useAtom(secVarOpenAtom)
@@ -13,9 +17,15 @@ function SecVarSelect() {
  const sizeOptions = product.options.find((o) => o.name === 'Size')
  const sizeValues = sizeOptions && sizeOptions.values
 
+ useOnClickOutside(ref, () => {
+  setSizeOpen(false)
+ })
+
  const handleClick = () => {
   setSizeOpen(!sizeOpen)
   setFFOpen(false)
+  setSecVarOpen(false)
+  setSelectedSecVar(secVarDefault)
  }
 
  return (
@@ -26,9 +36,22 @@ function SecVarSelect() {
     {selectedSize || 'Size'}
     <Chevron className='-rotate-90' />
    </div>
-   {secVarOpen && <div className='bg-bg-tertiary m-2 rounded-md absolute right-0 left-0'></div>}
+   {sizeOpen && (
+    <div
+     ref={ref}
+     className='bg-bg-tertiary m-2 rounded-md absolute right-0 left-0 z-20'>
+     {sizeValues &&
+      sizeValues.map((s) => (
+       <SizeItem
+        key={s}
+        setOpen={setSizeOpen}
+        size={s}
+       />
+      ))}
+    </div>
+   )}
   </div>
  )
 }
 
-export default SecVarSelect
+export default SizeSelect

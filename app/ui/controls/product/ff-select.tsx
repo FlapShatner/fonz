@@ -1,24 +1,41 @@
+import { useRef } from 'react'
 import { useAtom } from 'jotai'
+import { useOnClickOutside } from 'usehooks-ts'
 import { cn } from '@/app/utils'
 import Chevron from '@/app/icons/chevron'
 import FormFactorItem from './ff-item'
-import { productAtom, selectedFFAtom, ffOpenAtom, sizeOpenAtom, selectedSizeAtom } from '../../state/atoms'
-import { formFactors } from '../../data/form-factors'
-import SizeSelect from './size-select'
+import {
+ productAtom,
+ selectedFFAtom,
+ ffOpenAtom,
+ sizeOpenAtom,
+ secVarOpenAtom,
+ selectedSizeAtom,
+ selectedSecVarAtom,
+ showSecVarAtom,
+ secVarDefault,
+} from '../../../state/atoms'
+import { formFactors } from '../../../data/form-factors'
 
 const FormFactorSelect = () => {
+ const ref = useRef(null)
  const [selectedFF, setSelectedFF] = useAtom(selectedFFAtom)
  const [selectedSize, setSelectedSize] = useAtom(selectedSizeAtom)
+ const [selectedSecVar, setSelectedSecVar] = useAtom(selectedSecVarAtom)
  const [ffOpen, setFFOpen] = useAtom(ffOpenAtom)
  const [sizeOpen, setSizeOpen] = useAtom(sizeOpenAtom)
+ const [secVarOpen, setSecVarOpen] = useAtom(secVarOpenAtom)
+ useOnClickOutside(ref, () => {
+  setFFOpen(false)
+ })
  const handleClick = () => {
   setFFOpen(!ffOpen)
   setSelectedSize('')
+  setSelectedSecVar(secVarDefault)
   setSizeOpen(false)
+  setSecVarOpen(false)
  }
- const showSize = selectedFF.id !== ''
- const showSecVariant = selectedSize !== ''
- const isWindow = selectedFF.id === 'wi'
+
  return (
   <div>
    <div className='relative'>
@@ -29,7 +46,9 @@ const FormFactorSelect = () => {
      <Chevron className='-rotate-90' />
     </div>
     {ffOpen && (
-     <div className='bg-bg-tertiary m-2 rounded-md absolute right-0 left-0'>
+     <div
+      ref={ref}
+      className='bg-bg-tertiary m-2 rounded-md absolute right-0 left-0 z-30'>
       {formFactors.map((formFactor) => (
        <FormFactorItem
         key={formFactor.id}
@@ -40,7 +59,6 @@ const FormFactorSelect = () => {
      </div>
     )}
    </div>
-   {showSize && !ffOpen && !isWindow && <SizeSelect />}
   </div>
  )
 }
