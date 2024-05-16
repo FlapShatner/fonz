@@ -73,4 +73,4 @@ export const styleOptions = [
  },
 ]
 
-export const commonPrompt = 'die cut sticker, decal, contour cut, pitch black background, '
+export const decalPrompt = 'die cut sticker, decal, contour cut, pitch black background, '

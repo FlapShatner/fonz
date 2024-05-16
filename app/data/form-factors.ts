@@ -1,3 +1,5 @@
+import { gradientFade } from '@cloudinary/url-gen/actions/effect'
+
 export const formFactors = [
  {
   id: 'ba',
@@ -28,5 +30,8 @@ export const formFactors = [
   id: 'wi',
   label: 'Truck Back Window Graphics',
   handle: 'ai-truck-back-window-graphics',
+  ar: '4:1',
+  idCode: 'wi1',
+  grid: false,
  },
 ]

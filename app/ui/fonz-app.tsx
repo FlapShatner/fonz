@@ -1,6 +1,6 @@
 import React from 'react'
 import Controls from './controls/controls'
-import ImageBox from './imagebox'
+import ImageBox from './image/imagebox'
 import History from './history'
 
 function FonzApp() {
@@ -8,7 +8,6 @@ function FonzApp() {
   <div className='h-app w-full flex'>
    <Controls />
    <ImageBox />
-
    <History />
   </div>
  )

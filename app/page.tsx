@@ -4,10 +4,12 @@ import { reqUrl } from './lib/customerAccess'
 import { getShop } from './storefront-api/shop'
 import FonzApp from './ui/fonz-app'
 import { useAtomsDebugValue } from 'jotai-devtools'
+import { useWS } from './hooks/useWS'
 export default function Home() {
  const [shop, setShop] = useState(null)
  const [url, setUrl] = useState<string>('')
 
+ useWS()
  useEffect(() => {
   const fetchShop = async () => {
    const shop = await getShop()

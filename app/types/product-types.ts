@@ -31,3 +31,21 @@ export type SelectedOptionType = {
  name: string
  value: string
 }
+
+export type FFType = {
+ id: string
+ label: string
+ handle: string
+ ar?: string
+ idCode?: string
+ grid?: boolean
+}
+
+// {
+//     id: '',
+//     label: 'Choose a product type',
+//     handle: '',
+//     ar: '',
+//     idCode: '',
+//     grid: false,
+//    }
