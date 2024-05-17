@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { useAtom } from 'jotai'
 import { useOnClickOutside } from 'usehooks-ts'
 import { cn } from '@/app/utils'
+import type { FFType } from '@/app/types/product-types'
 import Chevron from '@/app/icons/chevron'
 import FormFactorItem from './ff-item'
 import {
@@ -35,30 +36,32 @@ const FormFactorSelect = () => {
   setSizeOpen(false)
   setSecVarOpen(false)
  }
+ const showSize = selectedFF.id !== ''
 
  return (
-  <div>
+  <div
+   ref={ref}
+   className='relative'>
    <div
-    ref={ref}
-    className='relative'>
-    <div
-     onClick={handleClick}
-     className='bg-bg-tertiary mx-2 mt-2 py-2 px-2 rounded-md flex items-center justify-between pr-4 cursor-pointer'>
-     {selectedFF.label}
-     <Chevron className='-rotate-90' />
-    </div>
-    {ffOpen && (
-     <div className='bg-bg-tertiary m-2 rounded-md absolute right-0 left-0 z-30'>
-      {formFactors.map((formFactor) => (
-       <FormFactorItem
-        key={formFactor.id}
-        setOpen={setFFOpen}
-        formFactor={formFactor}
-       />
-      ))}
-     </div>
-    )}
+    onClick={handleClick}
+    className={cn(
+     'bg-bg-tertiary mx-2 mt-2 py-2 px-2 rounded-md flex items-center justify-between pr-4 cursor-pointer border border-accent',
+     showSize && 'border-transparent'
+    )}>
+    {selectedFF.label}
+    <Chevron className='-rotate-90' />
    </div>
+   {ffOpen && (
+    <div className='bg-bg-tertiary m-2 rounded-md absolute right-0 left-0 z-30'>
+     {formFactors.map((formFactor) => (
+      <FormFactorItem
+       key={formFactor.id}
+       setOpen={setFFOpen}
+       formFactor={formFactor as FFType}
+      />
+     ))}
+    </div>
+   )}
   </div>
  )
 }

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { reqUrl } from './lib/customerAccess'
 import { getShop } from './storefront-api/shop'
 import FonzApp from './ui/fonz-app'
+import { Toaster } from 'react-hot-toast'
 import { useAtomsDebugValue } from 'jotai-devtools'
 import { useWS } from './hooks/useWS'
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
 
  return (
   <main className='h-app'>
+   <Toaster />
    <FonzApp />
    <DebugAtoms />
   </main>

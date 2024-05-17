@@ -17,7 +17,7 @@ function Grid() {
    }
 
    return Object.entries(transformations).map(([key, value], i) => {
-    const image = { publicID: generated.imgData.publicId, gravity: value }
+    const image = { publicID: generated.imgData.publicId, gravity: value, productId: generated.productId }
     return { id: i, label: key, image: image }
    })
   }

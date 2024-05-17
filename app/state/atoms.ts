@@ -1,7 +1,8 @@
 import { atom } from 'jotai'
+import { atomWithStorage } from 'jotai/utils'
 import { Customer } from '../types/customer-types'
 import { FFType } from '../types/product-types'
-import { Generated, CldImage } from '../types/image-types'
+import { Generated, CldImageType } from '../types/image-types'
 import { CloudinaryImage } from '@cloudinary/url-gen/index'
 
 export const customerAtom = atom<Customer | undefined>(undefined)
@@ -140,29 +141,29 @@ export const imageArrayAtom = atom([
  {
   id: 0,
   label: '',
-  image: {} as CldImage,
+  image: {} as CldImageType,
  },
  {
   id: 1,
   label: '',
-  image: {} as CldImage,
+  image: {} as CldImageType,
  },
  {
   id: 2,
   label: '',
-  image: {} as CldImage,
+  image: {} as CldImageType,
  },
  {
   id: 3,
   label: '',
-  image: {} as CldImage,
+  image: {} as CldImageType,
  },
 ])
 
 export const selectedImageAtom = atom({
  id: 0,
  label: '',
- image: {} as CldImage,
+ image: {} as CldImageType,
 })
 selectedImageAtom.debugLabel = 'selectedImageAtom'
 
@@ -176,3 +177,12 @@ export const sizeOpenAtom = atom(false)
 export const secVarOpenAtom = atom(false)
 export const showSecVarAtom = atom(false)
 export const styleOpenAtom = atom(false)
+
+export const generateErrorAtom = atom({
+ error: false,
+ message: '',
+})
+generateErrorAtom.debugLabel = 'generateErrorAtom'
+
+export const promptHistoryAtom = atomWithStorage<string[]>('promptHistory', [])
+promptHistoryAtom.debugLabel = 'promptHistoryAtom'

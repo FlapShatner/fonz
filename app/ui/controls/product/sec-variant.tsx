@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import { cn } from '@/app/utils'
 import Chevron from '@/app/icons/chevron'
 import SecItem from './sec-item'
 import { useOnClickOutside } from 'usehooks-ts'
@@ -26,13 +27,18 @@ function SecVarSelect() {
   setFFOpen(false)
  }
 
+ const isBorder = selectedSecVar.id === ''
+
  return (
   <div
    ref={ref}
    className='relative'>
    <div
     onClick={handleClick}
-    className='bg-bg-tertiary mx-2 mt-2 py-2 px-2 rounded-md flex items-center justify-between pr-4 cursor-pointer'>
+    className={cn(
+     'bg-bg-tertiary mx-2 mt-2 py-2 px-2 rounded-md flex items-center justify-between pr-4 cursor-pointer border border-accent',
+     !isBorder && 'border-transparent'
+    )}>
     {label?.value || (secOptions && secOptions.name)}
     <Chevron className='-rotate-90' />
    </div>

@@ -1,16 +1,16 @@
 import React from 'react'
 import { cn } from '@/app/utils'
-// import { AdvancedImage } from '@cloudinary/react'
 import { CldImage } from 'next-cloudinary'
 import { useAtom } from 'jotai'
 import { selectedImageAtom } from '@/app/state/atoms'
+import { CldImageType } from '@/app/types/image-types'
 
 interface GridImageProps {
  isGrid: boolean
  img: {
   id: number
   label: string
-  image: any
+  image: CldImageType
  }
 }
 
@@ -23,10 +23,10 @@ function GridImage({ img, isGrid }: GridImageProps) {
  }
 
  return (
-  <div className={cn('relative h-stack', isGrid && 'h-grid')}>
+  <div className={cn('cursor-pointer relative', isGrid && 'h-grid', !isGrid && 'h-stack')}>
    <CldImage
     onClick={handleClick}
-    className='object-contain'
+    className='object-contain  hover:border hover:border-accent rounded-md'
     fill
     crop={{
      type: 'crop',

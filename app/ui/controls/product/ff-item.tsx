@@ -8,9 +8,9 @@ type FormFactorItemProps = {
   id: string
   label: string
   handle: string
-  ar: string
-  idCode: string
-  grid: boolean
+  ar?: string
+  idCode?: string
+  grid?: boolean
  }
  setOpen: (open: boolean) => void
 }

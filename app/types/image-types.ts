@@ -12,7 +12,8 @@ export type Generated = {
  prompt: string
 }
 
-export type CldImage = {
+export type CldImageType = {
  publicID: string
  gravity: string
+ productId: string
 }

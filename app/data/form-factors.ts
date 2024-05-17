@@ -1,5 +1,3 @@
-import { gradientFade } from '@cloudinary/url-gen/actions/effect'
-
 export const formFactors = [
  {
   id: 'ba',
