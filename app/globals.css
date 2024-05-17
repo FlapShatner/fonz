@@ -5,8 +5,9 @@
 
 :root {
   --app-height: calc(100vh - 60px);
-  --main-sect-height: calc(var(--app-height) - 10rem);
-  --grid-img-height: calc((var(--app-height) / 2));
+  --main-sect-height: calc(var(--app-height) - 2rem);
+  --grid-img-height: calc(var(--main-sect-height) / 2);
+  --stack-img-height: calc((var(--main-sect-height) / 4)- 4rem);
 }
 
 body {

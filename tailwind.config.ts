@@ -27,6 +27,7 @@ const config: Config = {
     app: 'var(--app-height)',
     main: 'var(--main-sect-height)',
     grid: 'var(--grid-img-height)',
+    stack: 'var(--stack-img-height)',
    },
   },
  },

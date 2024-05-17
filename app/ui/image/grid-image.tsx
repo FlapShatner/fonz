@@ -1,11 +1,12 @@
 import React from 'react'
-import { Generated } from '@/app/types/image-types'
+import { cn } from '@/app/utils'
 // import { AdvancedImage } from '@cloudinary/react'
 import { CldImage } from 'next-cloudinary'
 import { useAtom } from 'jotai'
 import { selectedImageAtom } from '@/app/state/atoms'
 
 interface GridImageProps {
+ isGrid: boolean
  img: {
   id: number
   label: string
@@ -13,7 +14,7 @@ interface GridImageProps {
  }
 }
 
-function GridImage({ img }: GridImageProps) {
+function GridImage({ img, isGrid }: GridImageProps) {
  const [selectedImage, setSelectedImage] = useAtom(selectedImageAtom)
 
  const handleClick = () => {
@@ -22,7 +23,7 @@ function GridImage({ img }: GridImageProps) {
  }
 
  return (
-  <div className='max-h-grid w-full relative'>
+  <div className={cn('relative h-stack', isGrid && 'h-grid')}>
    <CldImage
     onClick={handleClick}
     className='object-contain'
