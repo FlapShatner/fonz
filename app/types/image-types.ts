@@ -11,3 +11,8 @@ export type Generated = {
  caption: string
  prompt: string
 }
+
+export type CldImage = {
+ publicID: string
+ gravity: string
+}

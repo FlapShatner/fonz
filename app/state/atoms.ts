@@ -1,7 +1,7 @@
 import { atom } from 'jotai'
 import { Customer } from '../types/customer-types'
 import { FFType } from '../types/product-types'
-import { Generated } from '../types/image-types'
+import { Generated, CldImage } from '../types/image-types'
 import { CloudinaryImage } from '@cloudinary/url-gen/index'
 
 export const customerAtom = atom<Customer | undefined>(undefined)
@@ -140,24 +140,31 @@ export const imageArrayAtom = atom([
  {
   id: 0,
   label: '',
-  image: {} as CloudinaryImage,
+  image: {} as CldImage,
  },
  {
   id: 1,
   label: '',
-  image: {} as CloudinaryImage,
+  image: {} as CldImage,
  },
  {
   id: 2,
   label: '',
-  image: {} as CloudinaryImage,
+  image: {} as CldImage,
  },
  {
   id: 3,
   label: '',
-  image: {} as CloudinaryImage,
+  image: {} as CldImage,
  },
 ])
+
+export const selectedImageAtom = atom({
+ id: 0,
+ label: '',
+ image: {} as CldImage,
+})
+selectedImageAtom.debugLabel = 'selectedImageAtom'
 
 export const wsIdAtom = atom('')
 wsIdAtom.debugLabel = 'wsIdAtom'

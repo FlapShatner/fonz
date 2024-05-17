@@ -12,7 +12,7 @@ function StyleList() {
   setStyleOpen(false)
  })
  return (
-  <div className='bg-bg-tertiary rounded-md fixed p-2 grid grid-cols-3 gap-2 left-[23%] top-1/4 border border-bg-primary'>
+  <div className='bg-bg-tertiary rounded-md fixed p-2 grid grid-cols-3 gap-2 left-[23%] top-1/4 border border-bg-primary z-50'>
    {styleOptions.map((item) => (
     <StyleItem
      key={item.id}

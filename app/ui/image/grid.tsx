@@ -19,11 +19,12 @@ function Grid() {
    }
 
    return Object.entries(transformations).map(([key, value], i) => {
-    const image = cld.image(generated.imgData.publicId)
-    image
-     .resize(crop().width(0.5).height(0.5).gravity(compass(value)))
-     .quality('auto')
-     .format('auto')
+    const image = { publicID: generated.imgData.publicId, gravity: value }
+    // cld.image(generated.imgData.publicId)
+    // image
+    //  .resize(crop().width(0.5).height(0.5).gravity(compass(value)))
+    //  .quality('auto')
+    //  .format('auto')
     return { id: i, label: key, image: image }
    })
   }
@@ -31,7 +32,7 @@ function Grid() {
  }, [generated])
  if (!generated) return null
  return (
-  <div className='grid grid-cols-2 '>
+  <div className='w-full grid grid-cols-2 gap-2 px-2'>
    {imageArray.map((img) => (
     <GridImage
      key={img.id}
