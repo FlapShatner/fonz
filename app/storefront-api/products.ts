@@ -36,8 +36,7 @@ query MyQuery($identifiers: [HasMetafieldsIdentifier!] = {namespace: "custom", k
 }
 `
 
-export const getProduct = async (id: string) => {
- const productHandle = formFactors.find((h) => h.id === id)?.handle
+export const getProduct = async (handle: string) => {
  const { data, errors, extensions } = await client.request(productQuery, {
   variables: {
    identifiers: [
@@ -45,7 +44,7 @@ export const getProduct = async (id: string) => {
     { namespace: 'custom', key: 'aspectratio' },
     { namespace: 'custom', key: 'idcode' },
    ],
-   handle: productHandle,
+   handle: handle,
   },
   apiVersion: '2024-04',
  })

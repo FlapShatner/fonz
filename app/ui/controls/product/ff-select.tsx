@@ -3,6 +3,7 @@ import { useAtom } from 'jotai'
 import { useOnClickOutside } from 'usehooks-ts'
 import { cn } from '@/app/utils'
 import type { FFType } from '@/app/types/product-types'
+import type { Option } from '@/app/data/options'
 import Chevron from '@/app/icons/chevron'
 import FormFactorItem from './ff-item'
 import {
@@ -17,6 +18,7 @@ import {
  secVarDefault,
 } from '../../../state/atoms'
 import { formFactors } from '../../../data/form-factors'
+import { options } from '@/app/data/options'
 
 const FormFactorSelect = () => {
  const ref = useRef(null)
@@ -31,7 +33,10 @@ const FormFactorSelect = () => {
  })
  const handleClick = () => {
   setFFOpen(!ffOpen)
-  setSelectedSize('')
+  setSelectedSize({
+   size: '',
+   secondary: [],
+  })
   setSelectedSecVar(secVarDefault)
   setSizeOpen(false)
   setSecVarOpen(false)
@@ -53,11 +58,11 @@ const FormFactorSelect = () => {
    </div>
    {ffOpen && (
     <div className='bg-bg-tertiary m-2 rounded-md absolute right-0 left-0 z-30'>
-     {formFactors.map((formFactor) => (
+     {options.map((option) => (
       <FormFactorItem
-       key={formFactor.id}
+       key={option.id}
        setOpen={setFFOpen}
-       formFactor={formFactor as FFType}
+       formFactor={option as Option}
       />
      ))}
     </div>

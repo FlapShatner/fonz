@@ -2,7 +2,7 @@ import React from 'react'
 import { cn } from '@/app/utils'
 import { CldImage } from 'next-cloudinary'
 import { useAtom } from 'jotai'
-import { selectedImageAtom } from '@/app/state/atoms'
+import { selectedImageAtom, isGridAtom } from '@/app/state/atoms'
 import { CldImageType } from '@/app/types/image-types'
 
 interface GridImageProps {
@@ -26,6 +26,7 @@ function GridImage({ img, isGrid }: GridImageProps) {
   <div className={cn('cursor-pointer relative', isGrid && 'h-grid', !isGrid && 'h-stack')}>
    <CldImage
     onClick={handleClick}
+    src={img.image.publicID}
     className='object-contain  hover:border hover:border-accent rounded-md'
     fill
     crop={{
@@ -35,7 +36,6 @@ function GridImage({ img, isGrid }: GridImageProps) {
      gravity: img.image.gravity,
     }}
     alt={img.label}
-    src={img.image.publicID}
    />
   </div>
  )

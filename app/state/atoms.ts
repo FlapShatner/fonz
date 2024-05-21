@@ -4,6 +4,7 @@ import { Customer } from '../types/customer-types'
 import { FFType } from '../types/product-types'
 import { Generated, CldImageType } from '../types/image-types'
 import { CloudinaryImage } from '@cloudinary/url-gen/index'
+import { Option, Secondary, Variant } from '../data/options'
 
 export const customerAtom = atom<Customer | undefined>(undefined)
 customerAtom.debugLabel = 'customerAtom'
@@ -52,15 +53,17 @@ productAtom.debugLabel = 'productAtom'
 
 export const selectedFFAtom = atom({
  id: '',
- label: 'Choose a product',
+ label: 'Select Product',
  handle: '',
- ar: '',
- idCode: '',
- grid: false,
-} as FFType)
+ variants: [],
+ secondaryVariant: '',
+} as Option)
 selectedFFAtom.debugLabel = 'selectedFFAtom'
 
-export const selectedSizeAtom = atom('')
+export const selectedSizeAtom = atom({
+ size: 'Select Size',
+ secondary: [],
+} as Variant)
 selectedSizeAtom.debugLabel = 'selectedSizeAtom'
 
 export const sizeFilteredAtom = atom([
@@ -91,26 +94,12 @@ sizeFilteredAtom.debugLabel = 'sizeFilteredAtom'
 
 export const secVarDefault = {
  id: '',
- title: '',
- selectedOptions: [
-  {
-   name: '',
-   value: '',
-  },
- ],
- metafields: [
-  {
-   id: '',
-   key: '',
-   value: '',
-  },
- ],
- price: {
-  amount: '',
- },
+ label: '',
+ ar: '',
+ grid: false,
 }
 
-export const selectedSecVarAtom = atom(secVarDefault)
+export const selectedSecVarAtom = atom(secVarDefault as Secondary)
 selectedSecVarAtom.debugLabel = 'selectedSecVarAtom'
 
 export const selectedStyleAtom = atom({
@@ -159,6 +148,10 @@ export const imageArrayAtom = atom([
   image: {} as CldImageType,
  },
 ])
+imageArrayAtom.debugLabel = 'imageArrayAtom'
+
+export const isGridAtom = atom(false)
+isGridAtom.debugLabel = 'isGridAtom'
 
 export const selectedImageAtom = atom({
  id: 0,
@@ -166,6 +159,28 @@ export const selectedImageAtom = atom({
  image: {} as CldImageType,
 })
 selectedImageAtom.debugLabel = 'selectedImageAtom'
+
+export const selectedVariantAtom = atom({
+ id: '',
+ title: '',
+ selectedOptions: [
+  {
+   name: '',
+   value: '',
+  },
+ ],
+ metafields: [
+  {
+   id: '',
+   key: '',
+   value: '',
+  },
+ ],
+ price: {
+  amount: '',
+ },
+})
+selectedVariantAtom.debugLabel = 'selectedVariantAtom'
 
 export const wsIdAtom = atom('')
 wsIdAtom.debugLabel = 'wsIdAtom'
@@ -184,5 +199,15 @@ export const generateErrorAtom = atom({
 })
 generateErrorAtom.debugLabel = 'generateErrorAtom'
 
-export const promptHistoryAtom = atomWithStorage<string[]>('promptHistory', [])
+const defaultHistory = {
+ event: '',
+ prompt: '',
+ productId: '',
+ isGrid: false,
+ caption: '',
+ style: '',
+ id: '',
+}
+
+export const promptHistoryAtom = atomWithStorage('promptHistory', [defaultHistory])
 promptHistoryAtom.debugLabel = 'promptHistoryAtom'

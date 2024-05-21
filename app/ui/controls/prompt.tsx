@@ -9,10 +9,9 @@ function Prompt() {
  const [promptHistory, setPromptHistory] = useAtom(promptHistoryAtom)
  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
   setPrompt(e.target.value)
-  setPromptHistory((prev) => [e.target.value, ...prev])
  }
  const handlePaste = () => {
-  setPrompt(promptHistory[0])
+  //   setPrompt(promptHistory[0])
  }
  return (
   <div className='mt-4 flex flex-col'>

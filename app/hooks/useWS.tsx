@@ -2,12 +2,13 @@ import { useEffect } from 'react'
 import useWebSocket, { ReadyState } from 'react-use-websocket'
 import { WS_URL } from '../lib/ws'
 import { useAtom } from 'jotai'
-import { wsIdAtom, wsMessageAtom, generatedAtom } from '../state/atoms'
+import { wsIdAtom, wsMessageAtom, generatedAtom, promptHistoryAtom } from '../state/atoms'
 
 export function useWS() {
  const [wsId, setWsId] = useAtom(wsIdAtom)
  const [wsMessage, setWsMessage] = useAtom(wsMessageAtom)
  const [, setGenerated] = useAtom(generatedAtom)
+ const [, setPromptHistory] = useAtom(promptHistoryAtom)
  const { sendJsonMessage, sendMessage, lastJsonMessage, readyState } = useWebSocket(WS_URL, {
   share: true,
   shouldReconnect: () => true,
@@ -42,6 +43,7 @@ export function useWS() {
    if ((lastJsonMessage as WsMessage).event === 'generate') {
     const { event, data, id } = lastJsonMessage as WsMessage
     setGenerated(data)
+    setPromptHistory((prev) => [...prev, data])
     console.log('generate data:', data)
    }
   }

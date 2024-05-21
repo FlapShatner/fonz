@@ -4,7 +4,18 @@ import Chevron from '@/app/icons/chevron'
 import SizeItem from './size-item'
 import { useOnClickOutside } from 'usehooks-ts'
 import { useAtom } from 'jotai'
-import { productAtom, selectedSizeAtom, ffOpenAtom, sizeOpenAtom, selectedSecVarAtom, secVarDefault, secVarOpenAtom, showSecVarAtom } from '@/app/state/atoms'
+import {
+ productAtom,
+ selectedSizeAtom,
+ ffOpenAtom,
+ sizeOpenAtom,
+ selectedSecVarAtom,
+ secVarDefault,
+ secVarOpenAtom,
+ showSecVarAtom,
+ isGridAtom,
+ selectedFFAtom,
+} from '@/app/state/atoms'
 
 function SizeSelect() {
  const ref = useRef(null)
@@ -15,9 +26,9 @@ function SizeSelect() {
  const [sizeOpen, setSizeOpen] = useAtom(sizeOpenAtom)
  const [secVarOpen, setSecVarOpen] = useAtom(secVarOpenAtom)
  const [showSecVar, setShowSecVar] = useAtom(showSecVarAtom)
+ const [selectedFF, setSelectedFF] = useAtom(selectedFFAtom)
 
- const sizeOptions = product.options.find((o) => o.name === 'Size')
- const sizeValues = sizeOptions && sizeOptions.values
+ const sizeOptions = selectedFF?.variants
 
  useOnClickOutside(ref, () => {
   setSizeOpen(false)
@@ -40,15 +51,15 @@ function SizeSelect() {
      'bg-bg-tertiary mx-2 mt-2 py-2 px-2 rounded-md flex items-center justify-between pr-4 cursor-pointer border border-accent ',
      showSecVar && 'border-transparent'
     )}>
-    {selectedSize || 'Size'}
+    {selectedSize.size != '' ? selectedSize.size : 'Size'}
     <Chevron className='-rotate-90' />
    </div>
    {sizeOpen && (
     <div className='bg-bg-tertiary m-2 rounded-md absolute right-0 left-0 z-20'>
-     {sizeValues &&
-      sizeValues.map((s) => (
+     {sizeOptions &&
+      sizeOptions.map((s) => (
        <SizeItem
-        key={s}
+        key={s.size}
         setOpen={setSizeOpen}
         size={s}
        />

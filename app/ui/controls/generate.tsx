@@ -1,6 +1,7 @@
 import React from 'react'
 import toast from 'react-hot-toast'
 import Plus from '@/app/icons/plus'
+
 import { useAtom } from 'jotai'
 import {
  wsMessageAtom,
@@ -12,9 +13,12 @@ import {
  wsIdAtom,
  productAtom,
  generateErrorAtom,
+ isGridAtom,
+ promptHistoryAtom,
+ selectedSizeAtom,
+ selectedVariantAtom,
 } from '@/app/state/atoms'
 import { assemblePrompt } from '@/app/utils'
-import { set } from '@cloudinary/url-gen/actions/variable'
 
 function Generate() {
  const [wsMessage, setWsMessage] = useAtom(wsMessageAtom)
@@ -25,40 +29,31 @@ function Generate() {
  const [selectedSecVar] = useAtom(selectedSecVarAtom)
  const [selectedFF] = useAtom(selectedFFAtom)
  const [filtered] = useAtom(sizeFilteredAtom)
+ const [isGrid, setIsGrid] = useAtom(isGridAtom)
+ const [selectedSize] = useAtom(selectedSizeAtom)
+ const [selectedVariant, setSelectedVariant] = useAtom(selectedVariantAtom)
  const [generateError, setGenerateError] = useAtom(generateErrorAtom)
+ const [promptHistory, setPromptHistory] = useAtom(promptHistoryAtom)
 
  const isWindow = selectedFF.id === 'wi'
  const secExists = filtered.length > 1
  const isDisabled = !prompt || !selectedStyle.id || !wsId
 
+ const productVariants = product.variants.edges
+ const varsFilteredBySize = productVariants.filter((variant) => variant.node.selectedOptions.some((option) => option.value === selectedSize.size))
+ const localSelectedVariant = varsFilteredBySize.find((variant) => variant.node.selectedOptions.some((option) => option.value === selectedSecVar.label))
+
  const buildMessage = () => {
-  let productId
-  let idCode
-  let isGrid
-  let ar
-  if (isWindow) {
-   productId = product.id
-   idCode = selectedFF.idCode
-   isGrid = selectedFF.grid
-   ar = selectedFF.ar
-  } else if (!secExists) {
-   const { metafields } = filtered[0].node
-   productId = filtered[0].node.id
-   idCode = metafields.find(({ key }) => key === 'idcode')?.value
-   isGrid = metafields.find(({ key }) => key === 'isgrid')?.value
-   ar = metafields.find(({ key }) => key === 'aspectratio')?.value
-  } else {
-   const { metafields } = selectedSecVar
-   productId = selectedSecVar.id
-   idCode = metafields.find(({ key }) => key === 'idcode')?.value
-   isGrid = metafields.find(({ key }) => key === 'isgrid')?.value
-   ar = metafields.find(({ key }) => key === 'aspectratio')?.value
-  }
+  const productId = localSelectedVariant?.node.id
+  const idCode = selectedSecVar.id
+  const isGrid = selectedSecVar.grid
+  const ar = selectedSecVar.ar
   if (!productId) {
    toast.error('Please select a product', { position: 'top-left' })
    setGenerateError({ error: true, message: 'Please select a product' })
    return
   }
+  setIsGrid(isGrid)
   const messageData = {
    event: 'generate',
    prompt: assemblePrompt(prompt, selectedStyle.prompt, ar, idCode),
@@ -78,6 +73,9 @@ function Generate() {
    return
   }
   const messageData = buildMessage()
+  if (localSelectedVariant) {
+   setSelectedVariant(localSelectedVariant.node)
+  }
   setWsMessage({ event: 'generate', data: JSON.stringify(messageData), id: wsId })
   setPrompt('')
  }

@@ -2,7 +2,7 @@ import React from 'react'
 import { cn } from '@/app/utils'
 import GridImage from './grid-image'
 
-interface GridProps {
+interface StackProps {
  isGrid: boolean
  imageArray: {
   id: number
@@ -15,9 +15,9 @@ interface GridProps {
  }[]
 }
 
-function Grid({ imageArray, isGrid }: GridProps) {
+function Stack({ imageArray, isGrid }: StackProps) {
  return (
-  <div className={cn('w-full grid gap-2 px-2 grid-cols-2')}>
+  <div className={cn('w-full grid gap-2 px-2 grid-cols-1')}>
    {imageArray.map((img) => (
     <GridImage
      isGrid={isGrid}
@@ -29,4 +29,4 @@ function Grid({ imageArray, isGrid }: GridProps) {
  )
 }
 
-export default Grid
+export default Stack
