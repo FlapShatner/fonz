@@ -51,13 +51,15 @@ export const productAtom = atom({
 })
 productAtom.debugLabel = 'productAtom'
 
-export const selectedFFAtom = atom({
+export const ffDefault = {
  id: '',
  label: 'Select Product',
  handle: '',
  variants: [],
  secondaryVariant: '',
-} as Option)
+}
+
+export const selectedFFAtom = atom(ffDefault)
 selectedFFAtom.debugLabel = 'selectedFFAtom'
 
 export const selectedSizeAtom = atom({
@@ -119,6 +121,16 @@ export const generatedDefault = {
  },
  productId: '',
  isGrid: false,
+ ff: '',
+ size: '',
+ secVar: {
+  ar: '',
+  grid: false,
+  id: '',
+  label: '',
+ },
+ style: '',
+
  meta: '',
  caption: '',
  prompt: '',
@@ -153,11 +165,16 @@ imageArrayAtom.debugLabel = 'imageArrayAtom'
 export const isGridAtom = atom(false)
 isGridAtom.debugLabel = 'isGridAtom'
 
-export const selectedImageAtom = atom({
- id: 0,
- label: '',
- image: {} as CldImageType,
-})
+export const selectedImageDefault = {
+ img: {
+  id: 0,
+  label: '',
+  image: {} as CldImageType,
+ },
+ generated: generatedDefault,
+}
+
+export const selectedImageAtom = atom(selectedImageDefault)
 selectedImageAtom.debugLabel = 'selectedImageAtom'
 
 export const selectedVariantAtom = atom({
@@ -200,13 +217,24 @@ export const generateErrorAtom = atom({
 generateErrorAtom.debugLabel = 'generateErrorAtom'
 
 const defaultHistory = {
- event: '',
- prompt: '',
- productId: '',
- isGrid: false,
  caption: '',
+ ff: '',
+ imgData: {
+  publicId: '',
+  url: '',
+ },
+ isGrid: false,
+ meta: '',
+ productId: '',
+ prompt: '',
+ secVar: {
+  ar: '',
+  grid: false,
+  id: '',
+  label: '',
+ },
+ size: '',
  style: '',
- id: '',
 }
 
 export const promptHistoryAtom = atomWithStorage('promptHistory', [defaultHistory])

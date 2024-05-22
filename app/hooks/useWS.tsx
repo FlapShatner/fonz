@@ -43,7 +43,7 @@ export function useWS() {
    if ((lastJsonMessage as WsMessage).event === 'generate') {
     const { event, data, id } = lastJsonMessage as WsMessage
     setGenerated(data)
-    setPromptHistory((prev) => [...prev, data])
+    setPromptHistory((prev) => [data, ...prev])
     console.log('generate data:', data)
    }
   }

@@ -41,6 +41,25 @@ export type FFType = {
  grid?: boolean
 }
 
+export type SelectedOption = {
+ name: string
+ value: string
+}
+
+export type ProductVariant = {
+ id: string
+ selectedOptions: SelectedOption[]
+ title: string
+ price: {
+  amount: string
+ }
+ product: {
+  handle: string
+  title: string
+  id: string
+ }
+}
+
 // {
 //     id: '',
 //     label: 'Choose a product type',

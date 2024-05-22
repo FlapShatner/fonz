@@ -1,20 +1,23 @@
 import React from 'react'
+import { cn } from '@/app/utils'
 import Paste from '@/app/icons/paste'
 import { useAtom } from 'jotai'
 
-import { promptAtom, promptHistoryAtom } from '@/app/state/atoms'
+import { promptAtom, promptHistoryAtom, generatedAtom } from '@/app/state/atoms'
 
 function Prompt() {
  const [prompt, setPrompt] = useAtom(promptAtom)
  const [promptHistory, setPromptHistory] = useAtom(promptHistoryAtom)
+ const [generated, setGenerated] = useAtom(generatedAtom)
  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
   setPrompt(e.target.value)
  }
  const handlePaste = () => {
-  //   setPrompt(promptHistory[0])
+  setPrompt(promptHistory[0].caption)
  }
+ const isDisabled = generated.productId != ''
  return (
-  <div className='mt-4 flex flex-col'>
+  <div className={cn('mt-4 flex flex-col')}>
    <div className='text-lg pl-2'>Prompt</div>
    <textarea
     onChange={(e) => handleChange(e)}

@@ -14,8 +14,8 @@ import {
  productAtom,
  generateErrorAtom,
  isGridAtom,
- promptHistoryAtom,
  selectedSizeAtom,
+ generatedAtom,
  selectedVariantAtom,
 } from '@/app/state/atoms'
 import { assemblePrompt } from '@/app/utils'
@@ -33,18 +33,24 @@ function Generate() {
  const [selectedSize] = useAtom(selectedSizeAtom)
  const [selectedVariant, setSelectedVariant] = useAtom(selectedVariantAtom)
  const [generateError, setGenerateError] = useAtom(generateErrorAtom)
- const [promptHistory, setPromptHistory] = useAtom(promptHistoryAtom)
+ const [generated, setGenerated] = useAtom(generatedAtom)
 
  const isWindow = selectedFF.id === 'wi'
  const secExists = filtered.length > 1
  const isDisabled = !prompt || !selectedStyle.id || !wsId
+ const isSizeOnly = selectedFF.id === 'de' || selectedFF.id === 'mb'
+ const isNewDesign = generated.productId != ''
 
  const productVariants = product.variants.edges
  const varsFilteredBySize = productVariants.filter((variant) => variant.node.selectedOptions.some((option) => option.value === selectedSize.size))
  const localSelectedVariant = varsFilteredBySize.find((variant) => variant.node.selectedOptions.some((option) => option.value === selectedSecVar.label))
+ const decalSelectedVariant = productVariants.find((variant) => variant.node.selectedOptions.some((option) => option.value.includes(selectedSize.size)))
 
  const buildMessage = () => {
-  const productId = localSelectedVariant?.node.id
+  console.log('pvar', productVariants)
+
+  console.log('lsv', localSelectedVariant)
+  const productId = isSizeOnly ? decalSelectedVariant : isWindow ? selectedFF.handle : localSelectedVariant?.node.id
   const idCode = selectedSecVar.id
   const isGrid = selectedSecVar.grid
   const ar = selectedSecVar.ar
@@ -59,6 +65,9 @@ function Generate() {
    prompt: assemblePrompt(prompt, selectedStyle.prompt, ar, idCode),
    productId,
    isGrid,
+   ff: selectedFF.id,
+   size: selectedSize.size,
+   secVar: selectedSecVar,
    caption: prompt,
    style: selectedStyle.id,
    id: wsId,

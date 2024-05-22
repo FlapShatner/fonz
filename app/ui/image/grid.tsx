@@ -17,7 +17,7 @@ interface GridProps {
 
 function Grid({ imageArray, isGrid }: GridProps) {
  return (
-  <div className={cn('w-full grid gap-2 px-2 grid-cols-2')}>
+  <div className={cn('w-full grid gap-2 px-2 grid-cols-2 ')}>
    {imageArray.map((img) => (
     <GridImage
      isGrid={isGrid}

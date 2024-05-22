@@ -7,5 +7,15 @@ Hook up variations
 
 Hook up upscale
 
-Capture generation history
+make caption a drawer from left with info:
+    FF, Size, SecVar, Style
+    add "i" icon instead of chevron
 
+Hover effects
+
+
+
+
+
+Done:
+Capture generation history

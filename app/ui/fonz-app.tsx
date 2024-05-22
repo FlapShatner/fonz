@@ -1,7 +1,7 @@
 import React from 'react'
 import Controls from './controls/controls'
 import ImageBox from './image/imagebox'
-import History from './history'
+import History from './history/history'
 
 function FonzApp() {
  return (

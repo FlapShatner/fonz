@@ -2,7 +2,7 @@ import React from 'react'
 import { cn } from '@/app/utils'
 import { CldImage } from 'next-cloudinary'
 import { useAtom } from 'jotai'
-import { selectedImageAtom, isGridAtom } from '@/app/state/atoms'
+import { selectedImageAtom, generatedAtom } from '@/app/state/atoms'
 import { CldImageType } from '@/app/types/image-types'
 
 interface GridImageProps {
@@ -16,10 +16,14 @@ interface GridImageProps {
 
 function GridImage({ img, isGrid }: GridImageProps) {
  const [selectedImage, setSelectedImage] = useAtom(selectedImageAtom)
-
+ const [generated, setGenerated] = useAtom(generatedAtom)
  const handleClick = () => {
-  setSelectedImage(img)
-  console.log(img.image)
+  const imageData = {
+   img: img,
+   generated: generated,
+  }
+  setSelectedImage(imageData)
+  console.log(imageData)
  }
 
  return (

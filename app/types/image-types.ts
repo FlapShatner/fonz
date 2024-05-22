@@ -3,10 +3,20 @@ export type ImgData = {
  url: string
 }
 
+export type SecVar = {
+ ar: string
+ grid: boolean
+ id: string
+ label: string
+}
 export type Generated = {
  imgData: ImgData
  productId: string
  isGrid: boolean
+ ff: string
+ size: string
+ secVar: SecVar
+ style: string
  meta: string
  caption: string
  prompt: string

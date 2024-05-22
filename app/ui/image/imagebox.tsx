@@ -4,7 +4,8 @@ import Grid from './grid'
 import Stack from './stack'
 
 import { useAtom } from 'jotai'
-import { generatedAtom, imageArrayAtom, isGridAtom, selectedSizeAtom, sizeFilteredAtom, selectedFFAtom, selectedSecVarAtom } from '@/app/state/atoms'
+import { generatedAtom, imageArrayAtom, isGridAtom, selectedSizeAtom, sizeFilteredAtom, selectedImageAtom, selectedSecVarAtom } from '@/app/state/atoms'
+import Detail from './detail'
 
 function ImageBox() {
  const [generated, setGenerate] = useAtom(generatedAtom)
@@ -12,6 +13,7 @@ function ImageBox() {
  const [selectedSecVar] = useAtom(selectedSecVarAtom)
  const [imageArray, setImageArray] = useAtom(imageArrayAtom)
  const [isGrid, setIsGrid] = useAtom(isGridAtom)
+ const [selectedImage, setSelectedImage] = useAtom(selectedImageAtom)
 
  const grid = selectedSecVar.grid
 
@@ -35,10 +37,13 @@ function ImageBox() {
  if (!generated) return null
 
  const imgExists = generated && generated.imgData.publicId !== ''
+ const showDetail = selectedImage.img.label != ''
  return (
-  <div className='w-3/4 bg-announce rounded-md my-2 relative flex items-center '>
+  <div className='w-3/4 bg-announce rounded-md my-2 pb-8 relative flex items-center '>
    {imgExists ? (
-    isGrid ? (
+    showDetail ? (
+     <Detail />
+    ) : isGrid ? (
      <Grid
       isGrid={isGrid}
       imageArray={imageArray}
