@@ -1,6 +1,7 @@
 export type Option = {
  id: string
  label: string
+ disabled: boolean
  handle: string
  secondaryVariant: string
  variants: Variant[]
@@ -23,6 +24,7 @@ export const options = [
   id: 'de',
   label: 'Contour Cut Decal',
   handle: 'ai-designed-contour-cut-decal',
+  disabled: false,
   secondaryVariant: 'none',
   variants: [
    {
@@ -30,7 +32,7 @@ export const options = [
     secondary: [
      {
       id: 'de1',
-      label: 'Contour Cut',
+      label: '3"',
       ar: '1:1',
       grid: true,
      },
@@ -41,7 +43,7 @@ export const options = [
     secondary: [
      {
       id: 'de2',
-      label: 'Contour Cut',
+      label: '4"',
       ar: '1:1',
       grid: true,
      },
@@ -52,7 +54,7 @@ export const options = [
     secondary: [
      {
       id: 'de3',
-      label: 'Contour Cut',
+      label: '5"',
       ar: '1:1',
       grid: true,
      },
@@ -63,7 +65,7 @@ export const options = [
     secondary: [
      {
       id: 'de4',
-      label: 'Contour Cut',
+      label: '6"',
       ar: '1:1',
       grid: true,
      },
@@ -74,7 +76,7 @@ export const options = [
     secondary: [
      {
       id: 'de5',
-      label: 'Contour Cut',
+      label: '7"',
       ar: '1:1',
       grid: true,
      },
@@ -85,7 +87,7 @@ export const options = [
     secondary: [
      {
       id: 'de6',
-      label: 'Contour Cut',
+      label: '8"',
       ar: '1:1',
       grid: true,
      },
@@ -96,7 +98,7 @@ export const options = [
     secondary: [
      {
       id: 'de7',
-      label: 'Contour Cut',
+      label: '10"',
       ar: '1:1',
       grid: true,
      },
@@ -107,7 +109,7 @@ export const options = [
     secondary: [
      {
       id: 'de8',
-      label: 'Contour Cut',
+      label: '12"',
       ar: '1:1',
       grid: true,
      },
@@ -118,7 +120,7 @@ export const options = [
     secondary: [
      {
       id: 'de9',
-      label: 'Contour Cut',
+      label: '15"',
       ar: '1:1',
       grid: true,
      },
@@ -129,7 +131,7 @@ export const options = [
     secondary: [
      {
       id: 'de10',
-      label: 'Contour Cut',
+      label: '18"',
       ar: '1:1',
       grid: true,
      },
@@ -140,6 +142,7 @@ export const options = [
  {
   id: 'dp',
   label: 'Digital Print',
+  disabled: false,
   handle: 'ai-designed-digital-print',
   secondaryVariant: 'Orientation',
   variants: [
@@ -216,6 +219,7 @@ export const options = [
  {
   id: 'ba',
   label: 'Banner',
+  disabled: false,
   handle: 'ai-designed-banner',
   secondaryVariant: 'none',
   variants: [
@@ -401,6 +405,7 @@ export const options = [
   id: 'wi',
   label: 'Truck Back Window Graphics',
   handle: 'ai-truck-back-window-graphics',
+  disabled: false,
   secondaryVariant: 'none',
   variants: [
    {
@@ -419,26 +424,27 @@ export const options = [
  {
   id: 'mb',
   label: 'Mailbox Wrap (includes mailbox)',
+  disabled: false,
   handle: 'ai-designed-wrapped-mailbox',
   secondaryVariant: 'none',
   variants: [
    {
-    size: `18.75"x8"`,
+    size: `18.75"x8" Standard`,
     secondary: [
      {
       id: 'mb1',
-      label: `Standard`,
+      label: `18.75"x8"`,
       ar: '7:3',
       grid: true,
      },
     ],
    },
    {
-    size: `21"x11"`,
+    size: `21"x11" XL`,
     secondary: [
      {
       id: 'mb2',
-      label: `XL`,
+      label: `21"x11"`,
       ar: '21:11',
       grid: true,
      },
@@ -449,6 +455,7 @@ export const options = [
  {
   id: 'ts',
   label: 'T-Shirt',
+  disabled: false,
   handle: 'ai-designed-printed-t-shirt',
   secondaryVariant: 'Color',
   variants: [
@@ -786,6 +793,7 @@ export const options = [
  {
   id: '3d',
   label: '3D Printed Model',
+  disabled: true,
   handle: 'ai-designed-3d-printed-model',
   secondaryVariant: 'none',
   variants: [

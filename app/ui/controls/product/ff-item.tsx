@@ -1,4 +1,5 @@
 import React from 'react'
+import { cn } from '@/app/utils'
 import { getProduct } from '@/app/storefront-api/products'
 import { useAtom } from 'jotai'
 import { Option } from '@/app/data/options'
@@ -31,8 +32,11 @@ function FormFactorItem({ formFactor, setOpen }: FormFactorItemProps) {
   <div
    onClick={handleSelect}
    key={formFactor.id}
-   className='flex justify-between items-center p-2 border-b border-bg-primary cursor-pointer '>
-   <span>{formFactor.label}</span>
+   className={cn('flex justify-between items-center p-2 border-b border-bg-primary cursor-pointer', formFactor.disabled && 'opacity-30 pointer-events-none')}>
+   <div>
+    <span>{formFactor.label}</span>
+    {formFactor.disabled && <p className='text-sm'>Coming Soon</p>}
+   </div>
   </div>
  )
 }

@@ -19,6 +19,7 @@ export type Generated = {
  style: string
  meta: string
  caption: string
+ secVarLabel: string
  prompt: string
 }
 

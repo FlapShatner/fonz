@@ -54,8 +54,21 @@ productAtom.debugLabel = 'productAtom'
 export const ffDefault = {
  id: '',
  label: 'Select Product',
+ disabled: false,
  handle: '',
- variants: [],
+ variants: [
+  {
+   size: '',
+   secondary: [
+    {
+     id: '',
+     label: '',
+     ar: '',
+     grid: false,
+    },
+   ],
+  },
+ ],
  secondaryVariant: '',
 }
 
@@ -130,10 +143,10 @@ export const generatedDefault = {
   label: '',
  },
  style: '',
-
  meta: '',
  caption: '',
  prompt: '',
+ secVarLabel: '',
 }
 
 export const generatedAtom = atom<Generated>(generatedDefault)
@@ -209,6 +222,7 @@ export const sizeOpenAtom = atom(false)
 export const secVarOpenAtom = atom(false)
 export const showSecVarAtom = atom(false)
 export const styleOpenAtom = atom(false)
+export const infoDrawerOpenAtom = atom(false)
 
 export const generateErrorAtom = atom({
  error: false,
@@ -235,6 +249,7 @@ const defaultHistory = {
  },
  size: '',
  style: '',
+ secVarLabel: '',
 }
 
 export const promptHistoryAtom = atomWithStorage('promptHistory', [defaultHistory])

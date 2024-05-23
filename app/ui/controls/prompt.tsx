@@ -22,12 +22,12 @@ function Prompt() {
    <textarea
     onChange={(e) => handleChange(e)}
     value={prompt}
-    className='bg-bg-tertiary border border-txt-secondary rounded-md m-2 resize-none text-sm p-1 '
+    className={cn('bg-bg-tertiary border border-txt-secondary rounded-md m-2 resize-none text-sm p-1', isDisabled && 'pointer-events-none')}
     rows={5}
    />
    <div
     onClick={handlePaste}
-    className='mx-2 ml-auto flex justify-end bg-bg-tertiary rounded-md w-max px-2 gap-2'>
+    className={cn('mx-2 ml-auto flex justify-end bg-bg-tertiary rounded-md w-max px-2 gap-2', isDisabled && 'pointer-events-none')}>
     <Paste className='w-4' />
     <p className='text-sm font-light py-[2px] flex cursor-pointer'>Insert your last prompt</p>
    </div>

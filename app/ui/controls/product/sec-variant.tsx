@@ -4,7 +4,16 @@ import Chevron from '@/app/icons/chevron'
 import SecItem from './sec-item'
 import { useOnClickOutside } from 'usehooks-ts'
 import { useAtom } from 'jotai'
-import { productAtom, selectedSecVarAtom, selectedSizeAtom, ffOpenAtom, sizeFilteredAtom, secVarOpenAtom, selectedFFAtom } from '@/app/state/atoms'
+import {
+ productAtom,
+ selectedSecVarAtom,
+ selectedSizeAtom,
+ ffOpenAtom,
+ sizeFilteredAtom,
+ secVarOpenAtom,
+ selectedFFAtom,
+ generatedAtom,
+} from '@/app/state/atoms'
 
 function SecVarSelect() {
  const ref = useRef(null)
@@ -12,6 +21,7 @@ function SecVarSelect() {
  const [selectedFF, setSelectedFF] = useAtom(selectedFFAtom)
  const [selectedSize, setSelectedSize] = useAtom(selectedSizeAtom)
  const [ffOpen, setFFOpen] = useAtom(ffOpenAtom)
+ const [generated, setGenerated] = useAtom(generatedAtom)
  const [secVarOpen, setSecVarOpen] = useAtom(secVarOpenAtom)
  const [sizeFiltered, setSizeFiltered] = useAtom(sizeFilteredAtom)
  const [selectedSecVar, setSelectedSecVar] = useAtom(selectedSecVarAtom)
@@ -26,6 +36,7 @@ function SecVarSelect() {
  }
 
  const isBorder = selectedSecVar.id === ''
+ const isDisabled = generated.productId != ''
 
  return (
   <div
@@ -35,7 +46,8 @@ function SecVarSelect() {
     onClick={handleClick}
     className={cn(
      'bg-bg-tertiary mx-2 mt-2 py-2 px-2 rounded-md flex items-center justify-between pr-4 cursor-pointer border border-accent',
-     !isBorder && 'border-transparent'
+     !isBorder && 'border-transparent',
+     isDisabled && 'pointer-events-none'
     )}>
     {selectedSecVar.label !== '' ? selectedSecVar.label : selectedFF.secondaryVariant}
     <Chevron className='-rotate-90' />

@@ -39,7 +39,7 @@ function ImageBox() {
  const imgExists = generated && generated.imgData.publicId !== ''
  const showDetail = selectedImage.img.label != ''
  return (
-  <div className='w-3/4 bg-announce rounded-md my-2 pb-8 relative flex items-center '>
+  <div className='w-3/4 bg-announce rounded-md my-2 relative flex items-center '>
    {imgExists ? (
     showDetail ? (
      <Detail />

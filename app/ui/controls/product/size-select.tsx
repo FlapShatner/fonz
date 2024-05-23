@@ -13,6 +13,7 @@ import {
  secVarDefault,
  secVarOpenAtom,
  showSecVarAtom,
+ generatedAtom,
  isGridAtom,
  selectedFFAtom,
 } from '@/app/state/atoms'
@@ -27,6 +28,7 @@ function SizeSelect() {
  const [secVarOpen, setSecVarOpen] = useAtom(secVarOpenAtom)
  const [showSecVar, setShowSecVar] = useAtom(showSecVarAtom)
  const [selectedFF, setSelectedFF] = useAtom(selectedFFAtom)
+ const [generated, setGenerated] = useAtom(generatedAtom)
 
  const sizeOptions = selectedFF?.variants
 
@@ -41,6 +43,8 @@ function SizeSelect() {
   setSelectedSecVar(secVarDefault)
  }
 
+ const isDisabled = generated.productId != ''
+
  return (
   <div
    ref={ref}
@@ -49,7 +53,8 @@ function SizeSelect() {
     onClick={handleClick}
     className={cn(
      'bg-bg-tertiary mx-2 mt-2 py-2 px-2 rounded-md flex items-center justify-between pr-4 cursor-pointer border border-accent ',
-     showSecVar && 'border-transparent'
+     showSecVar && 'border-transparent',
+     isDisabled && 'pointer-events-none'
     )}>
     {selectedSize.size != '' ? selectedSize.size : 'Size'}
     <Chevron className='-rotate-90' />
