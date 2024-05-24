@@ -6,9 +6,8 @@ import { useAtom } from 'jotai'
 import { selectedImageAtom, infoDrawerOpenAtom } from '@/app/state/atoms'
 import { options } from '@/app/data/options'
 import { styleOptions } from '@/app/data/style-options'
-import Close from '@/app/icons/close'
 
-function InfoDrawer() {
+function InfoDrawer({ className = '' }) {
  const [selectedImage] = useAtom(selectedImageAtom)
  const [infoDrawerOpen, setInfoDrawerOpen] = useAtom(infoDrawerOpenAtom)
  const ff = options.find((option) => option.id === selectedImage.generated.ff)
@@ -22,7 +21,7 @@ function InfoDrawer() {
  return (
   <div
    onClick={handleClick}
-   className='flex flex-col cursor-pointer bg-bg-primary w-max px-2 pb-1 rounded-br-md z-40 mr-auto'>
+   className={cn('flex flex-col cursor-pointer bg-bg-primary h-max w-max px-2 pb-1 rounded-br-md z-40 mr-auto', className)}>
    <div className='flex gap-2 items-center justify-between'>
     <p className='text-sm'>{selectedImage.generated.caption}</p>
 

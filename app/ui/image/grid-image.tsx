@@ -12,13 +12,15 @@ interface GridImageProps {
   label: string
   image: CldImageType
  }
+ index: number
 }
 
-function GridImage({ img, isGrid }: GridImageProps) {
+function GridImage({ img, isGrid, index }: GridImageProps) {
  const [selectedImage, setSelectedImage] = useAtom(selectedImageAtom)
  const [generated, setGenerated] = useAtom(generatedAtom)
  const handleClick = () => {
   const imageData = {
+   index: index + 1,
    img: img,
    generated: generated,
   }

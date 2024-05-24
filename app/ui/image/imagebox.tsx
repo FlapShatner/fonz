@@ -4,8 +4,19 @@ import Grid from './grid'
 import Stack from './stack'
 
 import { useAtom } from 'jotai'
-import { generatedAtom, imageArrayAtom, isGridAtom, selectedSizeAtom, sizeFilteredAtom, selectedImageAtom, selectedSecVarAtom } from '@/app/state/atoms'
+import {
+ generatedAtom,
+ imageArrayAtom,
+ isGridAtom,
+ selectedSizeAtom,
+ sizeFilteredAtom,
+ selectedImageAtom,
+ selectedSecVarAtom,
+ isLoadingAtom,
+} from '@/app/state/atoms'
 import Detail from './detail'
+import Squares from '@/app/common/squares'
+import Progress from './progress'
 
 function ImageBox() {
  const [generated, setGenerate] = useAtom(generatedAtom)
@@ -14,6 +25,7 @@ function ImageBox() {
  const [imageArray, setImageArray] = useAtom(imageArrayAtom)
  const [isGrid, setIsGrid] = useAtom(isGridAtom)
  const [selectedImage, setSelectedImage] = useAtom(selectedImageAtom)
+ const [isLoading] = useAtom(isLoadingAtom)
 
  const grid = selectedSecVar.grid
 
@@ -55,12 +67,20 @@ function ImageBox() {
      />
     )
    ) : (
-    <Image
-     className='object-contain overflow-hidden rounded-md opacity-10'
-     src='/img/robotpaint.png'
-     alt='robotpaint'
-     fill={true}
-    />
+    <div className='w-full h-full'>
+     <Image
+      className='object-contain overflow-hidden rounded-md opacity-10'
+      src='/img/robotpaint.png'
+      alt='robotpaint'
+      fill={true}
+     />
+     {isLoading && (
+      <div className='w-full h-full flex'>
+       <Squares />
+       <Progress />
+      </div>
+     )}
+    </div>
    )}
   </div>
  )

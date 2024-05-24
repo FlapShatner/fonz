@@ -1,5 +1,6 @@
 import React from 'react'
 import InfoDrawer from './info-drawer'
+import BackBtn from './back-btn'
 import { CldImage } from 'next-cloudinary'
 import { useAtom } from 'jotai'
 import { selectedImageAtom, generatedAtom } from '@/app/state/atoms'
@@ -10,7 +11,11 @@ function Detail() {
 
  return (
   <div className='flex flex-col h-full w-full'>
-   <InfoDrawer />
+   <div className='flex justify-between'>
+    <InfoDrawer />
+    <BackBtn />
+   </div>
+
    <CldImage
     src={selectedImage.img.image.publicID}
     className='object-contain'

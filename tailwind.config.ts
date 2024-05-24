@@ -22,6 +22,7 @@ const config: Config = {
     icon: '#898989',
     backdrop: '#1a1a1a75',
     'backdrop-dark': '#1a1a1ad3',
+    'slate-tr': '#94a3b849',
    },
    height: {
     app: 'var(--app-height)',

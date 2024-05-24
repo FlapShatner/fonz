@@ -16,6 +16,10 @@ body {
   background: hsl(210, 7%, 5%);
 }
 
+.test {
+  color: #94a3b849
+}
+
 .handle {
   background-color: #d2ac53 !important;
 }

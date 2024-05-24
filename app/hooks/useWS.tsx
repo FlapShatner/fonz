@@ -2,13 +2,15 @@ import { useEffect } from 'react'
 import useWebSocket, { ReadyState } from 'react-use-websocket'
 import { WS_URL } from '../lib/ws'
 import { useAtom } from 'jotai'
-import { wsIdAtom, wsMessageAtom, generatedAtom, promptHistoryAtom } from '../state/atoms'
+import { wsIdAtom, wsMessageAtom, generatedAtom, promptHistoryAtom, statusAtom, isLoadingAtom } from '../state/atoms'
 
 export function useWS() {
  const [wsId, setWsId] = useAtom(wsIdAtom)
  const [wsMessage, setWsMessage] = useAtom(wsMessageAtom)
  const [, setGenerated] = useAtom(generatedAtom)
  const [, setPromptHistory] = useAtom(promptHistoryAtom)
+ const [, setStatus] = useAtom(statusAtom)
+ const [, setIsLoading] = useAtom(isLoadingAtom)
  const { sendJsonMessage, sendMessage, lastJsonMessage, readyState } = useWebSocket(WS_URL, {
   share: true,
   shouldReconnect: () => true,
@@ -36,15 +38,21 @@ export function useWS() {
 
  useEffect(() => {
   if (lastJsonMessage) {
-   if ((lastJsonMessage as WsMessage).event === 'id') {
-    console.log('id:', (lastJsonMessage as WsMessage).id)
-    setWsId((lastJsonMessage as WsMessage).id)
+   const { id, data, event } = lastJsonMessage as WsMessage
+   if (event === 'id') {
+    console.log('id:', id as string)
+    setWsId(id as string)
    }
-   if ((lastJsonMessage as WsMessage).event === 'generate') {
-    const { event, data, id } = lastJsonMessage as WsMessage
+   if (event === 'status') {
+    setStatus(data)
+    console.log('status:', data)
+   }
+   if (event === 'generate' || event === 'variations') {
     setGenerated(data)
+    setIsLoading(false)
+    setStatus('0%')
     setPromptHistory((prev) => [data, ...prev])
-    console.log('generate data:', data)
+    console.log(event, ' data:', data)
    }
   }
  }, [lastJsonMessage])
@@ -58,13 +66,15 @@ export function useWS() {
   if (connectionStatus === 'Open') {
    switch (wsMessage.event) {
     case 'generate':
+     setIsLoading(true)
      console.log('sending generate')
      sendMessage(JSON.stringify({ event: 'generate', data: wsMessage, id: wsId }))
      clearWsMessage()
      break
     case 'variations':
+     setIsLoading(true)
      console.log('sending variations')
-     sendMessage(JSON.stringify({ event: 'variations', data: wsMessage, id: wsId }))
+     sendMessage(JSON.stringify(wsMessage))
      clearWsMessage()
      break
     case 'upscale':

@@ -184,6 +184,7 @@ export const selectedImageDefault = {
   label: '',
   image: {} as CldImageType,
  },
+ index: 0,
  generated: generatedDefault,
 }
 
@@ -254,3 +255,7 @@ const defaultHistory = {
 
 export const promptHistoryAtom = atomWithStorage('promptHistory', [defaultHistory])
 promptHistoryAtom.debugLabel = 'promptHistoryAtom'
+
+export const statusAtom = atom('0%')
+
+export const isLoadingAtom = atom(false)
