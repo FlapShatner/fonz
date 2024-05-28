@@ -10,7 +10,7 @@ import { generatedAtom } from '../../state/atoms'
 
 function Controls() {
  const [generated, setGenerated] = useAtom(generatedAtom)
- const isModify = generated.productId != ''
+ const isModify = generated.productId && generated.productId != ''
  return (
   <div className={cn('w-1/4 pt-2 relative  flex flex-col justify-between')}>
    <CustomScroll

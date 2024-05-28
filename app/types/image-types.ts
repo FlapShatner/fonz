@@ -9,6 +9,27 @@ export type SecVar = {
  id: string
  label: string
 }
+
+export type MetaType = {
+ id: string
+ flags: number
+ content: string
+ hash: string
+ progress: string
+ uri: string
+ proxy_url: string
+ options: MetaOptionType[]
+ width: number
+ height: number
+}
+
+export type MetaOptionType = {
+ type: number
+ style: number
+ label: string
+ custom: string
+}
+
 export type Generated = {
  imgData: ImgData
  productId: string
@@ -17,7 +38,7 @@ export type Generated = {
  size: string
  secVar: SecVar
  style: string
- meta: string
+ meta?: MetaType
  caption: string
  secVarLabel: string
  prompt: string

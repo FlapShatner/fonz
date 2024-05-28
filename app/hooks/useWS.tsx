@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import useWebSocket, { ReadyState } from 'react-use-websocket'
 import { WS_URL } from '../lib/ws'
 import { useAtom } from 'jotai'
-import { wsIdAtom, wsMessageAtom, generatedAtom, promptHistoryAtom, statusAtom, isLoadingAtom } from '../state/atoms'
+import { wsIdAtom, wsMessageAtom, generatedAtom, promptHistoryAtom, statusAtom, isLoadingAtom, selectedImageAtom, selectedImageDefault } from '../state/atoms'
 
 export function useWS() {
  const [wsId, setWsId] = useAtom(wsIdAtom)
@@ -11,6 +11,7 @@ export function useWS() {
  const [, setPromptHistory] = useAtom(promptHistoryAtom)
  const [, setStatus] = useAtom(statusAtom)
  const [, setIsLoading] = useAtom(isLoadingAtom)
+ const [, setSelectedImage] = useAtom(selectedImageAtom)
  const { sendJsonMessage, sendMessage, lastJsonMessage, readyState } = useWebSocket(WS_URL, {
   share: true,
   shouldReconnect: () => true,
@@ -49,6 +50,7 @@ export function useWS() {
    }
    if (event === 'generate' || event === 'variations') {
     setGenerated(data)
+    setSelectedImage(selectedImageDefault)
     setIsLoading(false)
     setStatus('0%')
     setPromptHistory((prev) => [data, ...prev])

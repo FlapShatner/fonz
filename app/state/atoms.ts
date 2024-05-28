@@ -1,10 +1,8 @@
 import { atom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 import { Customer } from '../types/customer-types'
-import { FFType } from '../types/product-types'
 import { Generated, CldImageType } from '../types/image-types'
-import { CloudinaryImage } from '@cloudinary/url-gen/index'
-import { Option, Secondary, Variant } from '../data/options'
+import { Secondary, Variant } from '../data/options'
 
 export const customerAtom = atom<Customer | undefined>(undefined)
 customerAtom.debugLabel = 'customerAtom'
@@ -143,7 +141,25 @@ export const generatedDefault = {
   label: '',
  },
  style: '',
- meta: '',
+ meta: {
+  id: '',
+  flags: 0,
+  content: '',
+  hash: '',
+  progress: '',
+  uri: '',
+  proxy_url: '',
+  options: [
+   {
+    type: 0,
+    style: 0,
+    label: '',
+    custom: '',
+   },
+  ],
+  width: 0,
+  height: 0,
+ },
  caption: '',
  prompt: '',
  secVarLabel: '',
