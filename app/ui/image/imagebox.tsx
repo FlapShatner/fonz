@@ -17,6 +17,7 @@ import {
 import Detail from './detail'
 import Squares from '@/app/common/squares'
 import Progress from './progress'
+import Upscaled from './upscaled'
 
 function ImageBox() {
  const [generated, setGenerate] = useAtom(generatedAtom)
@@ -48,6 +49,7 @@ function ImageBox() {
  }, [generated])
  if (!generated) return null
 
+ const isUpscaled = generated && generated.isUpscaled
  const imgExists = generated && generated.imgData.publicId !== ''
  const showDetail = selectedImage.img.label != ''
  return (
@@ -55,6 +57,8 @@ function ImageBox() {
    {imgExists ? (
     showDetail ? (
      <Detail />
+    ) : isUpscaled ? (
+     <Upscaled />
     ) : isGrid ? (
      <Grid
       isGrid={isGrid}

@@ -18,10 +18,11 @@ interface StackProps {
 function Stack({ imageArray, isGrid }: StackProps) {
  return (
   <div className={cn('w-full grid gap-2 px-2 grid-cols-1')}>
-   {imageArray.map((img) => (
+   {imageArray.map((img, i) => (
     <GridImage
      isGrid={isGrid}
      key={img.id}
+     index={i}
      img={img}
     />
    ))}

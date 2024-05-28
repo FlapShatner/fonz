@@ -34,6 +34,7 @@ export type Generated = {
  imgData: ImgData
  productId: string
  isGrid: boolean
+ isUpscaled?: boolean
  ff: string
  size: string
  secVar: SecVar
@@ -48,4 +49,14 @@ export type CldImageType = {
  publicID: string
  gravity: string
  productId: string
+}
+
+export type SelectedImageType = {
+ index: number
+ img: {
+  id: number
+  label: string
+  image: CldImageType
+ }
+ generated: Generated
 }

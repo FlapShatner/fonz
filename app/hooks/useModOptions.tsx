@@ -4,9 +4,10 @@ import { generatedAtom, generatedDefault, selectedImageAtom, wsIdAtom, wsMessage
 
 function useModOptions() {
  const [generated, setGenerated] = useAtom(generatedAtom)
+ const [wsMessage, setWsMessage] = useAtom(wsMessageAtom)
  const [selectedImage] = useAtom(selectedImageAtom)
  const [wsId] = useAtom(wsIdAtom)
- const [wsMessage, setWsMessage] = useAtom(wsMessageAtom)
+
  const goBack = () => {
   setGenerated(generatedDefault)
  }
@@ -24,6 +25,7 @@ function useModOptions() {
    toast.error('Please select an image to upscale.')
    return
   }
+  setWsMessage({ event: 'upscale', data: JSON.stringify(selectedImage), id: wsId })
  }
 
  const optionData = {

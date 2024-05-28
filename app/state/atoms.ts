@@ -1,7 +1,7 @@
 import { atom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 import { Customer } from '../types/customer-types'
-import { Generated, CldImageType } from '../types/image-types'
+import { Generated, CldImageType, SelectedImageType } from '../types/image-types'
 import { Secondary, Variant } from '../data/options'
 
 export const customerAtom = atom<Customer | undefined>(undefined)
@@ -132,6 +132,7 @@ export const generatedDefault = {
  },
  productId: '',
  isGrid: false,
+ isUpscaled: false,
  ff: '',
  size: '',
  secVar: {
@@ -204,7 +205,7 @@ export const selectedImageDefault = {
  generated: generatedDefault,
 }
 
-export const selectedImageAtom = atom(selectedImageDefault)
+export const selectedImageAtom = atom<SelectedImageType>(selectedImageDefault)
 selectedImageAtom.debugLabel = 'selectedImageAtom'
 
 export const selectedVariantAtom = atom({

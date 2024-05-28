@@ -56,6 +56,14 @@ export function useWS() {
     setPromptHistory((prev) => [data, ...prev])
     console.log(event, ' data:', data)
    }
+   if (event === 'upscale') {
+    setGenerated(data)
+    setSelectedImage(selectedImageDefault)
+    setIsLoading(false)
+    setStatus('0%')
+    setPromptHistory((prev) => [data, ...prev])
+    console.log(event, ' data:', data)
+   }
   }
  }, [lastJsonMessage])
 
@@ -81,6 +89,7 @@ export function useWS() {
      break
     case 'upscale':
      console.log('sending upscale')
+     setIsLoading(true)
      sendMessage(JSON.stringify({ event: 'upscale', data: wsMessage, id: wsId }))
      clearWsMessage()
      break

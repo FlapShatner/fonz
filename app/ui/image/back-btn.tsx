@@ -1,11 +1,16 @@
 import React from 'react'
 import Chevron from '@/app/icons/chevron'
 import { useAtom } from 'jotai'
-import { selectedImageAtom, selectedImageDefault } from '@/app/state/atoms'
+import { selectedImageAtom, selectedImageDefault, generatedAtom, generatedDefault } from '@/app/state/atoms'
 
 function BackBtn() {
  const [selectedImage, setSelectedImage] = useAtom(selectedImageAtom)
+ const [generated, setIsGenerated] = useAtom(generatedAtom)
+ const isUpscaled = generated?.isUpscaled
  const handleClick = () => {
+  if (isUpscaled) {
+   setIsGenerated(generatedDefault)
+  }
   setSelectedImage(selectedImageDefault)
  }
  return (

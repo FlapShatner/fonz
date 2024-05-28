@@ -1,5 +1,7 @@
 import React from 'react'
 import { CldImage } from 'next-cloudinary'
+import type { Generated } from '@/app/types/image-types'
+
 import { getProductVariant } from '@/app/storefront-api/products'
 import { useAtom } from 'jotai'
 import {
@@ -27,18 +29,7 @@ type SecVar = {
 }
 
 type HistoryItemProps = {
- item: {
-  imgData: ImgData
-  secVar: SecVar
-  ff: string
-  size: string
-  prompt: string
-  productId: string
-  isGrid: boolean
-  meta: string
-  caption: string
-  style: string
- }
+ item: Generated
 }
 
 function HistoryItem({ item }: HistoryItemProps) {

@@ -7,7 +7,17 @@ import SecVarSelect from './sec-variant'
 import StyleSelect from '../style/style-select'
 import Prompt from '../prompt'
 import { useAtom } from 'jotai'
-import { productAtom, selectedFFAtom, selectedSizeAtom, ffOpenAtom, sizeFilteredAtom, sizeOpenAtom, showSecVarAtom, generatedAtom } from '@/app/state/atoms'
+import {
+ productAtom,
+ selectedFFAtom,
+ selectedSizeAtom,
+ ffOpenAtom,
+ sizeFilteredAtom,
+ sizeOpenAtom,
+ showSecVarAtom,
+ generatedAtom,
+ isLoadingAtom,
+} from '@/app/state/atoms'
 
 function ImageGenerate() {
  const [selectedFF, setSelectedFF] = useAtom(selectedFFAtom)
@@ -17,12 +27,13 @@ function ImageGenerate() {
  const [sizeOpen, setSizeOpen] = useAtom(sizeOpenAtom)
  const [showSecVar, setShowSecVar] = useAtom(showSecVarAtom)
  const [generated, setGenerated] = useAtom(generatedAtom)
+ const [isLoading, setIsLoading] = useAtom(isLoadingAtom)
  const showSize = selectedFF.id !== ''
  const secExists = filtered.length > 1
  const isWindow = selectedFF.id === ''
 
  return (
-  <div className={cn('px-2')}>
+  <div className={cn('px-2', isLoading && 'opacity-40 pointer-events-none')}>
    <Logo />
    <div className='my-4'>
     <div className='text-lg pl-2'>Product type</div>

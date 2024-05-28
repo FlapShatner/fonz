@@ -1,21 +1,22 @@
 import React from 'react'
-import toast from 'react-hot-toast'
-import Plus from '@/app/icons/plus'
-
+import { cn } from '@/app/utils'
 import { useAtom } from 'jotai'
+import Plus from '@/app/icons/plus'
+import toast from 'react-hot-toast'
 import {
- wsMessageAtom,
- promptAtom,
- selectedStyleAtom,
- sizeFilteredAtom,
- selectedSecVarAtom,
- selectedFFAtom,
  wsIdAtom,
- productAtom,
- generateErrorAtom,
+ promptAtom,
  isGridAtom,
- selectedSizeAtom,
+ productAtom,
+ isLoadingAtom,
  generatedAtom,
+ wsMessageAtom,
+ selectedFFAtom,
+ selectedSizeAtom,
+ sizeFilteredAtom,
+ generateErrorAtom,
+ selectedStyleAtom,
+ selectedSecVarAtom,
  selectedVariantAtom,
 } from '@/app/state/atoms'
 import { assemblePrompt } from '@/app/utils'
@@ -34,6 +35,7 @@ function Generate() {
  const [selectedVariant, setSelectedVariant] = useAtom(selectedVariantAtom)
  const [generateError, setGenerateError] = useAtom(generateErrorAtom)
  const [generated, setGenerated] = useAtom(generatedAtom)
+ const [isLoading, setIsLoading] = useAtom(isLoadingAtom)
 
  const isWindow = selectedFF.id === 'wi'
  const isMB = selectedFF.id === 'de' || selectedFF.id === 'mb'
@@ -90,7 +92,7 @@ function Generate() {
  return (
   <div
    onClick={handleGenerate}
-   className='z-50 p-4 pb-8 border-t border-bg-tertiary bg-bg-primary sticky bottom-0'>
+   className={cn('z-50 p-4 pb-8 border-t border-bg-tertiary bg-bg-primary sticky bottom-0', isLoading && 'opacity-40 pointer-events-none')}>
    <div className='cursor-pointer gap-1 flex items-center justify-center p-2 py-3 rounded-md bg-txt-secondary text-bg-primary font-semibold'>
     <Plus />
     Generate
