@@ -1,11 +1,12 @@
 import { useAtom } from 'jotai'
 import toast from 'react-hot-toast'
-import { generatedAtom, generatedDefault, selectedImageAtom, wsIdAtom, wsMessageAtom } from '@/app/state/atoms'
+import { generatedAtom, generatedDefault, selectedImageAtom, wsIdAtom, wsMessageAtom, isLoadingAtom, selectedImageDefault } from '@/app/state/atoms'
 
 function useModOptions() {
  const [generated, setGenerated] = useAtom(generatedAtom)
  const [wsMessage, setWsMessage] = useAtom(wsMessageAtom)
- const [selectedImage] = useAtom(selectedImageAtom)
+ const [, setIsLoading] = useAtom(isLoadingAtom)
+ const [selectedImage, setSelectedImage] = useAtom(selectedImageAtom)
  const [wsId] = useAtom(wsIdAtom)
 
  const goBack = () => {
@@ -17,6 +18,9 @@ function useModOptions() {
    toast.error('Please select an image to make variations.')
    return
   }
+  setSelectedImage(selectedImageDefault)
+  setGenerated(generatedDefault)
+  setIsLoading(true)
   setWsMessage({ event: 'variations', data: JSON.stringify(selectedImage), id: wsId })
  }
 

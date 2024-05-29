@@ -10,8 +10,14 @@ function Upscaled() {
  return (
   <div className='flex flex-col h-full w-full'>
    <div className='flex justify-between'>
-    <InfoDrawer />
     <BackBtn />
+    <a
+     className='bg-backdrop py-1 px-2 m-1 rounded-md flex items-center mr-2 cursor-pointer h-max z-20'
+     href={generated.imgData.url}
+     target='_blank'
+     rel='noopener noreferrer'>
+     Click image to zoom
+    </a>
    </div>
 
    <a

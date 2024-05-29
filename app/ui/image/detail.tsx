@@ -12,7 +12,7 @@ function Detail() {
  return (
   <div className='flex flex-col h-full w-full'>
    <div className='flex justify-between'>
-    <InfoDrawer />
+    {/* <InfoDrawer /> */}
     <BackBtn />
    </div>
 

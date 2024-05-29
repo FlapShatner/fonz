@@ -58,7 +58,7 @@ export function useWS() {
    }
    if (event === 'upscale') {
     setGenerated(data)
-    setSelectedImage(selectedImageDefault)
+    setSelectedImage(data)
     setIsLoading(false)
     setStatus('0%')
     setPromptHistory((prev) => [data, ...prev])

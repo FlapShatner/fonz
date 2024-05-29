@@ -30,7 +30,7 @@ function ImageGenerate() {
  const [isLoading, setIsLoading] = useAtom(isLoadingAtom)
  const showSize = selectedFF.id !== ''
  const secExists = filtered.length > 1
- const isWindow = selectedFF.id === ''
+ const isWindow = selectedFF.id === 'wi'
 
  return (
   <div className={cn('px-2', isLoading && 'opacity-40 pointer-events-none')}>

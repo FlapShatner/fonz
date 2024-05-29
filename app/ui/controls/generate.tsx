@@ -37,22 +37,29 @@ function Generate() {
  const [generated, setGenerated] = useAtom(generatedAtom)
  const [isLoading, setIsLoading] = useAtom(isLoadingAtom)
 
+ const windowSecVar = {
+  id: 'wi1',
+  label: 'Choose size at checkout',
+  ar: '4:1',
+  grid: false,
+ }
+
  const isWindow = selectedFF.id === 'wi'
  const isMB = selectedFF.id === 'de' || selectedFF.id === 'mb'
 
  const productVariants = product.variants.edges
  const varsFilteredBySize = productVariants.filter((variant) => variant.node.selectedOptions.some((option) => selectedSize.size.includes(option.value)))
- const localSelectedVariant = varsFilteredBySize.find((variant) => variant.node.selectedOptions.some((option) => option.value === selectedSecVar.label))
- const selectedMailboxVariant = productVariants.find((variant) => variant.node.selectedOptions.some((option) => option.value === 'Mailbox'))
+ const localSelectedVariant = varsFilteredBySize.find((variant) => variant.node.selectedOptions.some((option) => option.value.includes(selectedSecVar.label)))
 
  const buildMessage = () => {
   console.log('vfs', varsFilteredBySize)
   console.log('pvar', productVariants)
   console.log('lsv', localSelectedVariant)
   const productId = isWindow ? selectedFF.handle : localSelectedVariant?.node.id
+  console.log('prod ID', productId)
   const idCode = selectedSecVar.id
   const isGrid = selectedSecVar.grid
-  const ar = selectedSecVar.ar
+  const ar = isWindow ? windowSecVar.ar : selectedSecVar.ar
   if (!productId) {
    toast.error('Please select a product', { position: 'top-left' })
    setGenerateError({ error: true, message: 'Please select a product' })
@@ -66,7 +73,7 @@ function Generate() {
    isGrid,
    ff: selectedFF.id,
    size: selectedSize.size,
-   secVar: selectedSecVar,
+   secVar: isWindow ? windowSecVar : selectedSecVar,
    caption: prompt,
    style: selectedStyle.id,
    secVarLabel: selectedFF.secondaryVariant,

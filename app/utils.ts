@@ -12,7 +12,7 @@ export const assemblePrompt = (prompt: string, style: string, ar?: string, idCod
   if (prompt.endsWith('noprefix')) {
    return prompt
   } else {
-   if (idCode == 'de1' || idCode == 'ts1') {
+   if (idCode?.startsWith('de') || idCode?.startsWith('ts')) {
     return `${decalPrompt} ${style} ${prompt}`
    } else {
     return `${style} ${prompt} --ar ${ar}`

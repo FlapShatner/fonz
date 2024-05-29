@@ -2,19 +2,25 @@ import React from 'react'
 import { cn } from '@/app/utils'
 import Logo from '../logo'
 import ModOption from './mod-option'
+import InfoBox from './info-box'
 import useModOptions from '@/app/hooks/useModOptions'
 import { useAtom } from 'jotai'
-import { isLoadingAtom } from '@/app/state/atoms'
+import { isLoadingAtom, generatedAtom } from '@/app/state/atoms'
 
 function Modify() {
  const [isLoading, setIsLoading] = useAtom(isLoadingAtom)
+ const [generated] = useAtom(generatedAtom)
  const optionData = useModOptions()
+ const isUpscaled = generated && generated.isUpscaled
  return (
   <div className={cn('px-2', isLoading && 'opacity-30 pointer-events-none')}>
    <Logo />
+   <InfoBox />
    <ModOption option={optionData.purchase} />
-   <ModOption option={optionData.variations} />
-   <ModOption option={optionData.upscale} />
+   <div className={cn(isUpscaled && 'opacity-40 pointer-events-none')}>
+    <ModOption option={optionData.variations} />
+    <ModOption option={optionData.upscale} />
+   </div>
    <ModOption option={optionData.back} />
   </div>
  )
