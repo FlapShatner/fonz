@@ -13,6 +13,7 @@ import {
  selectedImageAtom,
  selectedSecVarAtom,
  isLoadingAtom,
+ isUpscalingAtom,
 } from '@/app/state/atoms'
 import Detail from './detail'
 import Squares from '@/app/common/squares'
@@ -26,6 +27,7 @@ function ImageBox() {
  const [imageArray, setImageArray] = useAtom(imageArrayAtom)
  const [isGrid, setIsGrid] = useAtom(isGridAtom)
  const [selectedImage, setSelectedImage] = useAtom(selectedImageAtom)
+ const [isUpscaling, setIsUpscaling] = useAtom(isUpscalingAtom)
  const [isLoading] = useAtom(isLoadingAtom)
 
  const grid = selectedSecVar.grid
@@ -81,7 +83,7 @@ function ImageBox() {
      {isLoading && (
       <div className='w-full h-full flex'>
        <Squares />
-       <Progress />
+       {!isUpscaling && <Progress />}
       </div>
      )}
     </div>

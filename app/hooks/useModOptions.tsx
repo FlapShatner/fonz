@@ -1,12 +1,25 @@
 import { useAtom } from 'jotai'
 import toast from 'react-hot-toast'
-import { generatedAtom, generatedDefault, selectedImageAtom, wsIdAtom, wsMessageAtom, isLoadingAtom, selectedImageDefault } from '@/app/state/atoms'
+import { createCart } from '../storefront-api/cart'
+import {
+ generatedAtom,
+ generatedDefault,
+ selectedImageAtom,
+ wsIdAtom,
+ wsMessageAtom,
+ isLoadingAtom,
+ selectedImageDefault,
+ isUpscalingAtom,
+ cartDataAtom,
+} from '@/app/state/atoms'
 
 function useModOptions() {
  const [generated, setGenerated] = useAtom(generatedAtom)
  const [wsMessage, setWsMessage] = useAtom(wsMessageAtom)
+ const [cartData, setCartData] = useAtom(cartDataAtom)
  const [, setIsLoading] = useAtom(isLoadingAtom)
  const [selectedImage, setSelectedImage] = useAtom(selectedImageAtom)
+ const [isUpscaling, setIsUpscaling] = useAtom(isUpscalingAtom)
  const [wsId] = useAtom(wsIdAtom)
 
  const goBack = () => {
@@ -29,13 +42,36 @@ function useModOptions() {
    toast.error('Please select an image to upscale.')
    return
   }
+  setSelectedImage(selectedImageDefault)
+  setGenerated(generatedDefault)
+  setIsUpscaling(true)
+  setIsLoading(true)
   setWsMessage({ event: 'upscale', data: JSON.stringify(selectedImage), id: wsId })
+ }
+
+ const addToCart = async () => {
+  if (selectedImage.generated.imgData.publicId === '') {
+   toast.error('Please select an image to add to cart.')
+   return
+  }
+  if (!cartData.hasCart) {
+   const newCart = await createCart({
+    merchandiseId: generated.productId,
+    quantity: 1,
+   })
+   setCartData({
+    cartId: newCart.id,
+    hasCart: true,
+   })
+  }
+  setGenerated(generatedDefault)
  }
 
  const optionData = {
   purchase: {
    id: 'purchase',
-   label: 'Purchase Design',
+   label: 'Add to Cart',
+   addToCart: addToCart,
   },
   variations: {
    id: 'vars',

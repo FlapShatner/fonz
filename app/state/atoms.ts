@@ -256,7 +256,25 @@ const defaultHistory = {
   url: '',
  },
  isGrid: false,
- meta: '',
+ meta: {
+  id: '',
+  flags: 0,
+  content: '',
+  hash: '',
+  progress: '',
+  uri: '',
+  proxy_url: '',
+  options: [
+   {
+    type: 0,
+    style: 0,
+    label: '',
+    custom: '',
+   },
+  ],
+  width: 0,
+  height: 0,
+ },
  productId: '',
  prompt: '',
  secVar: {
@@ -273,6 +291,14 @@ const defaultHistory = {
 export const promptHistoryAtom = atomWithStorage('promptHistory', [defaultHistory])
 promptHistoryAtom.debugLabel = 'promptHistoryAtom'
 
+export const cartDataDefault = {
+ hasCart: false,
+ cartId: '',
+}
+
+export const cartDataAtom = atomWithStorage('cartData', cartDataDefault)
+
 export const statusAtom = atom('0%')
 
 export const isLoadingAtom = atom(false)
+export const isUpscalingAtom = atom(false)

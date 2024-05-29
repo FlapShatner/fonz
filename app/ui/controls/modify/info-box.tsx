@@ -1,11 +1,10 @@
 import React from 'react'
 import { useAtom } from 'jotai'
 import { cn } from '@/app/utils'
-import { selectedImageAtom, generatedAtom } from '@/app/state/atoms'
+import { generatedAtom } from '@/app/state/atoms'
 import { options } from '@/app/data/options'
 import { styleOptions } from '@/app/data/style-options'
 function InfoBox() {
- const [selectedImage] = useAtom(selectedImageAtom)
  const [generated] = useAtom(generatedAtom)
  const isUpscaled = generated?.isUpscaled
  const ff = options.find((option) => option.id === generated.ff)
@@ -13,8 +12,8 @@ function InfoBox() {
  const secVarLabel = generated.secVarLabel
  const isWindow = generated.ff === 'wi'
  return (
-  <div className={cn('flex flex-col cursor-pointer bg-bg-primary h-max w-max px-2 pb-1 rounded-br-md z-40 mr-auto')}>
-   <p className='text-sm'>{generated.caption}</p>
+  <div className={cn('flex flex-col bg-bg-primary h-max max-w-max px-3 my-4')}>
+   <p className='text-base'>{generated.caption}</p>
    {isUpscaled && <p className='text-sm'>Upscaled</p>}
    <p className='text-sm'>{ff?.label}</p>
    {!isWindow && <p className='text-sm'>Size: {generated.size} </p>}

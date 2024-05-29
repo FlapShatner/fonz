@@ -3,6 +3,7 @@ import { cn } from './utils'
 import { Open_Sans, Smooch } from 'next/font/google'
 import './globals.css'
 import Header from './header'
+import Modal from './ui/cart/modal'
 import Footer from './footer'
 
 export const open_sans = Open_Sans({ subsets: ['latin'], display: 'swap', variable: '--font-open-sans' })
@@ -26,6 +27,7 @@ export default function RootLayout({
    <body className={cn('flex flex-col justify-between h-full relative', open_sans.className)}>
     <Header />
     {children}
+    <Modal />
    </body>
   </html>
  )
