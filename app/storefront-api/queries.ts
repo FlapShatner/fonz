@@ -65,9 +65,23 @@ query ($id:ID!){
         node {
           id
           quantity
+          cost {
+            totalAmount {
+              amount
+            }
+          }
           merchandise {
             ... on ProductVariant {
               id
+              title
+              selectedOptions {
+                name
+                value
+              }
+              product{
+                id
+                title
+              }
             }
           }
           attributes {
@@ -81,6 +95,7 @@ query ($id:ID!){
       key
       value
     }
+    checkoutUrl
     cost {
       totalAmount {
         amount

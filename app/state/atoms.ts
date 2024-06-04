@@ -291,14 +291,72 @@ const defaultHistory = {
 export const promptHistoryAtom = atomWithStorage('promptHistory', [defaultHistory])
 promptHistoryAtom.debugLabel = 'promptHistoryAtom'
 
+export const cartContentsDefault = {
+ id: '',
+ createdAt: '',
+ updatedAt: '',
+ lines: {
+  edges: [
+   {
+    node: {
+     id: '',
+     quantity: 0,
+     cost: {
+      totalAmount: {
+       amount: '',
+      },
+     },
+     merchandise: {
+      id: '',
+      title: '',
+      selectedOptions: [
+       {
+        name: '',
+        value: '',
+       },
+      ],
+      product: {
+       id: '',
+       title: '',
+      },
+     },
+     attributes: [],
+    },
+   },
+  ],
+ },
+ attributes: [
+  {
+   key: '',
+   value: '',
+  },
+ ],
+ checkoutUrl: '',
+ cost: {
+  totalAmount: {
+   amount: '',
+   currencyCode: '',
+  },
+  subtotalAmount: {
+   amount: '',
+   currencyCode: '',
+  },
+  totalTaxAmount: null,
+  totalDutyAmount: null,
+ },
+}
+
 export const cartDataDefault = {
  hasCart: false,
  cartId: '',
 }
 
+export const cartContentsAtom = atomWithStorage('cartContents', cartContentsDefault)
 export const cartDataAtom = atomWithStorage('cartData', cartDataDefault)
 
 export const statusAtom = atom('0%')
 
 export const isLoadingAtom = atom(false)
 export const isUpscalingAtom = atom(false)
+export const upscaleAndAddAtom = atom(false)
+upscaleAndAddAtom.debugLabel = 'upscaleAndAddAtom'

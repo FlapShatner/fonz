@@ -11,6 +11,7 @@ function Upscaled() {
   <div className='flex flex-col h-full w-full'>
    <div className='flex justify-between'>
     <BackBtn />
+    <p className='bg-backdrop py-1 px-2 m-1 rounded-md z-20'>Upscaled</p>
     <a
      className='bg-backdrop py-1 px-2 m-1 rounded-md flex items-center mr-2 cursor-pointer h-max z-20'
      href={generated.imgData.url}

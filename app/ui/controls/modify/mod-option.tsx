@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { use, useEffect } from 'react'
 import { cn } from '@/app/utils'
 import { useRouter } from 'next/navigation'
+import { useAtom } from 'jotai'
+import { cartDataAtom, cartContentsAtom, upscaleAndAddAtom } from '@/app/state/atoms'
 
 type ModOptionProps = {
  option: {
@@ -14,7 +16,6 @@ type ModOptionProps = {
 }
 
 function ModOption({ option }: ModOptionProps) {
- const router = useRouter()
  const handleClick = () => {
   if (option.id === 'back') {
    option.goBack && option.goBack()
@@ -27,9 +28,9 @@ function ModOption({ option }: ModOptionProps) {
   }
   if (option.id === 'purchase') {
    option.addToCart && option.addToCart()
-   router.push('?modal=cart')
   }
  }
+
  return (
   <div className='relative'>
    <div

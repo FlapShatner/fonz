@@ -1,9 +1,16 @@
+'use client'
 import React from 'react'
+import { useRouter } from 'next/navigation'
 
 function Bag({ className }: { className: string }) {
+ const router = useRouter()
+ const handleCart = () => {
+  router.push('?modal=cart')
+ }
  return (
   <svg
    className={className}
+   onClick={handleCart}
    viewBox='0 0 19 22'>
    <g>
     <path

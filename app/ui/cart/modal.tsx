@@ -1,14 +1,17 @@
 'use client'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import CloseButton from './close-button'
+import { getCart } from '@/app/storefront-api/cart'
 import { useOnClickOutside } from 'usehooks-ts'
 import { useAtom } from 'jotai'
-import { cartDataAtom } from '@/app/state/atoms'
+import { cartDataAtom, cartContentsAtom } from '@/app/state/atoms'
+import LineItem from './line-item'
 
 function Modal() {
  const [cartData, setCartData] = useAtom(cartDataAtom)
+ const [cartContents, setCartContents] = useAtom(cartContentsAtom)
  const ref = useRef(null)
  const router = useRouter()
  const searchParams = useSearchParams()
@@ -18,17 +21,45 @@ function Modal() {
   router.push(pathname)
  })
 
- const cartEmpty = !cartData.hasCart
+ useEffect(() => {
+  const retrieveCart = async () => {
+   try {
+    const cart = await getCart(cartData.cartId)
+    setCartContents(cart)
+   } catch (error) {
+    console.error(error)
+   }
+  }
+  if (cartData.hasCart) {
+   retrieveCart()
+  }
+ }, [cartData])
 
+ const cartEmpty = !cartData.hasCart
+ const { checkoutUrl, lines, cost } = cartContents
+ const lineItems = lines.edges
  return (
   <>
    {modal && (
     <dialog className='fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center'>
      <div
       ref={ref}
-      className='bg-white m-auto p-8 relative'>
+      className='bg-bg-tertiary m-auto p-8 pt-0 relative text-white rounded-lg'>
       <div className='flex flex-col items-center'>
-       <p>Modal content</p>
+       {cartEmpty ? (
+        <div className='text-xl py-4'>Cart Empty</div>
+       ) : (
+        <div>
+         <div className='text-xl py-4'>Cart</div>
+
+         {lineItems.map((lineItem) => (
+          <LineItem
+           key={lineItem.node.id}
+           lineItem={lineItem}
+          />
+         ))}
+        </div>
+       )}
       </div>
      </div>
     </dialog>

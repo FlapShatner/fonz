@@ -37,6 +37,7 @@ function HistoryItem({ item }: HistoryItemProps) {
  const [generated, setGenerated] = useAtom(generatedAtom)
  const [isGrid, setIsGrid] = useAtom(isGridAtom)
  const [selectedSecVar, setSelectedSecVar] = useAtom(selectedSecVarAtom)
+ const isUpscaled = item.isUpscaled
 
  const handleClick = async () => {
   setGenerated(item)

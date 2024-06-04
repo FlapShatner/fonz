@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import useWebSocket, { ReadyState } from 'react-use-websocket'
 import { WS_URL } from '../lib/ws'
 import { useAtom } from 'jotai'
+import useModOptions from './useModOptions'
 import {
  wsIdAtom,
  wsMessageAtom,
@@ -12,6 +13,7 @@ import {
  selectedImageAtom,
  selectedImageDefault,
  isUpscalingAtom,
+ upscaleAndAddAtom,
 } from '../state/atoms'
 
 export function useWS() {
@@ -23,10 +25,13 @@ export function useWS() {
  const [, setIsLoading] = useAtom(isLoadingAtom)
  const [, setSelectedImage] = useAtom(selectedImageAtom)
  const [, setIsUpscaling] = useAtom(isUpscalingAtom)
+ const [upscaleAndAdd, setUpscaleAndAdd] = useAtom(upscaleAndAddAtom)
  const { sendJsonMessage, sendMessage, lastJsonMessage, readyState } = useWebSocket(WS_URL, {
   share: true,
   shouldReconnect: () => true,
  })
+
+ const modOptions = useModOptions()
 
  const connectionStatus = {
   [ReadyState.CONNECTING]: 'Connecting',
@@ -75,6 +80,15 @@ export function useWS() {
     setStatus('0%')
     setPromptHistory((prev) => [data, ...prev])
     console.log(event, ' data:', data)
+    if (upscaleAndAdd) {
+     const addCartData = {
+      up: true,
+      imageUrl: data.imgData.url,
+      productId: data.productId,
+     }
+     modOptions.purchase.addToCart(addCartData)
+     setUpscaleAndAdd(false)
+    }
    }
   }
  }, [lastJsonMessage])

@@ -3,9 +3,6 @@ Add interactive size picker for banner and print:
 
 Color swatches on color selector
 
-Hook up variations
-
-Hook up upscale
 
 make caption a drawer from left with info:
     FF, Size, SecVar, Style
@@ -14,8 +11,22 @@ make caption a drawer from left with info:
 Hover effects
 
 
+User clicks ATC:
+    Check if upscaled
+    is upscaled:
+        add to cart
+    is not upscaled:
+        Check if selectedImage
+        is selected:
+            upscale, then add to cart
+        is not selected:
+            throw error
 
 
 
 Done:
 Capture generation history
+
+Hook up variations
+
+Hook up upscale

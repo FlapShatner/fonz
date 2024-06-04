@@ -2,22 +2,26 @@ import { client } from '../lib/storefront-api-client'
 import { createCartMutation } from '../storefront-api/mutations'
 import { getCartQuery } from './queries'
 
+type Attribute = {
+ key: string
+ value: string
+}
+
 type CartInput = {
  merchandiseId: string
  quantity: number
+ attributes?: Attribute[]
 }
 
-export const createCart = async (input: CartInput) => {
+export const createCart = async (inputArgs: CartInput) => {
  const inputData = {
-  input: {
-   lines: [
-    {
-     merchandiseId: input.merchandiseId,
-     quantity: input.quantity,
-    },
-   ],
-   attributes: { key: 'cart_attribute', value: 'This is a cart attribute' },
-  },
+  lines: [
+   {
+    merchandiseId: inputArgs.merchandiseId,
+    quantity: inputArgs.quantity,
+    attributes: inputArgs.attributes,
+   },
+  ],
  }
 
  const { data, errors, extensions } = await client.request(createCartMutation, {
