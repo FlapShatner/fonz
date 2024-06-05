@@ -1,7 +1,7 @@
 import { useAtom } from 'jotai'
 import { useRouter } from 'next/navigation'
 import toast from 'react-hot-toast'
-import { createCart } from '../storefront-api/cart'
+import { createCart, addCartLine } from '../storefront-api/cart'
 import {
  generatedAtom,
  generatedDefault,
@@ -59,7 +59,6 @@ function useModOptions() {
 
  const addToCart = async (addCartData: { up: boolean; imageUrl: string; productId: string }) => {
   console.log('addCartData:', addCartData)
-
   const { up, imageUrl, productId } = addCartData ? addCartData : { up: false, imageUrl: '', productId: '' }
   if (!generated.isUpscaled && !up) {
    if (selectedImage.generated.imgData.publicId === '') {
@@ -74,9 +73,9 @@ function useModOptions() {
   if (!cartData.hasCart) {
    console.log('generated:', generated)
    const newCart = await createCart({
-    merchandiseId: productId,
+    merchandiseId: up ? productId : generated.productId,
     quantity: 1,
-    attributes: [{ key: 'imageUrl', value: imageUrl }],
+    attributes: [{ key: 'imageUrl', value: up ? imageUrl : generated.imgData.url }],
    })
    setCartData({
     cartId: newCart.id,
@@ -84,7 +83,18 @@ function useModOptions() {
    })
    router.push('?modal=cart')
   }
-  //   setGenerated(generatedDefault)
+  if (cartData.hasCart) {
+   const updatedCart = await addCartLine(cartData.cartId, {
+    merchandiseId: up ? productId : generated.productId,
+    quantity: 1,
+    attributes: [{ key: 'imageUrl', value: up ? imageUrl : generated.imgData.url }],
+   })
+   setCartData({
+    cartId: updatedCart.id,
+    hasCart: true,
+   })
+   router.push('?modal=cart')
+  }
  }
 
  const optionData = {

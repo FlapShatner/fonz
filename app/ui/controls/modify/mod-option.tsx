@@ -11,7 +11,7 @@ type ModOptionProps = {
   goBack?: () => void
   makeVariations?: () => void
   upscale?: () => void
-  addToCart?: () => void
+  addToCart?: any
  }
 }
 

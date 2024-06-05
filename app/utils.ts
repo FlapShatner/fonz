@@ -21,3 +21,8 @@ export const assemblePrompt = (prompt: string, style: string, ar?: string, idCod
  }
  return fullPrompt()
 }
+
+export const dollars = new Intl.NumberFormat('en-US', {
+ style: 'currency',
+ currency: 'USD',
+})
