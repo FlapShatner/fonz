@@ -22,6 +22,10 @@ function Modal() {
   router.push(pathname)
  })
 
+ const handleCheckout = () => {
+  console.log('checkout')
+ }
+
  useEffect(() => {
   const retrieveCart = async () => {
    try {
@@ -79,7 +83,9 @@ function Modal() {
         className='cursor-pointer  text-2xl font-semibold text-accent border-2 border-accent w-max px-4 py-2 mt-4 rounded-md'>
         Cancel
        </div>
-       <div className='cursor-pointer  text-2xl font-semibold text-bg-secondary bg-accent w-max px-4 py-2 mt-4 rounded-md border-2 border-accent'>
+       <div
+        onClick={handleCheckout}
+        className='cursor-pointer  text-2xl font-semibold text-bg-secondary bg-accent w-max px-4 py-2 mt-4 rounded-md border-2 border-accent'>
         Check Out
        </div>
       </div>
