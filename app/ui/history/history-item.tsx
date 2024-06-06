@@ -13,6 +13,7 @@ import {
  promptHistoryAtom,
  selectedImageAtom,
  selectedImageDefault,
+ historyIsOpenAtom,
 } from '@/app/state/atoms'
 import type { ProductVariant } from '@/app/types/product-types'
 
@@ -37,6 +38,7 @@ function HistoryItem({ item }: HistoryItemProps) {
  const [generated, setGenerated] = useAtom(generatedAtom)
  const [isGrid, setIsGrid] = useAtom(isGridAtom)
  const [selectedSecVar, setSelectedSecVar] = useAtom(selectedSecVarAtom)
+ const [historyIsOpen, setHistoryIsOpen] = useAtom(historyIsOpenAtom)
  const isUpscaled = item.isUpscaled
 
  const handleClick = async () => {
@@ -44,6 +46,7 @@ function HistoryItem({ item }: HistoryItemProps) {
   setSelectedSecVar(item.secVar)
   setIsGrid(item.isGrid)
   setSelectedImage(selectedImageDefault)
+  setHistoryIsOpen(false)
  }
 
  return (

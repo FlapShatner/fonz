@@ -7,7 +7,7 @@ import Bag from './icons/bag'
 
 function CartIndicator() {
  const [cartContents] = useAtom(cartContentsAtom)
- const cartCount = cartContents.lines.edges.length
+ const cartCount = cartContents.id ? cartContents.lines.edges.length : 0
  const router = useRouter()
  const handleCart = () => {
   router.push('?modal=cart')

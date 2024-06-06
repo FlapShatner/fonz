@@ -241,6 +241,7 @@ export const secVarOpenAtom = atom(false)
 export const showSecVarAtom = atom(false)
 export const styleOpenAtom = atom(false)
 export const infoDrawerOpenAtom = atom(false)
+export const historyIsOpenAtom = atom(false)
 
 export const generateErrorAtom = atom({
  error: false,
@@ -358,5 +359,14 @@ export const statusAtom = atom('0%')
 
 export const isLoadingAtom = atom(false)
 export const isUpscalingAtom = atom(false)
-export const upscaleAndAddAtom = atom(false)
+export const upscaleAndAddAtom = atom({ cart: false, wi: false })
 upscaleAndAddAtom.debugLabel = 'upscaleAndAddAtom'
+
+export const shopAtom = atom({
+ primaryDomain: {
+  url: '',
+ },
+ id: '',
+ name: '',
+})
+shopAtom.debugLabel = 'shopAtom'

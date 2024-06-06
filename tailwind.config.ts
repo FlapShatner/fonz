@@ -29,6 +29,11 @@ const config: Config = {
     main: 'var(--main-sect-height)',
     grid: 'var(--grid-img-height)',
     stack: 'var(--stack-img-height)',
+    'mb-grid': 'var(--mb-grid-img-h)',
+    'mb-stack': 'var(--mb-stack-img-h)',
+   },
+   width: {
+    'mb-img-w': 'var(--mb-img-width)',
    },
   },
  },

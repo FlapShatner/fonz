@@ -1,8 +1,10 @@
 'use client'
 import { useRef, useEffect } from 'react'
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
+import { useBreakPoints } from '@/app/hooks/useBreakPoints'
+import { cn } from '@/app/utils'
 import Link from 'next/link'
-import CloseButton from './close-button'
+import CartButton from './cart-button'
 import { getCart } from '@/app/storefront-api/cart'
 import { useOnClickOutside } from 'usehooks-ts'
 import { useAtom } from 'jotai'
@@ -11,6 +13,7 @@ import { dollars } from '@/app/utils'
 import LineItem from './line-item'
 
 function Modal() {
+ const { isMobile, isTablet, isDesktop } = useBreakPoints()
  const [cartData, setCartData] = useAtom(cartDataAtom)
  const [cartContents, setCartContents] = useAtom(cartContentsAtom)
  const ref = useRef(null)
@@ -21,10 +24,6 @@ function Modal() {
  useOnClickOutside(ref, () => {
   router.push(pathname)
  })
-
- const handleCheckout = () => {
-  console.log('checkout')
- }
 
  useEffect(() => {
   const retrieveCart = async () => {
@@ -41,7 +40,7 @@ function Modal() {
  }, [cartData])
 
  const cartEmpty = !cartData.hasCart
- const { checkoutUrl, lines, cost } = cartContents
+ const { checkoutUrl, lines, cost, id } = cartContents
  const lineItems = lines.edges
  return (
   <>
@@ -49,9 +48,9 @@ function Modal() {
     <dialog className='fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center'>
      <div
       ref={ref}
-      className='bg-bg-tertiary m-auto mx-8 p-8 pt-2 relative text-white rounded-lg'>
+      className={cn('bg-bg-tertiary m-auto mx-8 p-8 pt-2 relative text-white rounded-lg', isMobile && 'mx-2 px-2')}>
       <div className='flex flex-col items-center'>
-       {lineItems.length <= 0 ? (
+       {lineItems.length <= 0 || !id ? (
         <div className='text-xl py-4'>Cart Empty</div>
        ) : (
         <div>
@@ -78,16 +77,14 @@ function Modal() {
        )}
       </div>
       <div className='flex gap-4 justify-end'>
-       <div
-        onClick={() => router.push(pathname)}
-        className='cursor-pointer  text-2xl font-semibold text-accent border-2 border-accent w-max px-4 py-2 mt-4 rounded-md'>
-        Cancel
+       <div onClick={() => router.push(pathname)}>
+        <CartButton>Cancel</CartButton>
        </div>
-       <div
-        onClick={handleCheckout}
-        className='cursor-pointer  text-2xl font-semibold text-bg-secondary bg-accent w-max px-4 py-2 mt-4 rounded-md border-2 border-accent'>
-        Check Out
-       </div>
+       <a
+        className={cn((lineItems.length <= 0 || !id) && 'opacity-30 pointer-events-none')}
+        href={cartContents.checkoutUrl}>
+        <CartButton variant='checkout'>Check Out</CartButton>
+       </a>
       </div>
      </div>
     </dialog>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { cn } from '@/app/utils'
+import { useBreakPoints } from '@/app/hooks/useBreakPoints'
 import { CldImage } from 'next-cloudinary'
 import { useAtom } from 'jotai'
 import { selectedImageAtom, generatedAtom } from '@/app/state/atoms'
@@ -16,6 +17,7 @@ interface GridImageProps {
 }
 
 function GridImage({ img, isGrid, index }: GridImageProps) {
+ const { isMobile, isTablet, isDesktop } = useBreakPoints()
  const [selectedImage, setSelectedImage] = useAtom(selectedImageAtom)
  const [generated, setGenerated] = useAtom(generatedAtom)
  const handleClick = () => {
@@ -29,7 +31,7 @@ function GridImage({ img, isGrid, index }: GridImageProps) {
  }
 
  return (
-  <div className={cn('cursor-pointer relative', isGrid && 'h-grid', !isGrid && 'h-stack')}>
+  <div className={cn('cursor-pointer relative', isGrid && (isMobile ? 'h-mb-grid' : 'h-grid'), !isGrid && (isMobile ? 'h-mb-stack' : 'h-stack'))}>
    <CldImage
     onClick={handleClick}
     src={img.image.publicID}

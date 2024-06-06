@@ -6,9 +6,11 @@ import FonzApp from './ui/fonz-app'
 import { Toaster } from 'react-hot-toast'
 import { useAtomsDebugValue } from 'jotai-devtools'
 import { useWS } from './hooks/useWS'
+import { useAtom } from 'jotai'
+import { shopAtom } from './state/atoms'
 export default function Home() {
- const [shop, setShop] = useState(null)
  const [url, setUrl] = useState<string>('')
+ const [shop, setShop] = useAtom(shopAtom)
 
  useWS()
  useEffect(() => {

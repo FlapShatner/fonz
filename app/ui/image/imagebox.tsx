@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 import Image from 'next/image'
 import Grid from './grid'
 import Stack from './stack'
-
+import { cn } from '@/app/utils'
+import { useBreakPoints } from '@/app/hooks/useBreakPoints'
 import { useAtom } from 'jotai'
 import {
  generatedAtom,
@@ -30,6 +31,8 @@ function ImageBox() {
  const [isUpscaling, setIsUpscaling] = useAtom(isUpscalingAtom)
  const [isLoading] = useAtom(isLoadingAtom)
 
+ const { isMobile, isTablet, isDesktop } = useBreakPoints()
+
  const grid = selectedSecVar.grid
 
  useEffect(() => {
@@ -55,7 +58,7 @@ function ImageBox() {
  const imgExists = generated && generated.imgData.publicId !== ''
  const showDetail = selectedImage.img && selectedImage.img.label != ''
  return (
-  <div className='w-3/4 bg-announce rounded-md my-2 relative flex items-center '>
+  <div className={cn('w-3/4 bg-announce rounded-md my-2 relative flex items-center', isMobile && 'w-mb-img-w min-h-[50vh] m-auto')}>
    {imgExists ? (
     showDetail ? (
      <Detail />

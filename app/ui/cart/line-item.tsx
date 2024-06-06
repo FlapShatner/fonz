@@ -1,6 +1,8 @@
 import React from 'react'
 import { cn } from '@/app/utils'
 import Trash from '@/app/icons/trash'
+import { useBreakPoints } from '@/app/hooks/useBreakPoints'
+
 import Image from 'next/image'
 import { useAtom } from 'jotai'
 import { removeCartLine } from '@/app/storefront-api/cart'
@@ -37,6 +39,7 @@ type LineItemProps = {
 }
 
 function LineItem({ lineItem }: LineItemProps) {
+ const { isMobile, isTablet, isDesktop } = useBreakPoints()
  const [cartData, setCartData] = useAtom(cartDataAtom)
  const { merchandise, cost, quantity, attributes, id } = lineItem.node
  const size = merchandise.selectedOptions.find((option) => option.name === 'Size') || { value: 'N/A' }
@@ -62,10 +65,10 @@ function LineItem({ lineItem }: LineItemProps) {
       alt={merchandise.product.title}
      />
     )}
-    <div className=' col-span-3'>
-     <p>{merchandise.product.title}</p>
-     <p>Size: {size.value}</p>
-     {hasVariant && <p>Variant: {merchandise.selectedOptions[1].value}</p>}
+    <div className='col-span-3'>
+     <p className={cn(isMobile && 'text-xs')}>{merchandise.product.title}</p>
+     <p className={cn(isMobile && 'text-xs')}>Size: {size.value}</p>
+     {hasVariant && <p className={cn(isMobile && 'text-xs')}>Variant: {merchandise.selectedOptions[1].value}</p>}
     </div>
    </div>
    <div className='flex justify-center items-center  col-span-3'>

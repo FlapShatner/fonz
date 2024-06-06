@@ -1,6 +1,7 @@
 import React from 'react'
 import { cn } from '@/app/utils'
 import { useAtom } from 'jotai'
+import GenButton from './gen-button'
 import Plus from '@/app/icons/plus'
 import toast from 'react-hot-toast'
 import {
@@ -100,10 +101,12 @@ function Generate() {
   <div
    onClick={handleGenerate}
    className={cn('z-50 p-4 pb-8 border-t border-bg-tertiary bg-bg-primary sticky bottom-0', isLoading && 'opacity-40 pointer-events-none')}>
-   <div className='cursor-pointer gap-1 flex items-center justify-center p-2 py-3 rounded-md bg-txt-secondary text-bg-primary font-semibold'>
-    <Plus />
-    Generate
-   </div>
+   <GenButton>
+    <div className='flex gap-2 font-semibold'>
+     <Plus />
+     Generate
+    </div>
+   </GenButton>
   </div>
  )
 }

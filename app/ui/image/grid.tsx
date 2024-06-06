@@ -1,5 +1,6 @@
 import React from 'react'
 import { cn } from '@/app/utils'
+import { useBreakPoints } from '@/app/hooks/useBreakPoints'
 import GridImage from './grid-image'
 import InfoDrawer from './info-drawer'
 
@@ -17,6 +18,7 @@ interface GridProps {
 }
 
 function Grid({ imageArray, isGrid }: GridProps) {
+ const { isMobile, isTablet, isDesktop } = useBreakPoints()
  return (
   <div className='w-full'>
    {/* <InfoDrawer className='absolute top-0 opacity-40' /> */}

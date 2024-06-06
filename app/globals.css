@@ -8,7 +8,11 @@
   --main-sect-height: calc(var(--app-height) - 2rem);
   --stack-parent-height: calc(var(--app-height) - 4rem);
   --grid-img-height: calc(var(--main-sect-height) / 2);
+  --mb-img-h: calc(50vh - 2rem);
+  --mb-grid-img-h: calc(var(--mb-img-h) / 2);
+  --mb-stack-img-h: calc(var(--mb-img-h) /4);
   --stack-img-height: calc(var(--stack-parent-height) / 4);
+  --mb-img-width: calc(100% - 2rem);
 }
 
 body {

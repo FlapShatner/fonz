@@ -14,6 +14,7 @@ import {
  upscaleAndAddAtom,
  cartContentsAtom,
  cartDataAtom,
+ shopAtom,
 } from '@/app/state/atoms'
 
 function useModOptions() {
@@ -26,6 +27,7 @@ function useModOptions() {
  const [isUpscaling, setIsUpscaling] = useAtom(isUpscalingAtom)
  const [, setUpscaleAndAdd] = useAtom(upscaleAndAddAtom)
  const [wsId] = useAtom(wsIdAtom)
+ const [shop] = useAtom(shopAtom)
  const router = useRouter()
  const goBack = () => {
   setGenerated(generatedDefault)
@@ -42,7 +44,7 @@ function useModOptions() {
   setWsMessage({ event: 'variations', data: JSON.stringify(selectedImage), id: wsId })
  }
 
- const upscale = (cart = false) => {
+ const upscale = (cart = false, wi = false) => {
   if (selectedImage.generated.imgData.publicId === '') {
    toast.error('Please select an image to upscale.')
    return
@@ -53,22 +55,31 @@ function useModOptions() {
   setIsLoading(true)
   setWsMessage({ event: 'upscale', data: JSON.stringify(selectedImage), id: wsId })
   if (cart) {
-   setUpscaleAndAdd(true)
+   setUpscaleAndAdd({ cart: true, wi: wi })
   }
  }
 
- const addToCart = async (addCartData: { up: boolean; imageUrl: string; productId: string }) => {
+ const addToCart = async (addCartData: { up: boolean; imageUrl: string; productId: string; publicId: string; wi: boolean }) => {
   console.log('addCartData:', addCartData)
-  const { up, imageUrl, productId } = addCartData ? addCartData : { up: false, imageUrl: '', productId: '' }
+  const { up, imageUrl, productId, publicId, wi } = addCartData ? addCartData : { up: false, imageUrl: '', productId: '', publicId: '', wi: false }
   if (!generated.isUpscaled && !up) {
    if (selectedImage.generated.imgData.publicId === '') {
     toast.error('Please select an image to add to cart.')
     return
    } else {
     const cart = true
-    upscale(cart)
+    const wi = generated.ff === 'wi'
+    upscale(cart, wi)
     return
    }
+  }
+  if (wi) {
+   window.location.replace(`${shop.primaryDomain.url}/products/${productId}?pid=${publicId}`)
+   return
+  }
+  if (generated.ff === 'wi') {
+   window.location.replace(`${shop.primaryDomain.url}/products/${generated.productId}?pid=${generated.imgData.publicId}`)
+   return
   }
   if (!cartData.hasCart) {
    console.log('generated:', generated)

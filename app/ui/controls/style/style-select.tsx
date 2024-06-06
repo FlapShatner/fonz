@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-
 import SelectIcon from './select-icon'
 import Chevron from '@/app/icons/chevron'
 import StyleList from './style-list'
@@ -13,15 +12,17 @@ function StyleSelect() {
  const [styleOpen, setStyleOpen] = useAtom(styleOpenAtom)
  const [generated] = useAtom(generatedAtom)
  const [selectedStyle] = useAtom(selectedStyleAtom)
+
  useOnClickOutside(ref, () => {
   setStyleOpen(false)
  })
+
  const handleClick = () => {
   setStyleOpen(!styleOpen && true)
  }
  const isDisabled = generated.productId != ''
  return (
-  <div ref={ref}>
+  <div>
    <div className='text-lg pl-2'>Style</div>
    <div
     onClick={handleClick}
@@ -32,7 +33,7 @@ function StyleSelect() {
     </div>
     <Chevron className={cn('-rotate-90', styleOpen && '-rotate-180')} />
    </div>
-   {styleOpen && <StyleList />}
+   <StyleList />
   </div>
  )
 }

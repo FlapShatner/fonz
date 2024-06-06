@@ -1,4 +1,5 @@
 import React from 'react'
+import { useBreakPoints } from '@/app/hooks/useBreakPoints'
 import { cn } from '@/app/utils'
 import Logo from '../logo'
 import ModOption from './mod-option'
@@ -8,12 +9,13 @@ import { useAtom } from 'jotai'
 import { isLoadingAtom, generatedAtom } from '@/app/state/atoms'
 
 function Modify() {
+ const { isMobile, isTablet, isDesktop } = useBreakPoints()
  const [isLoading, setIsLoading] = useAtom(isLoadingAtom)
  const [generated] = useAtom(generatedAtom)
  const optionData = useModOptions()
  const isUpscaled = generated && generated.isUpscaled
  return (
-  <div className={cn('px-2', isLoading && 'opacity-30 pointer-events-none')}>
+  <div className={cn('px-2', isLoading && 'opacity-30 pointer-events-none', isMobile && 'pb-4')}>
    <Logo />
    <InfoBox />
    <ModOption option={optionData.purchase} />

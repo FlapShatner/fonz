@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Check from '@/app/icons/check'
 import { cn } from '@/app/utils'
 import { useAtom } from 'jotai'
-import { selectedStyleAtom } from '@/app/state/atoms'
+import { selectedStyleAtom, styleOpenAtom } from '@/app/state/atoms'
 
 type StyleItem = { id: string; label: string; prompt: string; img: string }
 
@@ -13,9 +13,11 @@ type StyleItemProps = {
 
 function StyleItem({ item }: StyleItemProps) {
  const [selectedStyle, setSelectedStyle] = useAtom(selectedStyleAtom)
+ const [styleOpen, setStyleOpen] = useAtom(styleOpenAtom)
 
  const handleClick = () => {
   setSelectedStyle(item)
+  setStyleOpen(false)
  }
 
  const isSelected = selectedStyle.id === item.id
@@ -23,7 +25,7 @@ function StyleItem({ item }: StyleItemProps) {
  return (
   <div
    onClick={handleClick}
-   className={cn('w-24 h-[101px] bg-black rounded-md relative flex items-end justify-center cursor-pointer m-[1px]')}>
+   className={cn('w-24 h-[101px] bg-black rounded-md relative flex items-end justify-center cursor-pointer m-[1px] text-white')}>
    <div className={cn('absolute h-[101px]')}>
     {isSelected && <Check className='absolute top-1 right-1 rounded-full bg-accent-bright w-max p-[1px] text-bg-primary' />}
     {item.id != 'none' ? (

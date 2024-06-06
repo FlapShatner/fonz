@@ -80,14 +80,16 @@ export function useWS() {
     setStatus('0%')
     setPromptHistory((prev) => [data, ...prev])
     console.log(event, ' data:', data)
-    if (upscaleAndAdd) {
+    if (upscaleAndAdd.cart) {
      const addCartData = {
       up: true,
       imageUrl: data.imgData.url,
+      publicId: data.imgData.publicId,
       productId: data.productId,
+      wi: upscaleAndAdd.wi,
      }
      modOptions.purchase.addToCart(addCartData)
-     setUpscaleAndAdd(false)
+     setUpscaleAndAdd({ cart: false, wi: false })
     }
    }
   }

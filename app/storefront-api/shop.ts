@@ -1,12 +1,15 @@
 import { client } from '../lib/storefront-api-client'
 
 const shopQuery = `
-  query shop {
-    shop {
-      name
-      id
+ query ShopQuery {
+  shop {
+    id
+    name
+    primaryDomain {
+      url
     }
   }
+}
 `
 
 export const getShop = async () => {
