@@ -50,9 +50,10 @@ function HistoryItem({ item }: HistoryItemProps) {
  }
 
  return (
-  <div className='max-w-40 relative border border-bg-tertiary p-1 rounded-md hover:bg-accent-tr cursor-pointer'>
+  <div
+   onClick={handleClick}
+   className='max-w-40 relative border border-bg-tertiary p-1 rounded-md hover:bg-accent-tr cursor-pointer'>
    <CldImage
-    onClick={handleClick}
     src={item.imgData.publicId}
     className='object-contain'
     width={160}

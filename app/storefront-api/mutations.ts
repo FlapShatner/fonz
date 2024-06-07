@@ -102,4 +102,39 @@ mutation cartLinesRemove($cartId: ID!, $lineIds: [ID!]!) {
     }
   }
 }
+`
+
+export const customerAccessTokenCreateMutation = `
+mutation customerAccessTokenCreate($input: CustomerAccessTokenCreateInput!) {
+  customerAccessTokenCreate(input: $input) {
+    customerAccessToken {
+      accessToken
+      expiresAt
+    }
+    customerUserErrors {
+      code
+      field
+      message
+    }   
+  }
+}
+`
+
+export const customerCreateMutation = `mutation customerCreate($input: CustomerCreateInput!) {
+    customerCreate(input: $input) {
+      customer {
+      email
+      firstName
+      id
+      lastName
+      acceptsMarketing
+      displayName
+      }
+      customerUserErrors {
+        field
+        message
+        code
+      }
+    }
+  }
   `

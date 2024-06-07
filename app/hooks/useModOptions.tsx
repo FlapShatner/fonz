@@ -1,5 +1,6 @@
 import { useAtom } from 'jotai'
 import { useRouter } from 'next/navigation'
+import { useCooldown } from '@/app/hooks/useCooldown'
 import toast from 'react-hot-toast'
 import { createCart, addCartLine } from '../storefront-api/cart'
 import {
@@ -28,12 +29,18 @@ function useModOptions() {
  const [, setUpscaleAndAdd] = useAtom(upscaleAndAddAtom)
  const [wsId] = useAtom(wsIdAtom)
  const [shop] = useAtom(shopAtom)
+ const { checkCooldown } = useCooldown()
  const router = useRouter()
  const goBack = () => {
   setGenerated(generatedDefault)
  }
 
  const makeVariations = () => {
+  const cdMessage = checkCooldown()
+  if (cdMessage.cd) {
+   toast.error(cdMessage.message)
+   return
+  }
   if (selectedImage.generated.imgData.publicId === '') {
    toast.error('Please select an image to make variations.')
    return

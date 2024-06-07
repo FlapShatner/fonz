@@ -17,7 +17,7 @@ export const getCustomer = async () => {
    variables: {},
   }),
  })
- //  console.log('response:', response)
+ console.log('response:', response)
  const json = await response.json()
  const data = json.data as { customer: Customer }
  console.log('data:', json.data)

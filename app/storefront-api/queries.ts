@@ -118,3 +118,16 @@ query ($id:ID!){
   }
 }
 `
+
+export const getCustomerQuery = `
+query ($customerAccessToken:string){
+  cart(customerAccessToken:$customerAccessToken) {
+    email
+    firstName
+    id
+    lastName
+    acceptsMarketing
+    displayName
+  }
+}
+`

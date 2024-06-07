@@ -2,8 +2,8 @@
 import React from 'react'
 import { useRouter } from 'next/navigation'
 import { useAtom } from 'jotai'
-import { cartContentsAtom } from './state/atoms'
-import Bag from './icons/bag'
+import { cartContentsAtom } from '../state/atoms'
+import Bag from '../icons/bag'
 
 function CartIndicator() {
  const [cartContents] = useAtom(cartContentsAtom)

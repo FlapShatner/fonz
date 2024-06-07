@@ -1,6 +1,7 @@
 import React from 'react'
 import { cn } from '@/app/utils'
 import { useAtom } from 'jotai'
+import { useCooldown } from '@/app/hooks/useCooldown'
 import GenButton from './gen-button'
 import Plus from '@/app/icons/plus'
 import toast from 'react-hot-toast'
@@ -37,6 +38,7 @@ function Generate() {
  const [generateError, setGenerateError] = useAtom(generateErrorAtom)
  const [generated, setGenerated] = useAtom(generatedAtom)
  const [isLoading, setIsLoading] = useAtom(isLoadingAtom)
+ const { checkCooldown } = useCooldown()
 
  const windowSecVar = {
   id: 'wi1',
@@ -51,21 +53,16 @@ function Generate() {
  const productVariants = product.variants.edges
  const varsFilteredBySize = productVariants.filter((variant) => variant.node.selectedOptions.some((option) => selectedSize.size.includes(option.value)))
  const localSelectedVariant = varsFilteredBySize.find((variant) => variant.node.selectedOptions.some((option) => option.value.includes(selectedSecVar.label)))
+ const productId = isWindow ? selectedFF.handle : localSelectedVariant?.node.id
 
  const buildMessage = () => {
   console.log('vfs', varsFilteredBySize)
   console.log('pvar', productVariants)
   console.log('lsv', localSelectedVariant)
-  const productId = isWindow ? selectedFF.handle : localSelectedVariant?.node.id
   console.log('prod ID', productId)
   const idCode = selectedSecVar.id
   const isGrid = selectedSecVar.grid
   const ar = isWindow ? windowSecVar.ar : selectedSecVar.ar
-  if (!productId) {
-   toast.error('Please select a product', { position: 'top-left' })
-   setGenerateError({ error: true, message: 'Please select a product' })
-   return
-  }
   setIsGrid(isGrid)
   const messageData = {
    event: 'generate',
@@ -89,6 +86,17 @@ function Generate() {
    setGenerateError({ error: true, message: 'Please enter a prompt' })
    return
   }
+  if (!productId) {
+   toast.error('Please select a product', { position: 'top-left' })
+   setGenerateError({ error: true, message: 'Please select a product' })
+   return
+  }
+  const cdMessage = checkCooldown()
+  if (cdMessage.cd) {
+   toast.error(cdMessage.message, { position: 'top-left' })
+   return
+  }
+
   const messageData = buildMessage()
   if (localSelectedVariant) {
    setSelectedVariant(localSelectedVariant.node)

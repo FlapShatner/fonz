@@ -1,11 +1,7 @@
 import { atom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
-import { Customer } from '../types/customer-types'
 import { Generated, CldImageType, SelectedImageType } from '../types/image-types'
 import { Secondary, Variant } from '../data/options'
-
-export const customerAtom = atom<Customer | undefined>(undefined)
-customerAtom.debugLabel = 'customerAtom'
 
 export const viewOpenAtom = atom(false)
 
@@ -242,6 +238,7 @@ export const showSecVarAtom = atom(false)
 export const styleOpenAtom = atom(false)
 export const infoDrawerOpenAtom = atom(false)
 export const historyIsOpenAtom = atom(false)
+export const formIsOpenAtom = atom(false)
 
 export const generateErrorAtom = atom({
  error: false,
@@ -370,3 +367,13 @@ export const shopAtom = atom({
  name: '',
 })
 shopAtom.debugLabel = 'shopAtom'
+
+export const cdMetaAtom = atomWithStorage('cdMeta', {
+ genCount: 0,
+ isCd: false,
+ genTimes: [1],
+})
+
+export const customerAccessTokenAtom = atomWithStorage('customerAccessToken', '')
+export const customerAtom = atom({ email: '', firstName: '', id: '', lastName: '', acceptsMarketing: false, displayName: '' })
+customerAtom.debugLabel = 'customerAtom'

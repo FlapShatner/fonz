@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { cn } from './utils'
 import { Open_Sans, Smooch } from 'next/font/google'
 import './globals.css'
-import Header from './header'
+import Header from './header/header'
 import Modal from './ui/cart/modal'
 import Footer from './footer'
 
