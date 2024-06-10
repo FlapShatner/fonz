@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import { useOnClickOutside } from 'usehooks-ts'
 import { CustomScroll } from 'react-custom-scroll'
+import Close from './close'
 import HistoryIcon from '@/app/icons/history'
 import HistoryItem from './history-item'
 import { useAtom } from 'jotai'
@@ -30,16 +31,19 @@ function MobileHistory() {
       heightRelativeToParent='80%'>
       <div
        ref={ref}
-       className='grid grid-cols-3 gap-2 bg-bg-primary text-white p-4 rounded-md'>
-       {promptHistory.map(
-        (item, i) =>
-         item.productId !== '' && (
-          <HistoryItem
-           key={i}
-           item={item}
-          />
-         )
-       )}
+       className=' bg-bg-primary text-white p-4 rounded-md min-h-[80vh]'>
+       <Close />
+       <div className='grid grid-cols-3 gap-2'>
+        {promptHistory.map(
+         (item, i) =>
+          item.productId !== '' && (
+           <HistoryItem
+            key={i}
+            item={item}
+           />
+          )
+        )}
+       </div>
       </div>
      </CustomScroll>
     </dialog>

@@ -1,25 +1,34 @@
+'use client'
 import React, { useRef } from 'react'
 import { useOnClickOutside } from 'usehooks-ts'
+import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import { useCustomer } from '../hooks/useCustomer'
 import SignIn from './sign-in'
+import SentVerify from './sent-ver'
+import SignUp from './sign-up'
 import { useAtom } from 'jotai'
-import { formIsOpenAtom } from '../state/atoms'
+import { formIsOpenAtom, formTypeAtom, sentVerificationAtom } from '../state/atoms'
 
 function AccountForm() {
- const [formIsOpen, setFormOpen] = useAtom(formIsOpenAtom)
+ const [sentVerification, setSentVerification] = useAtom(sentVerificationAtom)
  const { customer, exists } = useCustomer()
+ const router = useRouter()
+ const searchParams = useSearchParams()
+ const acct = searchParams.get('modal') == 'account'
+ const formType = searchParams.get('formType')
+ const pathname = usePathname()
  const ref = useRef(null)
  useOnClickOutside(ref, () => {
-  setFormOpen(false)
+  router.push(pathname)
  })
  return (
   <>
-   {formIsOpen && (
+   {acct && (
     <dialog className='fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center'>
      <div
       ref={ref}
       className='flex flex-col gap-2 bg-bg-secondary text-white p-4 rounded-md'>
-      <SignIn />
+      {formType === 'signIn' ? <SignIn /> : formType === 'verify' ? <SentVerify /> : <SignUp />}
      </div>
     </dialog>
    )}

@@ -1,0 +1,168 @@
+import React, { useState } from 'react'
+import { useAtom } from 'jotai'
+import { useSearchParams, usePathname, useRouter } from 'next/navigation'
+import { useCustomer } from '../hooks/useCustomer'
+import { formTypeAtom, newCustomerAtom, sentVerificationAtom } from '../state/atoms'
+
+function SignUp() {
+ const [email, setEmail] = useState('')
+ const [password, setPassword] = useState('')
+ const [confirmPassword, setConfirmPassword] = useState('')
+ const [phone, setPhone] = useState('')
+ const [consent, setConsent] = useState(false)
+ const [isLoading, setIsLoading] = useState(false)
+ const [sentVerification, setSentVerification] = useAtom(sentVerificationAtom)
+ const [formType, setFormType] = useAtom(formTypeAtom)
+ const [name, setName] = useState({
+  firstName: '',
+  lastName: '',
+ })
+ const { createNewCustomer, customer } = useCustomer()
+ const router = useRouter()
+ const pathname = usePathname()
+
+ const verifyPassword = () => {
+  if (password !== confirmPassword) {
+   alert('Passwords do not match')
+   return false
+  }
+  return true
+ }
+
+ const handleClick = async () => {
+  setIsLoading(true)
+  const verified = verifyPassword()
+  if (!verified) {
+   setIsLoading(false)
+   return
+  }
+  if (!email || !password) {
+   alert('Email and password are required')
+   setIsLoading(false)
+   return
+  }
+  const result = await createNewCustomer({
+   email,
+   password,
+   phone,
+   firstName: name.firstName,
+   lastName: name.lastName,
+   acceptsMarketing: consent,
+  })
+
+  if (result) {
+   if (result.code === 'CUSTOMER_DISABLED') {
+    setSentVerification({ sent: true, message: result.message })
+    router.push('?modal=account&formType=verify')
+   }
+  }
+ }
+
+ const handleGoToSignIn = () => {
+  router.push('?modal=account&formType=signIn')
+ }
+
+ return (
+  <div>
+   <div className='flex flex-col gap-2 min-w-[50vw]'>
+    <div className='flex flex-col'>
+     <label htmlFor='email'>
+      Email<span className='text-red-500'>*</span>
+     </label>
+     <input
+      onChange={(e) => setEmail(e.target.value)}
+      value={email}
+      className='bg-bg-tertiary border border-txt-secondary rounded-md p-1 text-sm '
+      type='email'
+      name='email'
+      id='email'
+     />
+    </div>
+    <div className='flex flex-col'>
+     <label htmlFor='password'>
+      Password<span className='text-red-500'>*</span>
+     </label>
+     <input
+      onChange={(e) => setPassword(e.target.value)}
+      value={password}
+      className='bg-bg-tertiary border border-txt-secondary rounded-md p-1 text-sm '
+      type='password'
+      name='password'
+      id='password'
+     />
+    </div>
+    <div className='flex flex-col'>
+     <label htmlFor='confirmPassword'>
+      Confirm Password<span className='text-red-500'>*</span>
+     </label>
+     <input
+      onChange={(e) => setConfirmPassword(e.target.value)}
+      value={confirmPassword}
+      className='bg-bg-tertiary border border-txt-secondary rounded-md p-1 text-sm '
+      type='password'
+      name='confirmPassword'
+      id='confirmPassword'
+     />
+    </div>
+    <div className='flex flex-col'>
+     <label htmlFor='firstName'>First Name</label>
+     <input
+      onChange={(e) => setName({ ...name, firstName: e.target.value })}
+      value={name.firstName}
+      className='bg-bg-tertiary border border-txt-secondary rounded-md p-1 text-sm '
+      type='text'
+      name='firstName'
+      id='firstName'
+     />
+    </div>
+    <div className='flex flex-col'>
+     <label htmlFor='lastName'>Last Name</label>
+     <input
+      onChange={(e) => setName({ ...name, lastName: e.target.value })}
+      value={name.lastName}
+      className='bg-bg-tertiary border border-txt-secondary rounded-md p-1 text-sm '
+      type='text'
+      name='lastName'
+      id='lastName'
+     />
+    </div>
+    {/* Format phone to  +16135551111. */}
+    <div className='flex flex-col'>
+     <label htmlFor='phone'>Phone #</label>
+     <input
+      onChange={(e) => setPhone(e.target.value)}
+      value={phone}
+      className='bg-bg-tertiary border border-txt-secondary rounded-md p-1 text-sm '
+      type='text'
+      name='phone'
+      id='phone'
+     />
+    </div>
+    <div className='flex gap-4 justify-center '>
+     <input
+      onChange={() => setConsent(!consent)}
+      value={consent ? 'checked' : 'unchecked'}
+      checked={consent}
+      className='bg-bg-tertiary border border-txt-secondary rounded-md p-1 text-sm cursor-pointer '
+      type='checkbox'
+      name='consent'
+      id='consent'
+     />
+     <label htmlFor='consent'>I want to receive emails from Ink Monkey LLC</label>
+    </div>
+    <div
+     onClick={handleClick}
+     className='px-4 py-2 cursor-pointer rounded-md bg-accent font-semibold text-bg-secondary text-center mt-2'>
+     Sign Up
+    </div>
+    <div
+     onClick={handleGoToSignIn}
+     className='cursor-pointer text-white underline text-center mt-4'>
+     Sign in instead
+    </div>
+   </div>
+  </div>
+ )
+}
+
+export default SignUp

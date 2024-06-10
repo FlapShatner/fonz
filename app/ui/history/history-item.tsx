@@ -52,7 +52,7 @@ function HistoryItem({ item }: HistoryItemProps) {
  return (
   <div
    onClick={handleClick}
-   className='max-w-40 relative border border-bg-tertiary p-1 rounded-md hover:bg-accent-tr cursor-pointer'>
+   className='max-w-40 relative border border-bg-tertiary p-1 rounded-md hover:bg-accent-tr cursor-pointer h-max'>
    <CldImage
     src={item.imgData.publicId}
     className='object-contain'
@@ -60,7 +60,7 @@ function HistoryItem({ item }: HistoryItemProps) {
     height={160}
     alt={item.caption}
    />
-   <p className='text-ellipsis overflow-hidden whitespace-nowrap text-sm font-light max-w-40'>{item.caption}</p>
+   <p className='text-ellipsis overflow-hidden whitespace-nowrap text-sm font-light max-w-40 '>{item.caption}</p>
   </div>
  )
 }

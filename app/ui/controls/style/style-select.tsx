@@ -33,7 +33,7 @@ function StyleSelect() {
     </div>
     <Chevron className={cn('-rotate-90', styleOpen && '-rotate-180')} />
    </div>
-   <StyleList />
+   {/* <StyleList /> */}
   </div>
  )
 }

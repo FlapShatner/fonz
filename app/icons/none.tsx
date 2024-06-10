@@ -18,7 +18,7 @@ function NoneIcon({ className = '' }) {
    <path
     d='M5.83325 5.83594L14.1666 14.1693'
     stroke='currentColor'
-    stroke-width='1.25'
+    strokeWidth='1.25'
     strokeLinecap='round'
     strokeLinejoin='round'></path>
   </svg>

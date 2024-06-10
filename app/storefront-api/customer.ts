@@ -1,5 +1,5 @@
 import { client } from '../lib/storefront-api-client'
-import { customerAccessTokenCreateMutation, customerCreateMutation } from './mutations'
+import { customerAccessTokenCreateMutation, customerActivateMutation, customerCreateMutation } from './mutations'
 import { getCustomerQuery } from './queries'
 
 type CustomerAccessTokenCreateInput = {
@@ -7,19 +7,21 @@ type CustomerAccessTokenCreateInput = {
  password: string
 }
 
-type CustomerCreateInput = {
+export type CustomerCreateInput = {
  email: string
- firstName: string
- id: string
- lastName: string
- acceptsMarketing: boolean
- displayName: string
+ password: string
+ firstName?: string
+ lastName?: string
+ acceptsMarketing?: boolean
 }
 
 export const createCustomerAccessToken = async (inputArgs: CustomerAccessTokenCreateInput) => {
  const { data, errors, extensions } = await client.request(customerAccessTokenCreateMutation, {
   variables: {
-   inputArgs,
+   input: {
+    email: inputArgs.email,
+    password: inputArgs.password,
+   },
   },
   apiVersion: '2024-04',
  })
@@ -33,15 +35,14 @@ export const createCustomerAccessToken = async (inputArgs: CustomerAccessTokenCr
 
 export const createCustomer = async (inputArgs: CustomerCreateInput) => {
  const { data, errors, extensions } = await client.request(customerCreateMutation, {
-  variables: {
-   inputArgs,
-  },
+  variables: { input: inputArgs },
   apiVersion: '2024-04',
  })
 
  if (errors) {
   throw new Error(errors.message)
  }
+
  console.log('data:', data)
  return await data.customerCreate
 }
@@ -59,4 +60,20 @@ export const getCustomer = async (customerAccessToken: string) => {
  }
  console.log('data:', data)
  return await data.cart
+}
+
+export const activateCustomer = async (activationUrl: string, password: string) => {
+ const { data, errors, extensions } = await client.request(customerActivateMutation, {
+  variables: {
+   activationUrl: activationUrl,
+   password: password,
+  },
+  apiVersion: '2024-04',
+ })
+
+ if (errors) {
+  throw new Error(errors.message)
+ }
+ console.log('data:', data)
+ return await data.customerActivateByUrl
 }

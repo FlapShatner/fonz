@@ -1,22 +1,32 @@
 import React, { useState } from 'react'
 import { useCustomer } from '../hooks/useCustomer'
-import { useAtom } from 'jotai'
-import { formIsOpenAtom } from '../state/atoms'
-import { get } from 'http'
+import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 
 function SignIn() {
- const [formIsOpen, setFormOpen] = useAtom(formIsOpenAtom)
- const { getCustomerData, customer } = useCustomer()
+ const { getCustomerTokenAndData, customer } = useCustomer()
  const [email, setEmail] = useState('')
  const [password, setPassword] = useState('')
+ const router = useRouter()
+ const pathname = usePathname()
 
- const handleClick = () => {
-  getCustomerData({
+ const handleSignIn = async () => {
+  const result = await getCustomerTokenAndData({
    email: email,
    password: password,
   })
-  setFormOpen(false)
+  console.log('result:', result)
+  if (result && result.error) {
+   if (result.code === 'UNIDENTIFIED_CUSTOMER') {
+    alert('Customer not found')
+   }
+  }
+  router.push(pathname)
  }
+
+ const handleGoToSignUp = () => {
+  router.push('?modal=account&formType=signUp')
+ }
+
  return (
   <div>
    <form className='flex flex-col gap-2'>
@@ -42,11 +52,16 @@ function SignIn() {
       id='password'
      />
     </div>
-    <button
-     onClick={handleClick}
-     className='px-4 py-2 rounded-md bg-accent font-semibold text-bg-secondary mt-2'>
+    <div
+     onClick={handleSignIn}
+     className='cursor-pointer px-4 py-2 text-center rounded-md bg-accent font-semibold text-bg-secondary mt-2'>
      Sign In
-    </button>
+    </div>
+    <div
+     onClick={handleGoToSignUp}
+     className='cursor-pointer text-white underline text-center mt-4'>
+     Sign up instead
+    </div>
    </form>
   </div>
  )

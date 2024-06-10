@@ -1,9 +1,11 @@
 import React from 'react'
 import { cn } from '../utils'
+import StyleList from './controls/style/style-list'
 import { useBreakPoints } from '../hooks/useBreakPoints'
 import Controls from './controls/controls'
 import ImageBox from './image/imagebox'
 import History from './history/history'
+import AccountForm from '../account/account-form'
 
 function FonzApp() {
  const { isMobile, isTablet, isDesktop } = useBreakPoints()
@@ -12,6 +14,7 @@ function FonzApp() {
    <Controls />
    <ImageBox />
    <History />
+   <StyleList />
   </div>
  )
 }

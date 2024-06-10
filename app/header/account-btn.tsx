@@ -1,17 +1,18 @@
 'use client'
 import React from 'react'
 import Avatar from '../icons/avatar'
-import AccountForm from './account-form'
+import { useRouter } from 'next/navigation'
+import AccountForm from '../account/account-form'
 import { useCustomer } from '../hooks/useCustomer'
 import { useAtom } from 'jotai'
 import { formIsOpenAtom } from '../state/atoms'
 
 function AccountBtn() {
- const [formIsOpen, setFormOpen] = useAtom(formIsOpenAtom)
  const { customer, exists } = useCustomer()
+ const router = useRouter()
 
- const handleClick = async () => {
-  setFormOpen(!formIsOpen)
+ const handleClick = () => {
+  router.push('?modal=account&formType=signIn')
  }
 
  return (
@@ -21,7 +22,6 @@ function AccountBtn() {
     className='cursor-pointer'>
     {exists ? <Avatar /> : 'Sign In'}
    </div>
-   <AccountForm />
   </>
  )
 }

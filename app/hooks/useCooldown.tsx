@@ -6,12 +6,12 @@ export function useCooldown() {
  const [cdMeta, setCdMeta] = useAtom(cdMetaAtom)
  const { genCount, genTimes, isCd } = cdMeta
 
- console.log(cdMeta)
+ //  console.log(cdMeta)
  const checkCooldown = () => {
   let cdMessage = { cd: false, message: '' }
   const timeLeft = getTimeLeft(genTimes[0])
   const { hours, minutes } = getHoursAndMinutes(timeLeft)
-  if (timeLeft <= 0) {
+  if (Number(timeLeft) <= 0) {
    setCdMeta({ ...cdMeta, isCd: false, genTimes: addToArray(genTimes, Date.now()), genCount: 1 })
   }
   if (isCd) {

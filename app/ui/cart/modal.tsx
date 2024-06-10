@@ -19,7 +19,7 @@ function Modal() {
  const ref = useRef(null)
  const router = useRouter()
  const searchParams = useSearchParams()
- const modal = searchParams.get('modal')
+ const modal = searchParams.get('modal') === 'cart'
  const pathname = usePathname()
  useOnClickOutside(ref, () => {
   router.push(pathname)

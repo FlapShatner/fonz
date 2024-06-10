@@ -110,7 +110,7 @@ function Generate() {
    onClick={handleGenerate}
    className={cn('z-50 p-4 pb-8 border-t border-bg-tertiary bg-bg-primary sticky bottom-0', isLoading && 'opacity-40 pointer-events-none')}>
    <GenButton>
-    <div className='flex gap-2 font-semibold'>
+    <div className='flex gap-2 font-semibold justify-center'>
      <Plus />
      Generate
     </div>

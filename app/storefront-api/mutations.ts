@@ -125,10 +125,8 @@ export const customerCreateMutation = `mutation customerCreate($input: CustomerC
       customer {
       email
       firstName
-      id
       lastName
       acceptsMarketing
-      displayName
       }
       customerUserErrors {
         field
@@ -138,3 +136,15 @@ export const customerCreateMutation = `mutation customerCreate($input: CustomerC
     }
   }
   `
+
+export const customerActivateMutation = `
+mutation($activationUrl: URL!, $password: String!){
+  customerActivateByUrl(
+    activationUrl: $activationUrl,
+    password: $password
+  ) {
+    customer { id }
+    customerUserErrors { code field message }
+  }
+}
+`

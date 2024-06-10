@@ -377,3 +377,26 @@ export const cdMetaAtom = atomWithStorage('cdMeta', {
 export const customerAccessTokenAtom = atomWithStorage('customerAccessToken', '')
 export const customerAtom = atom({ email: '', firstName: '', id: '', lastName: '', acceptsMarketing: false, displayName: '' })
 customerAtom.debugLabel = 'customerAtom'
+
+export const customerErrorAtom = atom({
+ error: false,
+ message: '',
+})
+
+export type NewCustomer = {
+ email: string
+ password: string
+ firstName?: string
+ lastName?: string
+ acceptsMarketing?: boolean
+ phone?: string
+}
+
+export const newCustomerAtom = atom<NewCustomer>({
+ email: '',
+ password: '',
+})
+
+export const formTypeAtom = atom('signIn')
+
+export const sentVerificationAtom = atom({ sent: false, message: '' })
