@@ -3,7 +3,7 @@ import { useCustomer } from '../hooks/useCustomer'
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 
 function SignIn() {
- const { getCustomerTokenAndData, customer } = useCustomer()
+ const { getCustomerTokenAndData } = useCustomer()
  const [email, setEmail] = useState('')
  const [password, setPassword] = useState('')
  const router = useRouter()

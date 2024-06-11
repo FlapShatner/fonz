@@ -59,7 +59,7 @@ export const getCustomer = async (customerAccessToken: string) => {
   throw new Error(errors.message)
  }
  console.log('data:', data)
- return await data.cart
+ return data.customer
 }
 
 export const activateCustomer = async (activationUrl: string, password: string) => {

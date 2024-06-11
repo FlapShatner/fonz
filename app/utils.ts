@@ -70,3 +70,14 @@ export const addToArray = debounce((arr: number[], val: number) => {
  }
  return arr
 }, 300)
+
+export const isValidExpiry = (expiresAt: string): boolean => {
+ const now = new Date()
+ const expiryDate = new Date(expiresAt)
+ const timeDifference = expiryDate.getTime() - now.getTime()
+
+ // 24 hours in milliseconds
+ const twentyFourHoursInMillis = 24 * 60 * 60 * 1000
+
+ return timeDifference >= twentyFourHoursInMillis
+}

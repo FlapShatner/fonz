@@ -17,7 +17,7 @@ function SignUp() {
   firstName: '',
   lastName: '',
  })
- const { createNewCustomer, customer } = useCustomer()
+ const { createNewCustomer, getCustomerTokenAndData } = useCustomer()
  const router = useRouter()
  const pathname = usePathname()
 
@@ -41,19 +41,47 @@ function SignUp() {
    setIsLoading(false)
    return
   }
-  const result = await createNewCustomer({
+
+  type NewCustomer = {
+   email: string
+   password: string
+   firstName?: string
+   lastName?: string
+   phone?: string
+   acceptsMarketing: boolean
+  }
+
+  let newCustomer: NewCustomer = {
    email,
    password,
-   phone,
-   firstName: name.firstName,
-   lastName: name.lastName,
    acceptsMarketing: consent,
-  })
+  }
+  if (name.firstName) {
+   newCustomer.firstName = name.firstName
+  }
+  if (name.lastName) {
+   newCustomer.lastName = name.lastName
+  }
+  if (phone !== '') {
+   newCustomer.phone = phone
+  }
 
+  const result = await createNewCustomer(newCustomer)
   if (result) {
+   setIsLoading(false)
+   if (result.customer.id !== '') {
+    const creds = { email, password }
+    const customerData = await getCustomerTokenAndData(creds)
+    if (customerData) {
+     router.push('/')
+    }
+   }
    if (result.code === 'CUSTOMER_DISABLED') {
     setSentVerification({ sent: true, message: result.message })
     router.push('?modal=account&formType=verify')
+   }
+   if (result.code === 'TAKEN') {
+    alert('Email is already in use, please sign in or use a different email address.')
    }
   }
  }

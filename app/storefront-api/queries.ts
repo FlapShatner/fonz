@@ -120,8 +120,8 @@ query ($id:ID!){
 `
 
 export const getCustomerQuery = `
-query ($customerAccessToken:string){
-  cart(customerAccessToken:$customerAccessToken) {
+query ($customerAccessToken:String!){
+  customer(customerAccessToken:$customerAccessToken) {
     email
     firstName
     id

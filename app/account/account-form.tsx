@@ -8,10 +8,10 @@ import SentVerify from './sent-ver'
 import SignUp from './sign-up'
 import { useAtom } from 'jotai'
 import { formIsOpenAtom, formTypeAtom, sentVerificationAtom } from '../state/atoms'
+import SignOut from './sign-out'
 
 function AccountForm() {
  const [sentVerification, setSentVerification] = useAtom(sentVerificationAtom)
- const { customer, exists } = useCustomer()
  const router = useRouter()
  const searchParams = useSearchParams()
  const acct = searchParams.get('modal') == 'account'
@@ -28,7 +28,7 @@ function AccountForm() {
      <div
       ref={ref}
       className='flex flex-col gap-2 bg-bg-secondary text-white p-4 rounded-md'>
-      {formType === 'signIn' ? <SignIn /> : formType === 'verify' ? <SentVerify /> : <SignUp />}
+      {formType === 'signIn' ? <SignIn /> : formType === 'verify' ? <SentVerify /> : formType === 'signOut' ? <SignOut /> : <SignUp />}
      </div>
     </dialog>
    )}

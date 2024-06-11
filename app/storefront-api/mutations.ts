@@ -123,6 +123,8 @@ mutation customerAccessTokenCreate($input: CustomerAccessTokenCreateInput!) {
 export const customerCreateMutation = `mutation customerCreate($input: CustomerCreateInput!) {
     customerCreate(input: $input) {
       customer {
+      id
+      phone
       email
       firstName
       lastName
@@ -143,7 +145,17 @@ mutation($activationUrl: URL!, $password: String!){
     activationUrl: $activationUrl,
     password: $password
   ) {
-    customer { id }
+    customer { 
+      id
+      email
+      firstName
+      lastName
+      acceptsMarketing
+    }
+    customerAccessToken {
+      accessToken
+      expiresAt
+    }
     customerUserErrors { code field message }
   }
 }

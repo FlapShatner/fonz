@@ -374,9 +374,10 @@ export const cdMetaAtom = atomWithStorage('cdMeta', {
  genTimes: [1],
 })
 
-export const customerAccessTokenAtom = atomWithStorage('customerAccessToken', '')
-export const customerAtom = atom({ email: '', firstName: '', id: '', lastName: '', acceptsMarketing: false, displayName: '' })
-customerAtom.debugLabel = 'customerAtom'
+export const customerDefault = { email: '', firstName: '', id: '', phone: '', lastName: '', acceptsMarketing: false, displayName: '' }
+
+export const customerAccessTokenAtom = atomWithStorage('customerAccessToken', { accessToken: '', expiresAt: '' })
+export const customerAtom = atomWithStorage('customer', customerDefault)
 
 export const customerErrorAtom = atom({
  error: false,
