@@ -4,7 +4,7 @@ import { Open_Sans, Smooch } from 'next/font/google'
 import './globals.css'
 import Header from './header/header'
 import Modal from './ui/cart/modal'
-import AccountForm from './account/account-form'
+// import AccountForm from './account/account-form'
 
 export const open_sans = Open_Sans({ subsets: ['latin'], display: 'swap', variable: '--font-open-sans' })
 export const smooch = Smooch({ weight: '400', subsets: ['latin'], display: 'swap', variable: '--font-smooch' })
@@ -28,7 +28,7 @@ export default function RootLayout({
     <Header />
     {children}
     <Modal />
-    <AccountForm />
+    {/* <AccountForm /> */}
    </body>
   </html>
  )
