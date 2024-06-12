@@ -36,6 +36,9 @@ export function useCustomer() {
     if (newCustomer.customerUserErrors[0].code === 'CUSTOMER_DISABLED') {
      return { error: false, message: newCustomer.customerUserErrors[0].message, code: newCustomer.customerUserErrors[0].code }
     }
+    if (newCustomer.customerUserErrors[0].code === 'TAKEN') {
+     return { error: false, message: newCustomer.customerUserErrors[0].message, code: newCustomer.customerUserErrors[0].code }
+    }
    }
    return newCustomer
   } catch (error) {

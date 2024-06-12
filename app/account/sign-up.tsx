@@ -5,6 +5,7 @@ import { useCustomer } from '../hooks/useCustomer'
 import { formTypeAtom, newCustomerAtom, sentVerificationAtom } from '../state/atoms'
 
 function SignUp() {
+ const [formError, setFormError] = useState('')
  const [email, setEmail] = useState('')
  const [password, setPassword] = useState('')
  const [confirmPassword, setConfirmPassword] = useState('')
@@ -12,7 +13,6 @@ function SignUp() {
  const [consent, setConsent] = useState(false)
  const [isLoading, setIsLoading] = useState(false)
  const [sentVerification, setSentVerification] = useAtom(sentVerificationAtom)
- const [formType, setFormType] = useAtom(formTypeAtom)
  const [name, setName] = useState({
   firstName: '',
   lastName: '',
@@ -23,7 +23,7 @@ function SignUp() {
 
  const verifyPassword = () => {
   if (password !== confirmPassword) {
-   alert('Passwords do not match')
+   setFormError(formErrors.PASSWORDS)
    return false
   }
   return true
@@ -69,7 +69,7 @@ function SignUp() {
   const result = await createNewCustomer(newCustomer)
   if (result) {
    setIsLoading(false)
-   if (result.customer.id !== '') {
+   if (result.customer?.id !== '') {
     const creds = { email, password }
     const customerData = await getCustomerTokenAndData(creds)
     if (customerData) {
@@ -81,24 +81,51 @@ function SignUp() {
     router.push('?modal=account&formType=verify')
    }
    if (result.code === 'TAKEN') {
-    alert('Email is already in use, please sign in or use a different email address.')
+    setFormError(formErrors.TAKEN)
    }
   }
+ }
+
+ const formErrors = {
+  TAKEN: 'Email is already associated with an account, please sign in or use a different email address.',
+  PASSWORDS: 'Passwords do not match.',
  }
 
  const handleGoToSignIn = () => {
   router.push('?modal=account&formType=signIn')
  }
 
+ const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  setFormError('')
+  const { name, value } = e.target
+  switch (name) {
+   case 'email':
+    setEmail(value)
+    break
+   case 'password':
+    setPassword(value)
+    break
+   case 'confirmPassword':
+    setConfirmPassword(value)
+    break
+   case 'phone':
+    setPhone(value)
+    break
+   default:
+    break
+  }
+ }
+
  return (
   <div>
    <div className='flex flex-col gap-2 min-w-[50vw]'>
+    <div>{formError}</div>
     <div className='flex flex-col'>
      <label htmlFor='email'>
       Email<span className='text-red-500'>*</span>
      </label>
      <input
-      onChange={(e) => setEmail(e.target.value)}
+      onChange={handleInputChange}
       value={email}
       className='bg-bg-tertiary border border-txt-secondary rounded-md p-1 text-sm '
       type='email'
@@ -111,7 +138,7 @@ function SignUp() {
       Password<span className='text-red-500'>*</span>
      </label>
      <input
-      onChange={(e) => setPassword(e.target.value)}
+      onChange={handleInputChange}
       value={password}
       className='bg-bg-tertiary border border-txt-secondary rounded-md p-1 text-sm '
       type='password'
@@ -124,7 +151,7 @@ function SignUp() {
       Confirm Password<span className='text-red-500'>*</span>
      </label>
      <input
-      onChange={(e) => setConfirmPassword(e.target.value)}
+      onChange={handleInputChange}
       value={confirmPassword}
       className='bg-bg-tertiary border border-txt-secondary rounded-md p-1 text-sm '
       type='password'
@@ -158,7 +185,7 @@ function SignUp() {
     <div className='flex flex-col'>
      <label htmlFor='phone'>Phone #</label>
      <input
-      onChange={(e) => setPhone(e.target.value)}
+      onChange={handleInputChange}
       value={phone}
       className='bg-bg-tertiary border border-txt-secondary rounded-md p-1 text-sm '
       type='text'
