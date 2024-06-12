@@ -36,11 +36,11 @@ function useModOptions() {
  }
 
  const makeVariations = () => {
-  const cdMessage = checkCooldown()
-  if (cdMessage.cd) {
-   toast.error(cdMessage.message)
-   return
-  }
+  // const cdMessage = checkCooldown()
+  // if (cdMessage.cd) {
+  //  toast.error(cdMessage.message)
+  //  return
+  // }
   if (selectedImage.generated.imgData.publicId === '') {
    toast.error('Please select an image to make variations.')
    return

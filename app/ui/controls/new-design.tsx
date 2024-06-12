@@ -2,6 +2,7 @@ import React from 'react'
 import { cn } from '@/app/utils'
 import GenButton from './gen-button'
 import { useAtom } from 'jotai'
+import { useBreakPoints } from '@/app/hooks/useBreakPoints'
 import { generatedAtom, selectedFFAtom, selectedSecVarAtom, selectedStyleAtom, selectedSizeAtom, showSecVarAtom } from '@/app/state/atoms'
 import { generatedDefault, ffDefault, isLoadingAtom } from '@/app/state/atoms'
 
@@ -12,6 +13,8 @@ function NewDesign() {
  const [selectedSecVar, setSelectedSecVar] = useAtom(selectedSecVarAtom)
  const [selectedStyle, setSelectedStyle] = useAtom(selectedStyleAtom)
  const [showSecVar, setShowSecVar] = useAtom(showSecVarAtom)
+
+ const { isMobile, isTablet, isDesktop } = useBreakPoints()
 
  const handleClick = () => {
   setGenerated(generatedDefault)
@@ -24,7 +27,7 @@ function NewDesign() {
  return (
   <div
    onClick={handleClick}
-   className={cn('z-50 p-4 pb-8 border-t border-bg-tertiary bg-bg-primary sticky bottom-0 font-semibold')}>
+   className={cn('z-50 p-4 pb-8 border-t border-bg-tertiary bg-bg-primary sticky bottom-0 font-semibold', isTablet && 'text-xs')}>
    <GenButton>Start New Design</GenButton>
   </div>
  )

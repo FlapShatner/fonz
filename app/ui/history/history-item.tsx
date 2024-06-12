@@ -1,7 +1,7 @@
 import React from 'react'
 import { CldImage } from 'next-cloudinary'
 import type { Generated } from '@/app/types/image-types'
-
+import { Suspense } from 'react'
 import { getProductVariant } from '@/app/storefront-api/products'
 import { useAtom } from 'jotai'
 import {
@@ -49,17 +49,21 @@ function HistoryItem({ item }: HistoryItemProps) {
   setHistoryIsOpen(false)
  }
 
+ if (!item.imgData) return null
+
  return (
   <div
    onClick={handleClick}
    className='max-w-40 relative border border-bg-tertiary p-1 rounded-md hover:bg-accent-tr cursor-pointer h-max'>
-   <CldImage
-    src={item.imgData.publicId}
-    className='object-contain'
-    width={160}
-    height={160}
-    alt={item.caption}
-   />
+   <Suspense fallback={<div className='w-24 h-24 bg-transparent' />}>
+    <CldImage
+     src={item.imgData.publicId}
+     className='object-contain'
+     width={160}
+     height={160}
+     alt={item.caption}
+    />
+   </Suspense>
    <p className='text-ellipsis overflow-hidden whitespace-nowrap text-sm font-light max-w-40 '>{item.caption}</p>
   </div>
  )

@@ -5,7 +5,6 @@ import { useBreakPoints } from '../hooks/useBreakPoints'
 import Controls from './controls/controls'
 import ImageBox from './image/imagebox'
 import History from './history/history'
-import AccountForm from '../account/account-form'
 
 function FonzApp() {
  const { isMobile, isTablet, isDesktop } = useBreakPoints()

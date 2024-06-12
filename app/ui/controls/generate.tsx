@@ -91,11 +91,11 @@ function Generate() {
    setGenerateError({ error: true, message: 'Please select a product' })
    return
   }
-  const cdMessage = checkCooldown()
-  if (cdMessage.cd) {
-   toast.error(cdMessage.message, { position: 'top-left' })
-   return
-  }
+  // const cdMessage = checkCooldown()
+  // if (cdMessage.cd) {
+  //  toast.error(cdMessage.message, { position: 'top-left' })
+  //  return
+  // }
 
   const messageData = buildMessage()
   if (localSelectedVariant) {

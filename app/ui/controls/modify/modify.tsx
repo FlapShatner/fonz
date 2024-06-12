@@ -18,7 +18,7 @@ function Modify() {
   <div className={cn('px-2', isLoading && 'opacity-30 pointer-events-none', isMobile && 'pb-4')}>
    <Logo />
    <InfoBox />
-   <ModOption option={optionData.purchase} />
+   {/* <ModOption option={optionData.purchase} /> */}
    <div className={cn(isUpscaled && 'opacity-40 pointer-events-none')}>
     <ModOption option={optionData.variations} />
     <ModOption option={optionData.upscale} />

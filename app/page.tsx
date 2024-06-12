@@ -8,6 +8,7 @@ import { useAtomsDebugValue } from 'jotai-devtools'
 import { useWS } from './hooks/useWS'
 import { useAtom } from 'jotai'
 import { shopAtom, customerAccessTokenAtom, customerAtom } from './state/atoms'
+import { Suspense } from 'react'
 export default function Home() {
  const [url, setUrl] = useState<string>('')
  const [shop, setShop] = useAtom(shopAtom)
@@ -37,9 +38,11 @@ export default function Home() {
 
  return (
   <main className='h-app'>
-   <Toaster />
-   <FonzApp />
-   <DebugAtoms />
+   <Suspense fallback={<div>Loading...</div>}>
+    <Toaster />
+    <FonzApp />
+    <DebugAtoms />
+   </Suspense>
   </main>
  )
 }

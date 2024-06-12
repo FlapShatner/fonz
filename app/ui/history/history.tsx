@@ -15,6 +15,7 @@ function HistList() {
    <span className={cn('flex w-full justify-center pr-6')}>History</span>
    {promptHistory.map(
     (item, i) =>
+     item &&
      item.productId !== '' && (
       <HistoryItem
        key={i}
