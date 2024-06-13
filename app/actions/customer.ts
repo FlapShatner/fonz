@@ -5,7 +5,7 @@ export const getCustomer = async () => {
  const customerEndpoint = process.env.NEXT_PUBLIC_CUSTOMER_ENDPOINT as string
  const accessToken = cookies().get('customerAccessToken')
  const token = accessToken && accessToken.value
- console.log('accessToken:', accessToken)
+ //  console.log('accessToken:', accessToken)
  const response = await fetch(customerEndpoint, {
   method: 'POST',
   headers: {
@@ -17,10 +17,10 @@ export const getCustomer = async () => {
    variables: {},
   }),
  })
- console.log('response:', response)
+ //  console.log('response:', response)
  const json = await response.json()
  const data = json.data as { customer: Customer }
- console.log('data:', json.data)
+ //  console.log('data:', json.data)
  if (response.status !== 200) {
   return { status: 'error' }
  }

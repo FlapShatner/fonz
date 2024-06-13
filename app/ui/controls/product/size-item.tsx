@@ -24,7 +24,7 @@ function SizeItem({ size, setOpen }: SizeItemProps) {
   }
   setShowSecVar(true)
   setOpen(false)
-  console.log('filtered', filtered)
+  // console.log('filtered', filtered)
  }
  return (
   <div

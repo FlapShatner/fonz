@@ -39,7 +39,7 @@ export const createCart = async (inputArgs: CartInput) => {
  if (errors) {
   throw new Error(errors.message)
  }
- console.log('data:', data)
+ //  console.log('data:', data)
  return await data.cartCreate.cart
 }
 
@@ -54,7 +54,7 @@ export const getCart = async (id: string) => {
  if (errors) {
   throw new Error(errors.message)
  }
- console.log('data:', data)
+ //  console.log('data:', data)
  return await data.cart
 }
 
@@ -76,7 +76,7 @@ export const addCartLine = async (cartId: string, inputArgs: CartInput) => {
  if (errors) {
   throw new Error(errors.message)
  }
- console.log('data:', data)
+ //  console.log('data:', data)
  return await data.cartLinesAdd.cart
 }
 
@@ -98,7 +98,7 @@ export const updateCartLine = async (cartId: string, lineId: string, inputArgs: 
  if (errors) {
   throw new Error(errors.message)
  }
- console.log('data:', data)
+ //  console.log('data:', data)
  return await data.cartLinesUpdate.cart
 }
 
@@ -114,6 +114,6 @@ export const removeCartLine = async (cartId: string, lineId: string) => {
  if (errors) {
   throw new Error(errors.message)
  }
- console.log('data:', data)
+ //  console.log('data:', data)
  return await data.cartLinesRemove.cart
 }

@@ -78,7 +78,7 @@ function ImageBox() {
    ) : (
     <div className='w-full h-full'>
      <Image
-      className='object-contain overflow-hidden rounded-md opacity-10'
+      className='relative object-contain overflow-hidden rounded-md opacity-10'
       src='/img/robotpaint.png'
       alt='robotpaint'
       fill={true}

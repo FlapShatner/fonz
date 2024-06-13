@@ -19,12 +19,12 @@ export default function Home() {
   const fetchShop = async () => {
    const shop = await getShop()
    setShop(shop)
-   console.log('shop:', shop)
+   //  console.log('shop:', shop)
   }
   const getUrl = async () => {
    const url = await reqUrl()
    setUrl(url.reqUrl)
-   console.log(url)
+   //  console.log(url)
   }
   getUrl()
   fetchShop()

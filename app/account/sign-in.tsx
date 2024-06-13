@@ -14,7 +14,7 @@ function SignIn() {
    email: email,
    password: password,
   })
-  console.log('result:', result)
+  // console.log('result:', result)
   if (result && result.error) {
    if (result.code === 'UNIDENTIFIED_CUSTOMER') {
     alert('Customer not found')

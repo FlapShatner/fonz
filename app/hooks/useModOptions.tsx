@@ -67,7 +67,7 @@ function useModOptions() {
  }
 
  const addToCart = async (addCartData: { up: boolean; imageUrl: string; productId: string; publicId: string; wi: boolean }) => {
-  console.log('addCartData:', addCartData)
+  // console.log('addCartData:', addCartData)
   const { up, imageUrl, productId, publicId, wi } = addCartData ? addCartData : { up: false, imageUrl: '', productId: '', publicId: '', wi: false }
   if (!generated.isUpscaled && !up) {
    if (selectedImage.generated.imgData.publicId === '') {
@@ -89,7 +89,7 @@ function useModOptions() {
    return
   }
   if (!cartData.hasCart) {
-   console.log('generated:', generated)
+   //  console.log('generated:', generated)
    const newCart = await createCart({
     merchandiseId: up ? productId : generated.productId,
     quantity: 1,

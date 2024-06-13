@@ -17,6 +17,6 @@ export const getShop = async () => {
  if (errors) {
   throw new Error(errors.message)
  }
- console.log('data:', data)
+ //  console.log('data:', data)
  return await data.shop
 }

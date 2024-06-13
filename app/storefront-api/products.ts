@@ -18,7 +18,7 @@ export const getProduct = async (handle: string) => {
   console.log('errors:', errors)
   throw new Error(errors.message)
  }
- console.log('data:', data)
+ //  console.log('data:', data)
  return await data.product
 }
 
@@ -34,6 +34,6 @@ export const getProductVariant = async (id: string) => {
   console.log('errors:', errors)
   throw new Error(errors.message)
  }
- console.log('data:', data)
+ //  console.log('data:', data)
  return await data.node
 }

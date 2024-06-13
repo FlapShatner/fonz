@@ -57,12 +57,12 @@ export function useWS() {
   if (lastJsonMessage) {
    const { id, data, event } = lastJsonMessage as WsMessage
    if (event === 'id') {
-    console.log('id:', id as string)
+    // console.log('id:', id as string)
     setWsId(id as string)
    }
    if (event === 'status') {
     setStatus(data)
-    console.log('status:', data)
+    // console.log('status:', data)
    }
    if (event === 'generate' || event === 'variations') {
     setGenerated(data)
@@ -70,7 +70,7 @@ export function useWS() {
     setIsLoading(false)
     setStatus('0%')
     setPromptHistory((prev) => [data, ...prev])
-    console.log(event, ' data:', data)
+    // console.log(event, ' data:', data)
    }
    if (event === 'upscale') {
     setGenerated(data)
@@ -79,7 +79,7 @@ export function useWS() {
     setIsLoading(false)
     setStatus('0%')
     setPromptHistory((prev) => [data, ...prev])
-    console.log(event, ' data:', data)
+    // console.log(event, ' data:', data)
     if (upscaleAndAdd.cart) {
      const addCartData = {
       up: true,

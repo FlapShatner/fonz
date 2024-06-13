@@ -30,10 +30,10 @@ export const dollars = new Intl.NumberFormat('en-US', {
 
 export const getTimeLeft = (cooldownTime: number) => {
  const timeDiff = Date.now() - cooldownTime
- console.log('Time Diff:', timeDiff)
+ //  console.log('Time Diff:', timeDiff)
  //  const currTimeLeft = 8000 - timeDiff
  const currTimeLeft = 86400000 - timeDiff
- console.log('Current Time Left:', currTimeLeft)
+ //  console.log('Current Time Left:', currTimeLeft)
  return currTimeLeft
 }
 

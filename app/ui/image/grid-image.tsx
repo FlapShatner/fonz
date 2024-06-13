@@ -27,7 +27,7 @@ function GridImage({ img, isGrid, index }: GridImageProps) {
    generated: generated,
   }
   setSelectedImage(imageData)
-  console.log(imageData)
+  // console.log(imageData)
  }
 
  return (
