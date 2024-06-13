@@ -7,7 +7,7 @@ import { useAtom } from 'jotai'
 import { promptAtom, promptHistoryAtom, generatedAtom } from '@/app/state/atoms'
 
 function Prompt() {
- const { isMobile, isTablet, isDesktop } = useBreakPoints()
+ const { isMobile } = useBreakPoints()
  const [prompt, setPrompt] = useAtom(promptAtom)
  const [promptHistory, setPromptHistory] = useAtom(promptHistoryAtom)
  const [generated, setGenerated] = useAtom(generatedAtom)

@@ -81,3 +81,10 @@ export const isValidExpiry = (expiresAt: string): boolean => {
 
  return timeDifference >= twentyFourHoursInMillis
 }
+
+export function extractProductId(string: string): string {
+ // Split the string by '/'
+ const parts = string.split('/')
+ // Return the last part
+ return parts[parts.length - 1]
+}

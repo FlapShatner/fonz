@@ -1,1 +1,1 @@
-export const shopUrl = 'https://squirrels-and-squirrels.myshopify.com/'
+export const shopUrl = 'https://7c5018-3.myshopify.com/'

@@ -39,6 +39,8 @@ function Modal() {
   }
  }, [cartData])
 
+ if (!cartContents) return null
+
  const cartEmpty = !cartData.hasCart
  const { checkoutUrl, lines, cost, id } = cartContents
  const lineItems = lines.edges
