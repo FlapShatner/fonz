@@ -80,7 +80,7 @@ function Modal() {
       </div>
       <div className='flex gap-4 justify-end'>
        <div onClick={() => router.push(pathname)}>
-        <CartButton>Cancel</CartButton>
+        <CartButton>Close</CartButton>
        </div>
        <a
         className={cn((lineItems.length <= 0 || !id) && 'opacity-30 pointer-events-none')}

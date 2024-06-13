@@ -4,6 +4,7 @@ import CartIndicator from './cart-indicator'
 import { shopUrl } from '@/shopUrl'
 import { cn } from '../utils'
 import { smooch } from '../layout'
+import StoreBtn from './store-btn'
 
 function Header() {
  return (
@@ -14,8 +15,9 @@ function Header() {
      className={cn('text-2xl text-accent', smooch.className)}>
      Ink Monkey
     </a>
-    <div className='flex gap-4'>
+    <div className='flex gap-8'>
      {/* <AccountButton /> */}
+     <StoreBtn />
      <CartIndicator />
     </div>
    </div>
