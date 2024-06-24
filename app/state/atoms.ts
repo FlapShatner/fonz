@@ -401,3 +401,5 @@ export const newCustomerAtom = atom<NewCustomer>({
 export const formTypeAtom = atom('signIn')
 
 export const sentVerificationAtom = atom({ sent: false, message: '' })
+
+export const upscaleAndDownloadAtom = atom(false)

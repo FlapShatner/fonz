@@ -17,7 +17,7 @@
   "clsx": "^2.1.1",
   "jotai": "^2.8.0",
   "jotai-devtools": "^0.9.1",
-  "next": "14.2.3",
+  "next": "^14.2.4",
   "next-cloudinary": "^6.5.2",
   "pkce": "^1.0.0-beta2",
   "react": "^18",

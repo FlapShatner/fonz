@@ -11,6 +11,7 @@ type ModOptionProps = {
   goBack?: () => void
   makeVariations?: () => void
   upscale?: () => void
+  download?: any
   addToCart?: any
  }
 }
@@ -28,6 +29,9 @@ function ModOption({ option }: ModOptionProps) {
   }
   if (option.id === 'purchase') {
    option.addToCart && option.addToCart()
+  }
+  if (option.id === 'download') {
+   option.download && option.download()
   }
  }
 

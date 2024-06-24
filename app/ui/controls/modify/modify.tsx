@@ -23,6 +23,7 @@ function Modify() {
     <ModOption option={optionData.variations} />
     <ModOption option={optionData.upscale} />
    </div>
+   <ModOption option={optionData.download} />
    <ModOption option={optionData.back} />
   </div>
  )

@@ -16,6 +16,7 @@ import {
  cartContentsAtom,
  cartDataAtom,
  shopAtom,
+ upscaleAndDownloadAtom,
 } from '@/app/state/atoms'
 
 function useModOptions() {
@@ -27,8 +28,10 @@ function useModOptions() {
  const [selectedImage, setSelectedImage] = useAtom(selectedImageAtom)
  const [isUpscaling, setIsUpscaling] = useAtom(isUpscalingAtom)
  const [, setUpscaleAndAdd] = useAtom(upscaleAndAddAtom)
+ const [upscaleAndDownload, setUpscaleAndDownload] = useAtom(upscaleAndDownloadAtom)
  const [wsId] = useAtom(wsIdAtom)
  const [shop] = useAtom(shopAtom)
+
  const { checkCooldown } = useCooldown()
  const router = useRouter()
  const goBack = () => {
@@ -51,7 +54,8 @@ function useModOptions() {
   setWsMessage({ event: 'variations', data: JSON.stringify(selectedImage), id: wsId })
  }
 
- const upscale = (cart = false, wi = false) => {
+ const upscale = (cart = false, wi = false, dl = false) => {
+  console.log('upscale:', cart)
   if (selectedImage.generated.imgData.publicId === '') {
    toast.error('Please select an image to upscale.')
    return
@@ -61,9 +65,46 @@ function useModOptions() {
   setIsUpscaling(true)
   setIsLoading(true)
   setWsMessage({ event: 'upscale', data: JSON.stringify(selectedImage), id: wsId })
+  if (dl) {
+   setUpscaleAndDownload(true)
+   return
+  }
   if (cart) {
    setUpscaleAndAdd({ cart: true, wi: wi })
   }
+ }
+
+ const download = (up = false, imgUrl = '', caption = '') => {
+  if (!generated.isUpscaled && !up) {
+   console.log('dl upscale')
+   const dl = true
+   upscale(false, false, dl)
+   return
+  }
+  let url = imgUrl
+  let fileName = caption
+  if (generated.isUpscaled) {
+   url = generated.imgData.url
+   fileName = generated.caption
+  }
+
+  fetch(url)
+   .then((res) => res.blob())
+   .then((blob) => {
+    const url = window.URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = fileName || 'image.png'
+    document.body.appendChild(a)
+    a.click()
+    setTimeout(() => {
+     document.body.removeChild(a)
+     window.URL.revokeObjectURL(url)
+    }, 100)
+   })
+   .catch((err) => {
+    console.log('Error:', err)
+   })
  }
 
  const addToCart = async (addCartData: { up: boolean; imageUrl: string; productId: string; publicId: string; wi: boolean }) => {
@@ -130,6 +171,11 @@ function useModOptions() {
    id: 'upscale',
    label: 'Upscale',
    upscale: upscale,
+  },
+  download: {
+   id: 'download',
+   label: 'Download',
+   download: download,
   },
   back: {
    id: 'back',

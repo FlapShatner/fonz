@@ -14,6 +14,7 @@ import {
  selectedImageDefault,
  isUpscalingAtom,
  upscaleAndAddAtom,
+ upscaleAndDownloadAtom,
 } from '../state/atoms'
 
 export function useWS() {
@@ -26,6 +27,7 @@ export function useWS() {
  const [, setSelectedImage] = useAtom(selectedImageAtom)
  const [, setIsUpscaling] = useAtom(isUpscalingAtom)
  const [upscaleAndAdd, setUpscaleAndAdd] = useAtom(upscaleAndAddAtom)
+ const [upscaleAndDownload, setUpscaleAndDownload] = useAtom(upscaleAndDownloadAtom)
  const { sendJsonMessage, sendMessage, lastJsonMessage, readyState } = useWebSocket(WS_URL, {
   share: true,
   shouldReconnect: () => true,
@@ -90,6 +92,16 @@ export function useWS() {
      }
      modOptions.purchase.addToCart(addCartData)
      setUpscaleAndAdd({ cart: false, wi: false })
+    }
+    if (upscaleAndDownload) {
+     const downloadData = {
+      up: true,
+      imageUrl: data.imgData.url,
+      publicId: data.imgData.publicId,
+     }
+     const up = true
+     modOptions.download.download(up, data.imgData.url, data.caption)
+     setUpscaleAndDownload(false)
     }
    }
   }
