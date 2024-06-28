@@ -15,6 +15,8 @@ export const assemblePrompt = (prompt: string, style: string, ar?: string, idCod
   } else {
    if (idCode?.startsWith('de') || idCode?.startsWith('ts')) {
     return `${decalPrompt} ${style} ${prompt}`
+   } else if (!ar) {
+    return `${style} ${prompt}`
    } else {
     return `${style} ${prompt} --ar ${ar}`
    }
