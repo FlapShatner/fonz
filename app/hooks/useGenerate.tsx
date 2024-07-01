@@ -50,10 +50,6 @@ export function useGenerate() {
  const productId = isWindow ? selectedFF.handle : localSelectedVariant?.node.id
 
  const buildMessage = () => {
-  // console.log('vfs', varsFilteredBySize)
-  // console.log('pvar', productVariants)
-  // console.log('lsv', localSelectedVariant)
-  // console.log('prod ID', productId)
   const idCode = selectedSecVar.id
   const isGrid = selectedSecVar.grid
   const ar = isWindow ? windowSecVar.ar : selectedSecVar.ar
@@ -80,7 +76,7 @@ export function useGenerate() {
    setGenerateError({ error: true, message: 'Please enter a prompt' })
    return
   }
-  if (!productId) {
+  if (!productId || !selectedSecVar.id) {
    toast.error('Please select a product', { position: 'top-left' })
    setGenerateError({ error: true, message: 'Please select a product' })
    return
