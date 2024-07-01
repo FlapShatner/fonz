@@ -9,7 +9,7 @@ function InfoBox() {
  const isUpscaled = generated?.isUpscaled
  const ff = options.find((option) => option.id === generated.ff)
  const style = styleOptions.find((style) => style.id === generated.style)
- const secVarLabel = generated.secVarLabel
+ const secVarLabel = generated.secVarLabel ? generated.secVarLabel : 'none'
  const isWindow = generated.ff === 'wi'
  return (
   <div className={cn('flex flex-col bg-bg-primary h-max max-w-max px-3 my-4')}>

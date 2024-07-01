@@ -33,7 +33,7 @@ function ImageBox() {
 
  const { isMobile, isTablet, isDesktop } = useBreakPoints()
 
- const grid = selectedSecVar.grid
+ const grid = selectedSecVar ? selectedSecVar.grid : true
 
  useEffect(() => {
   setIsGrid(grid)

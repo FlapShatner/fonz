@@ -50,7 +50,9 @@ function useGenerate() {
 
  const productVariants = product.variants.edges
  const varsFilteredBySize = productVariants.filter((variant) => variant.node.selectedOptions.some((option) => selectedSize.size.includes(option.value)))
- const localSelectedVariant = varsFilteredBySize.find((variant) => variant.node.selectedOptions.some((option) => option.value.includes(selectedSecVar.label)))
+ const localSelectedVariant = varsFilteredBySize.find((variant) =>
+  variant.node.selectedOptions.some((option) => option.value.includes(selectedSecVar && selectedSecVar.label))
+ )
  const productId = isWindow ? selectedFF.handle : localSelectedVariant?.node.id
 
  const buildMessage = () => {
@@ -77,6 +79,23 @@ function useGenerate() {
   }
   return messageData
  }
+ const buildDefaultMessage = () => {
+  setIsGrid(true)
+  const messageData = {
+   event: 'generate',
+   prompt: assemblePrompt(prompt, selectedStyle.prompt),
+   productId: 'noproduct',
+   isGrid: true,
+   //  ff: selectedFF.id,
+   //  size: selectedSize.size,
+   //  secVar: isWindow ? windowSecVar : selectedSecVar,
+   caption: prompt,
+   style: selectedStyle.id,
+   //  secVarLabel: selectedFF.secondaryVariant,
+   id: wsId,
+  }
+  return messageData
+ }
 
  const handleGenerate = () => {
   if (!prompt) {
@@ -84,7 +103,14 @@ function useGenerate() {
    setGenerateError({ error: true, message: 'Please enter a prompt' })
    return
   }
-  if (!productId || !selectedSecVar.id) {
+  if (!selectedFF.id) {
+   const messageData = buildDefaultMessage()
+   console.log('!selectedFF.id:', messageData)
+   setWsMessage({ event: 'generate', data: JSON.stringify(messageData), id: wsId })
+   setPrompt('')
+   return
+  }
+  if (!productId || (!isWindow && !selectedSecVar.id)) {
    toast.error('Please select a product', { position: 'top-left' })
    setGenerateError({ error: true, message: 'Please select a product' })
    return
