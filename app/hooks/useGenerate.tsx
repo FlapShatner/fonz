@@ -76,7 +76,7 @@ export function useGenerate() {
    setGenerateError({ error: true, message: 'Please enter a prompt' })
    return
   }
-  if (!productId || !selectedSecVar.id) {
+  if (!productId || (!isWindow && !selectedSecVar.id)) {
    toast.error('Please select a product', { position: 'top-left' })
    setGenerateError({ error: true, message: 'Please select a product' })
    return
