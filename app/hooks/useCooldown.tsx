@@ -13,6 +13,8 @@ export function useCooldown() {
   const { hours, minutes } = getHoursAndMinutes(timeLeft)
   if (Number(timeLeft) <= 0) {
    setCdMeta({ ...cdMeta, isCd: false, genTimes: addToArray(genTimes, Date.now()), genCount: 1 })
+   let cdMessage = { cd: false, message: '' }
+   return cdMessage
   }
   if (isCd) {
    console.log('On Cooldown')
