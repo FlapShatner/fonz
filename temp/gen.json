@@ -1,0 +1,2343 @@
+{
+  "atom27": {
+    "value": {
+      "id": "gid://shopify/Cart/Z2NwLXVzLWNlbnRyYWwxOjAxSjI5S00wWDg0WkRWWVRNTlpFNkRYUkdI?key=424770b43159b18433efa2e825edfec0",
+      "createdAt": "2024-07-08T16:42:51Z",
+      "updatedAt": "2024-07-08T16:42:51Z",
+      "lines": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/CartLine/1886380b-1d96-4e81-8528-28ac4dc9cb8a?cart=Z2NwLXVzLWNlbnRyYWwxOjAxSjI5S00wWDg0WkRWWVRNTlpFNkRYUkdI",
+              "quantity": 1,
+              "cost": {
+                "totalAmount": {
+                  "amount": "26.0"
+                }
+              },
+              "merchandise": {
+                "id": "gid://shopify/ProductVariant/49092155146524",
+                "title": "Medium / Red",
+                "selectedOptions": [
+                  {
+                    "name": "Size",
+                    "value": "Medium"
+                  },
+                  {
+                    "name": "Color",
+                    "value": "Red"
+                  }
+                ],
+                "product": {
+                  "id": "gid://shopify/Product/9472405045532",
+                  "title": "AI Designed Printed T-Shirt"
+                }
+              },
+              "attributes": [
+                {
+                  "key": "imageUrl",
+                  "value": "https://res.cloudinary.com/dkxssdk96/image/upload/v1720456970/d9ujjllq17wbjhyrrixb.png"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "attributes": [],
+      "checkoutUrl": "https://ink-monkey.com/cart/c/Z2NwLXVzLWNlbnRyYWwxOjAxSjI5S00wWDg0WkRWWVRNTlpFNkRYUkdI?key=424770b43159b18433efa2e825edfec0",
+      "cost": {
+        "totalAmount": {
+          "amount": "26.0",
+          "currencyCode": "USD"
+        },
+        "subtotalAmount": {
+          "amount": "26.0",
+          "currencyCode": "USD"
+        },
+        "totalTaxAmount": null,
+        "totalDutyAmount": null
+      }
+    },
+    "dependents": [
+      "atom28"
+    ]
+  },
+  "atom28": {
+    "dependents": []
+  },
+  "selectedFFAtom": {
+    "value": {
+      "id": "dp",
+      "label": "Digital Print",
+      "disabled": false,
+      "handle": "ai-designed-digital-print",
+      "secondaryVariant": "Orientation",
+      "variants": [
+        {
+          "size": "11\"x14\"",
+          "secondary": [
+            {
+              "id": "dp1",
+              "label": "Vertical",
+              "ar": "4:5",
+              "grid": true
+            },
+            {
+              "id": "dp2",
+              "label": "Horizontal",
+              "ar": "5:4",
+              "grid": true
+            }
+          ]
+        },
+        {
+          "size": "16\"x20\"",
+          "secondary": [
+            {
+              "id": "dp3",
+              "label": "Vertical",
+              "ar": "4:5",
+              "grid": true
+            },
+            {
+              "id": "dp4",
+              "label": "Horizontal",
+              "ar": "5:4",
+              "grid": true
+            }
+          ]
+        },
+        {
+          "size": "18\"x24\"",
+          "secondary": [
+            {
+              "id": "dp5",
+              "label": "Vertical",
+              "ar": "3:4",
+              "grid": true
+            },
+            {
+              "id": "dp6",
+              "label": "Horizontal",
+              "ar": "4:3",
+              "grid": true
+            }
+          ]
+        },
+        {
+          "size": "24\"x36\"",
+          "secondary": [
+            {
+              "id": "dp7",
+              "label": "Vertical",
+              "ar": "2:3",
+              "grid": true
+            },
+            {
+              "id": "dp8",
+              "label": "Horizontal",
+              "ar": "3:2",
+              "grid": true
+            }
+          ]
+        }
+      ]
+    },
+    "dependents": []
+  },
+  "selectedSizeAtom": {
+    "dependents": []
+  },
+  "selectedSecVarAtom": {
+    "dependents": []
+  },
+  "atom16": {
+    "value": false,
+    "dependents": []
+  },
+  "atom17": {
+    "value": false,
+    "dependents": []
+  },
+  "atom18": {
+    "value": false,
+    "dependents": []
+  },
+  "generatedAtom": {
+    "value": {
+      "imgData": {
+        "publicId": "",
+        "url": ""
+      },
+      "productId": "",
+      "isGrid": false,
+      "isUpscaled": false,
+      "ff": "",
+      "size": "",
+      "secVar": {
+        "ar": "",
+        "grid": false,
+        "id": "",
+        "label": ""
+      },
+      "style": "",
+      "meta": {
+        "id": "",
+        "flags": 0,
+        "content": "",
+        "hash": "",
+        "progress": "",
+        "uri": "",
+        "proxy_url": "",
+        "options": [
+          {
+            "type": 0,
+            "style": 0,
+            "label": "",
+            "custom": ""
+          }
+        ],
+        "width": 0,
+        "height": 0
+      },
+      "caption": "",
+      "prompt": "",
+      "secVarLabel": ""
+    },
+    "dependents": []
+  },
+  "atom20": {
+    "value": false,
+    "dependents": []
+  },
+  "atom7": {
+    "value": {
+      "id": "realistic",
+      "label": "Realistic",
+      "prompt": " realistic, photograph, 35mm, dslr,",
+      "img": "/img/realistic.jpg"
+    },
+    "dependents": []
+  },
+  "promptAtom": {
+    "value": "",
+    "dependents": []
+  },
+  "atom25": {
+    "value": [
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1720459671/cmutsvjysdrgy3cvgonw.png",
+          "publicId": "cmutsvjysdrgy3cvgonw"
+        },
+        "productId": "gid://shopify/ProductVariant/49092050583836",
+        "isGrid": true,
+        "ff": "de",
+        "size": "5\"",
+        "secVar": {
+          "id": "de3",
+          "label": "5\"",
+          "ar": "1:1",
+          "grid": true
+        },
+        "meta": {
+          "id": "1259923918559383572",
+          "flags": 0,
+          "content": "**die cut sticker, decal, contour cut, pitch black background, realistic, photograph, 35mm, dslr, young bumblebee --v 6.0** - <@1002308909979156490> (fast)",
+          "hash": "9f61d24c-730a-40ab-b795-2f964d6890c5",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1259923918052135043/volvner_die_cut_sticker_decal_contour_cut_pitch_black_backgroun_9f61d24c-730a-40ab-b795-2f964d6890c5.png?ex=668d7316&is=668c2196&hm=6ed4921326146255b4e4b2a0e47c93c4da9a9d2c0ec3d659e11aa20bdd81c635&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1259923918052135043/volvner_die_cut_sticker_decal_contour_cut_pitch_black_backgroun_9f61d24c-730a-40ab-b795-2f964d6890c5.png?ex=668d7316&is=668c2196&hm=6ed4921326146255b4e4b2a0e47c93c4da9a9d2c0ec3d659e11aa20bdd81c635&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U1",
+              "custom": "MJ::JOB::upsample::1::9f61d24c-730a-40ab-b795-2f964d6890c5"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U2",
+              "custom": "MJ::JOB::upsample::2::9f61d24c-730a-40ab-b795-2f964d6890c5"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U3",
+              "custom": "MJ::JOB::upsample::3::9f61d24c-730a-40ab-b795-2f964d6890c5"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U4",
+              "custom": "MJ::JOB::upsample::4::9f61d24c-730a-40ab-b795-2f964d6890c5"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "🔄",
+              "custom": "MJ::JOB::reroll::0::9f61d24c-730a-40ab-b795-2f964d6890c5::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V1",
+              "custom": "MJ::JOB::variation::1::9f61d24c-730a-40ab-b795-2f964d6890c5"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V2",
+              "custom": "MJ::JOB::variation::2::9f61d24c-730a-40ab-b795-2f964d6890c5"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V3",
+              "custom": "MJ::JOB::variation::3::9f61d24c-730a-40ab-b795-2f964d6890c5"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V4",
+              "custom": "MJ::JOB::variation::4::9f61d24c-730a-40ab-b795-2f964d6890c5"
+            }
+          ],
+          "width": 2048,
+          "height": 2048
+        },
+        "style": "realistic",
+        "caption": "young bumblebee",
+        "prompt": "die cut sticker, decal, contour cut, pitch black background,   realistic, photograph, 35mm, dslr, young bumblebee",
+        "secVarLabel": "none"
+      },
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1720457467/wlkn83qtl6lbvlpyple8.png",
+          "publicId": "wlkn83qtl6lbvlpyple8"
+        },
+        "productId": "gid://shopify/ProductVariant/49092005069084",
+        "isGrid": true,
+        "ff": "ba",
+        "size": "3'x5'",
+        "secVar": {
+          "id": "ba6",
+          "label": "3'x5'",
+          "ar": "5:3",
+          "grid": true
+        },
+        "meta": {
+          "id": "1259914674858754071",
+          "flags": 0,
+          "content": "**realistic, photograph, 35mm, dslr, a goat --ar 5:3 --v 6.0** - <@1002308909979156490> (fast)",
+          "hash": "c8343301-75c0-496a-ba1a-0aa5b54a7cf5",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1259914674531467394/volvner_realistic_photograph_35mm_dslr_a_goat_c8343301-75c0-496a-ba1a-0aa5b54a7cf5.png?ex=668d6a7a&is=668c18fa&hm=8479003238f0d6c58bd1f769a54dc2f22e00564ce5c03b471a8baffdb629ee23&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1259914674531467394/volvner_realistic_photograph_35mm_dslr_a_goat_c8343301-75c0-496a-ba1a-0aa5b54a7cf5.png?ex=668d6a7a&is=668c18fa&hm=8479003238f0d6c58bd1f769a54dc2f22e00564ce5c03b471a8baffdb629ee23&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U1",
+              "custom": "MJ::JOB::upsample::1::c8343301-75c0-496a-ba1a-0aa5b54a7cf5"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U2",
+              "custom": "MJ::JOB::upsample::2::c8343301-75c0-496a-ba1a-0aa5b54a7cf5"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U3",
+              "custom": "MJ::JOB::upsample::3::c8343301-75c0-496a-ba1a-0aa5b54a7cf5"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U4",
+              "custom": "MJ::JOB::upsample::4::c8343301-75c0-496a-ba1a-0aa5b54a7cf5"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "🔄",
+              "custom": "MJ::JOB::reroll::0::c8343301-75c0-496a-ba1a-0aa5b54a7cf5::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V1",
+              "custom": "MJ::JOB::variation::1::c8343301-75c0-496a-ba1a-0aa5b54a7cf5"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V2",
+              "custom": "MJ::JOB::variation::2::c8343301-75c0-496a-ba1a-0aa5b54a7cf5"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V3",
+              "custom": "MJ::JOB::variation::3::c8343301-75c0-496a-ba1a-0aa5b54a7cf5"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V4",
+              "custom": "MJ::JOB::variation::4::c8343301-75c0-496a-ba1a-0aa5b54a7cf5"
+            }
+          ],
+          "width": 2848,
+          "height": 1696
+        },
+        "style": "realistic",
+        "caption": "a goat",
+        "prompt": " realistic, photograph, 35mm, dslr, a goat --ar 5:3",
+        "secVarLabel": "none"
+      },
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1720456970/d9ujjllq17wbjhyrrixb.png",
+          "publicId": "d9ujjllq17wbjhyrrixb"
+        },
+        "meta": {
+          "id": "1259912589803261994",
+          "flags": 0,
+          "content": "**die cut sticker, decal, contour cut, pitch black background, realistic, photograph, 35mm, dslr, grumbularis hephustus --v 6.0** - Image #1 <@1002308909979156490>",
+          "hash": "5949fd21-f8c5-467a-9e9c-420cd996a142",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1259912589639422118/volvner_die_cut_sticker_decal_contour_cut_pitch_black_backgroun_5949fd21-f8c5-467a-9e9c-420cd996a142.png?ex=668d6889&is=668c1709&hm=a464d8fbccd5bd39866530ad66876e489d78fc4bc03d1b083c76d5aae940abd1&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1259912589639422118/volvner_die_cut_sticker_decal_contour_cut_pitch_black_backgroun_5949fd21-f8c5-467a-9e9c-420cd996a142.png?ex=668d6889&is=668c1709&hm=a464d8fbccd5bd39866530ad66876e489d78fc4bc03d1b083c76d5aae940abd1&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Upscale (Subtle)",
+              "custom": "MJ::JOB::upsample_v6_2x_subtle::1::5949fd21-f8c5-467a-9e9c-420cd996a142::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Upscale (Creative)",
+              "custom": "MJ::JOB::upsample_v6_2x_creative::1::5949fd21-f8c5-467a-9e9c-420cd996a142::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Vary (Subtle)",
+              "custom": "MJ::JOB::low_variation::1::5949fd21-f8c5-467a-9e9c-420cd996a142::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Vary (Strong)",
+              "custom": "MJ::JOB::high_variation::1::5949fd21-f8c5-467a-9e9c-420cd996a142::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Vary (Region)",
+              "custom": "MJ::Inpaint::1::5949fd21-f8c5-467a-9e9c-420cd996a142::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Zoom Out 2x",
+              "custom": "MJ::Outpaint::50::1::5949fd21-f8c5-467a-9e9c-420cd996a142::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Zoom Out 1.5x",
+              "custom": "MJ::Outpaint::75::1::5949fd21-f8c5-467a-9e9c-420cd996a142::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Custom Zoom",
+              "custom": "MJ::CustomZoom::5949fd21-f8c5-467a-9e9c-420cd996a142"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "⬅️",
+              "custom": "MJ::JOB::pan_left::1::5949fd21-f8c5-467a-9e9c-420cd996a142::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "➡️",
+              "custom": "MJ::JOB::pan_right::1::5949fd21-f8c5-467a-9e9c-420cd996a142::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "⬆️",
+              "custom": "MJ::JOB::pan_up::1::5949fd21-f8c5-467a-9e9c-420cd996a142::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "⬇️",
+              "custom": "MJ::JOB::pan_down::1::5949fd21-f8c5-467a-9e9c-420cd996a142::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "❤️",
+              "custom": "MJ::BOOKMARK::5949fd21-f8c5-467a-9e9c-420cd996a142"
+            }
+          ],
+          "width": 1024,
+          "height": 1024
+        },
+        "productId": "gid://shopify/ProductVariant/49092155146524",
+        "isGrid": true,
+        "isUpscaled": true,
+        "ff": "ts",
+        "size": "Medium",
+        "secVar": {
+          "id": "ts10",
+          "label": "Red",
+          "ar": "1:1",
+          "grid": true
+        },
+        "secVarLabel": "Color",
+        "caption": "grumbularis hephustus",
+        "prompt": "die cut sticker, decal, contour cut, pitch black background,   realistic, photograph, 35mm, dslr, grumbularis hephustus",
+        "style": "realistic"
+      },
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1719853709/nmuefqdyn594jxlqgpst.png",
+          "publicId": "nmuefqdyn594jxlqgpst"
+        },
+        "meta": {
+          "id": "1257382329966530611",
+          "flags": 0,
+          "content": "**a crunchy herbivore --ar 3:4 --v 6.0** - Image #3 <@1002308909979156490>",
+          "hash": "baeb5024-8c44-4d09-927a-aa8718b4dc2d",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1257382329664671804/volvner_a_crunchy_herbivore_baeb5024-8c44-4d09-927a-aa8718b4dc2d.png?ex=6684340c&is=6682e28c&hm=10299698badc68f5c61280222a058f4f66dba1c8ddfd01d47602c078bf5f4fa2&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1257382329664671804/volvner_a_crunchy_herbivore_baeb5024-8c44-4d09-927a-aa8718b4dc2d.png?ex=6684340c&is=6682e28c&hm=10299698badc68f5c61280222a058f4f66dba1c8ddfd01d47602c078bf5f4fa2&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Upscale (Subtle)",
+              "custom": "MJ::JOB::upsample_v6_2x_subtle::1::baeb5024-8c44-4d09-927a-aa8718b4dc2d::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Upscale (Creative)",
+              "custom": "MJ::JOB::upsample_v6_2x_creative::1::baeb5024-8c44-4d09-927a-aa8718b4dc2d::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Vary (Subtle)",
+              "custom": "MJ::JOB::low_variation::1::baeb5024-8c44-4d09-927a-aa8718b4dc2d::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Vary (Strong)",
+              "custom": "MJ::JOB::high_variation::1::baeb5024-8c44-4d09-927a-aa8718b4dc2d::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Vary (Region)",
+              "custom": "MJ::Inpaint::1::baeb5024-8c44-4d09-927a-aa8718b4dc2d::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Zoom Out 2x",
+              "custom": "MJ::Outpaint::50::1::baeb5024-8c44-4d09-927a-aa8718b4dc2d::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Zoom Out 1.5x",
+              "custom": "MJ::Outpaint::75::1::baeb5024-8c44-4d09-927a-aa8718b4dc2d::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Custom Zoom",
+              "custom": "MJ::CustomZoom::baeb5024-8c44-4d09-927a-aa8718b4dc2d"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Make Square",
+              "custom": "MJ::Outpaint::100::1::baeb5024-8c44-4d09-927a-aa8718b4dc2d::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "⬅️",
+              "custom": "MJ::JOB::pan_left::1::baeb5024-8c44-4d09-927a-aa8718b4dc2d::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "➡️",
+              "custom": "MJ::JOB::pan_right::1::baeb5024-8c44-4d09-927a-aa8718b4dc2d::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "⬆️",
+              "custom": "MJ::JOB::pan_up::1::baeb5024-8c44-4d09-927a-aa8718b4dc2d::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "⬇️",
+              "custom": "MJ::JOB::pan_down::1::baeb5024-8c44-4d09-927a-aa8718b4dc2d::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "❤️",
+              "custom": "MJ::BOOKMARK::baeb5024-8c44-4d09-927a-aa8718b4dc2d"
+            }
+          ],
+          "width": 928,
+          "height": 1232
+        },
+        "productId": "gid://shopify/ProductVariant/49092105273628",
+        "isGrid": true,
+        "isUpscaled": true,
+        "ff": "dp",
+        "size": "18\"x24\"",
+        "secVar": {
+          "id": "dp5",
+          "label": "Vertical",
+          "ar": "3:4",
+          "grid": true
+        },
+        "secVarLabel": "Orientation",
+        "caption": "a crunchy herbivore",
+        "prompt": " a crunchy herbivore --ar 3:4",
+        "style": "none"
+      },
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1719853688/ko5aje5l7p5waewb4oru.png",
+          "publicId": "ko5aje5l7p5waewb4oru"
+        },
+        "productId": "gid://shopify/ProductVariant/49092155146524",
+        "isGrid": true,
+        "ff": "ts",
+        "size": "Medium",
+        "secVar": {
+          "id": "ts10",
+          "label": "Red",
+          "ar": "1:1",
+          "grid": true
+        },
+        "meta": {
+          "id": "1257382243261878352",
+          "flags": 0,
+          "content": "**die cut sticker, decal, contour cut, pitch black background, realistic, photograph, 35mm, dslr, grumbularis hephustus --v 6.0** - <@1002308909979156490> (fast)",
+          "hash": "8343a173-6f86-4118-b812-0f1544b9f065",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1257382242829734008/volvner_die_cut_sticker_decal_contour_cut_pitch_black_backgroun_8343a173-6f86-4118-b812-0f1544b9f065.png?ex=668433f7&is=6682e277&hm=425c6567298262607fb53ac33ffc806b34538c8c76fdaa7f27c002c164514bd2&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1257382242829734008/volvner_die_cut_sticker_decal_contour_cut_pitch_black_backgroun_8343a173-6f86-4118-b812-0f1544b9f065.png?ex=668433f7&is=6682e277&hm=425c6567298262607fb53ac33ffc806b34538c8c76fdaa7f27c002c164514bd2&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U1",
+              "custom": "MJ::JOB::upsample::1::8343a173-6f86-4118-b812-0f1544b9f065"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U2",
+              "custom": "MJ::JOB::upsample::2::8343a173-6f86-4118-b812-0f1544b9f065"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U3",
+              "custom": "MJ::JOB::upsample::3::8343a173-6f86-4118-b812-0f1544b9f065"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U4",
+              "custom": "MJ::JOB::upsample::4::8343a173-6f86-4118-b812-0f1544b9f065"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "🔄",
+              "custom": "MJ::JOB::reroll::0::8343a173-6f86-4118-b812-0f1544b9f065::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V1",
+              "custom": "MJ::JOB::variation::1::8343a173-6f86-4118-b812-0f1544b9f065"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V2",
+              "custom": "MJ::JOB::variation::2::8343a173-6f86-4118-b812-0f1544b9f065"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V3",
+              "custom": "MJ::JOB::variation::3::8343a173-6f86-4118-b812-0f1544b9f065"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V4",
+              "custom": "MJ::JOB::variation::4::8343a173-6f86-4118-b812-0f1544b9f065"
+            }
+          ],
+          "width": 2048,
+          "height": 2048
+        },
+        "style": "realistic",
+        "caption": "grumbularis hephustus",
+        "prompt": "die cut sticker, decal, contour cut, pitch black background,   realistic, photograph, 35mm, dslr, grumbularis hephustus",
+        "secVarLabel": "Color"
+      },
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1719853573/qs3yzsjj8jr83bgrmz8w.png",
+          "publicId": "qs3yzsjj8jr83bgrmz8w"
+        },
+        "productId": "gid://shopify/ProductVariant/49092105273628",
+        "isGrid": true,
+        "ff": "dp",
+        "size": "18\"x24\"",
+        "secVar": {
+          "id": "dp5",
+          "label": "Vertical",
+          "ar": "3:4",
+          "grid": true
+        },
+        "meta": {
+          "id": "1257381761156124683",
+          "flags": 0,
+          "content": "**a crunchy herbivore --ar 3:4 --v 6.0** - <@1002308909979156490> (fast)",
+          "hash": "487e15aa-714e-465d-8e29-f702ad761664",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1257381760749273278/volvner_a_crunchy_herbivore_487e15aa-714e-465d-8e29-f702ad761664.png?ex=66843384&is=6682e204&hm=77c2b46412724e59330111e7bcdbfd20faad5da8baf6a6bee5b92c8863fa193a&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1257381760749273278/volvner_a_crunchy_herbivore_487e15aa-714e-465d-8e29-f702ad761664.png?ex=66843384&is=6682e204&hm=77c2b46412724e59330111e7bcdbfd20faad5da8baf6a6bee5b92c8863fa193a&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U1",
+              "custom": "MJ::JOB::upsample::1::487e15aa-714e-465d-8e29-f702ad761664"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U2",
+              "custom": "MJ::JOB::upsample::2::487e15aa-714e-465d-8e29-f702ad761664"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U3",
+              "custom": "MJ::JOB::upsample::3::487e15aa-714e-465d-8e29-f702ad761664"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U4",
+              "custom": "MJ::JOB::upsample::4::487e15aa-714e-465d-8e29-f702ad761664"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "🔄",
+              "custom": "MJ::JOB::reroll::0::487e15aa-714e-465d-8e29-f702ad761664::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V1",
+              "custom": "MJ::JOB::variation::1::487e15aa-714e-465d-8e29-f702ad761664"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V2",
+              "custom": "MJ::JOB::variation::2::487e15aa-714e-465d-8e29-f702ad761664"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V3",
+              "custom": "MJ::JOB::variation::3::487e15aa-714e-465d-8e29-f702ad761664"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V4",
+              "custom": "MJ::JOB::variation::4::487e15aa-714e-465d-8e29-f702ad761664"
+            }
+          ],
+          "width": 1856,
+          "height": 2464
+        },
+        "style": "none",
+        "caption": "a crunchy herbivore",
+        "prompt": " a crunchy herbivore --ar 3:4",
+        "secVarLabel": "Orientation"
+      },
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1719853501/ysqtht9nszgrg0xddzk6.png",
+          "publicId": "ysqtht9nszgrg0xddzk6"
+        },
+        "productId": "ai-truck-back-window-graphics",
+        "isGrid": false,
+        "ff": "wi",
+        "size": "Choose size at checkout",
+        "secVar": {
+          "id": "wi1",
+          "label": "Choose size at checkout",
+          "ar": "4:1",
+          "grid": false
+        },
+        "meta": {
+          "id": "1257381454674006131",
+          "flags": 0,
+          "content": "**A spamtacular grombit --ar 4:1 --v 6.0** - <@1002308909979156490> (fast)",
+          "hash": "53aeec2c-799b-4b63-8430-bc2b06bc5d2e",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1257381453449265314/volvner_A_spamtacular_grombit_53aeec2c-799b-4b63-8430-bc2b06bc5d2e.png?ex=6684333b&is=6682e1bb&hm=7924ed8627fa9a624325ab95ed1991da940c3655267c3a1b5e7f2588d1d4b28a&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1257381453449265314/volvner_A_spamtacular_grombit_53aeec2c-799b-4b63-8430-bc2b06bc5d2e.png?ex=6684333b&is=6682e1bb&hm=7924ed8627fa9a624325ab95ed1991da940c3655267c3a1b5e7f2588d1d4b28a&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U1",
+              "custom": "MJ::JOB::upsample::1::53aeec2c-799b-4b63-8430-bc2b06bc5d2e"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U2",
+              "custom": "MJ::JOB::upsample::2::53aeec2c-799b-4b63-8430-bc2b06bc5d2e"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U3",
+              "custom": "MJ::JOB::upsample::3::53aeec2c-799b-4b63-8430-bc2b06bc5d2e"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U4",
+              "custom": "MJ::JOB::upsample::4::53aeec2c-799b-4b63-8430-bc2b06bc5d2e"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "🔄",
+              "custom": "MJ::JOB::reroll::0::53aeec2c-799b-4b63-8430-bc2b06bc5d2e::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V1",
+              "custom": "MJ::JOB::variation::1::53aeec2c-799b-4b63-8430-bc2b06bc5d2e"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V2",
+              "custom": "MJ::JOB::variation::2::53aeec2c-799b-4b63-8430-bc2b06bc5d2e"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V3",
+              "custom": "MJ::JOB::variation::3::53aeec2c-799b-4b63-8430-bc2b06bc5d2e"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V4",
+              "custom": "MJ::JOB::variation::4::53aeec2c-799b-4b63-8430-bc2b06bc5d2e"
+            }
+          ],
+          "width": 4352,
+          "height": 1088
+        },
+        "style": "none",
+        "caption": "A spamtacular grombit",
+        "prompt": " A spamtacular grombit --ar 4:1",
+        "secVarLabel": "none"
+      },
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1719846058/nkunjvcseoduwcsikeww.png",
+          "publicId": "nkunjvcseoduwcsikeww"
+        },
+        "meta": {
+          "id": "1257350240294670367",
+          "flags": 0,
+          "content": "**A low poly dinosaur, ps2 graphics, low resolution video game --ar 2:3 --v 6.0** - Image #3 <@1002308909979156490>",
+          "hash": "fe011580-3253-477a-9e01-ea8c192b3dd6",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1257350239979962549/volvner_A_low_poly_dinosaur_ps2_graphics_low_resolution_video_g_fe011580-3253-477a-9e01-ea8c192b3dd6.png?ex=66841629&is=6682c4a9&hm=a9f2a5ffbb1588da167d356715b1709af88a9d1bec9287d85ada4176dc3e43a8&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1257350239979962549/volvner_A_low_poly_dinosaur_ps2_graphics_low_resolution_video_g_fe011580-3253-477a-9e01-ea8c192b3dd6.png?ex=66841629&is=6682c4a9&hm=a9f2a5ffbb1588da167d356715b1709af88a9d1bec9287d85ada4176dc3e43a8&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Upscale (Subtle)",
+              "custom": "MJ::JOB::upsample_v6_2x_subtle::1::fe011580-3253-477a-9e01-ea8c192b3dd6::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Upscale (Creative)",
+              "custom": "MJ::JOB::upsample_v6_2x_creative::1::fe011580-3253-477a-9e01-ea8c192b3dd6::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Vary (Subtle)",
+              "custom": "MJ::JOB::low_variation::1::fe011580-3253-477a-9e01-ea8c192b3dd6::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Vary (Strong)",
+              "custom": "MJ::JOB::high_variation::1::fe011580-3253-477a-9e01-ea8c192b3dd6::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Vary (Region)",
+              "custom": "MJ::Inpaint::1::fe011580-3253-477a-9e01-ea8c192b3dd6::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Zoom Out 2x",
+              "custom": "MJ::Outpaint::50::1::fe011580-3253-477a-9e01-ea8c192b3dd6::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Zoom Out 1.5x",
+              "custom": "MJ::Outpaint::75::1::fe011580-3253-477a-9e01-ea8c192b3dd6::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Custom Zoom",
+              "custom": "MJ::CustomZoom::fe011580-3253-477a-9e01-ea8c192b3dd6"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "Make Square",
+              "custom": "MJ::Outpaint::100::1::fe011580-3253-477a-9e01-ea8c192b3dd6::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "⬅️",
+              "custom": "MJ::JOB::pan_left::1::fe011580-3253-477a-9e01-ea8c192b3dd6::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "➡️",
+              "custom": "MJ::JOB::pan_right::1::fe011580-3253-477a-9e01-ea8c192b3dd6::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "⬆️",
+              "custom": "MJ::JOB::pan_up::1::fe011580-3253-477a-9e01-ea8c192b3dd6::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "⬇️",
+              "custom": "MJ::JOB::pan_down::1::fe011580-3253-477a-9e01-ea8c192b3dd6::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "❤️",
+              "custom": "MJ::BOOKMARK::fe011580-3253-477a-9e01-ea8c192b3dd6"
+            }
+          ],
+          "width": 896,
+          "height": 1344
+        },
+        "productId": "gid://shopify/ProductVariant/49092105339164",
+        "isGrid": true,
+        "isUpscaled": true,
+        "ff": "dp",
+        "size": "24\"x36\"",
+        "secVar": {
+          "id": "dp7",
+          "label": "Vertical",
+          "ar": "2:3",
+          "grid": true
+        },
+        "secVarLabel": "Orientation",
+        "caption": "A low poly dinosaur, ps2 graphics, low resolution video game",
+        "prompt": " A low poly dinosaur, ps2 graphics, low resolution video game --ar 2:3",
+        "style": "none"
+      },
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1719846042/kbzn86y9h4hatuzgdv4y.png",
+          "publicId": "kbzn86y9h4hatuzgdv4y"
+        },
+        "meta": {
+          "id": "1257350172292284416",
+          "flags": 0,
+          "content": "**A low poly dinosaur, ps2 graphics, low resolution video game --ar 2:3 --v 6.0** - Variations (Strong) by <@1002308909979156490> (fast)",
+          "hash": "42195c18-2834-4c96-87e8-095c3cf6ee05",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1257350171793166496/volvner_A_low_poly_dinosaur_ps2_graphics_low_resolution_video_g_42195c18-2834-4c96-87e8-095c3cf6ee05.png?ex=66841619&is=6682c499&hm=149e7943ef5db20663127142e3bb5ca33601293dbae71b5fdf9ff5f6c74a79e7&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1257350171793166496/volvner_A_low_poly_dinosaur_ps2_graphics_low_resolution_video_g_42195c18-2834-4c96-87e8-095c3cf6ee05.png?ex=66841619&is=6682c499&hm=149e7943ef5db20663127142e3bb5ca33601293dbae71b5fdf9ff5f6c74a79e7&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U1",
+              "custom": "MJ::JOB::upsample::1::42195c18-2834-4c96-87e8-095c3cf6ee05"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U2",
+              "custom": "MJ::JOB::upsample::2::42195c18-2834-4c96-87e8-095c3cf6ee05"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U3",
+              "custom": "MJ::JOB::upsample::3::42195c18-2834-4c96-87e8-095c3cf6ee05"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U4",
+              "custom": "MJ::JOB::upsample::4::42195c18-2834-4c96-87e8-095c3cf6ee05"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "🔄",
+              "custom": "MJ::JOB::reroll::0::42195c18-2834-4c96-87e8-095c3cf6ee05::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V1",
+              "custom": "MJ::JOB::variation::1::42195c18-2834-4c96-87e8-095c3cf6ee05"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V2",
+              "custom": "MJ::JOB::variation::2::42195c18-2834-4c96-87e8-095c3cf6ee05"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V3",
+              "custom": "MJ::JOB::variation::3::42195c18-2834-4c96-87e8-095c3cf6ee05"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V4",
+              "custom": "MJ::JOB::variation::4::42195c18-2834-4c96-87e8-095c3cf6ee05"
+            }
+          ],
+          "width": 1792,
+          "height": 2688
+        },
+        "productId": "gid://shopify/ProductVariant/49092105339164",
+        "isGrid": true,
+        "ff": "dp",
+        "size": "24\"x36\"",
+        "secVar": {
+          "id": "dp7",
+          "label": "Vertical",
+          "ar": "2:3",
+          "grid": true
+        },
+        "secVarLabel": "Orientation",
+        "caption": "A low poly dinosaur, ps2 graphics, low resolution video game",
+        "prompt": " A low poly dinosaur, ps2 graphics, low resolution video game --ar 2:3",
+        "style": "none"
+      },
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1719845943/gefpygfblga3htsv5nkl.png",
+          "publicId": "gefpygfblga3htsv5nkl"
+        },
+        "productId": "gid://shopify/ProductVariant/49092105339164",
+        "isGrid": true,
+        "ff": "dp",
+        "size": "24\"x36\"",
+        "secVar": {
+          "id": "dp7",
+          "label": "Vertical",
+          "ar": "2:3",
+          "grid": true
+        },
+        "meta": {
+          "id": "1257349758855417987",
+          "flags": 0,
+          "content": "**A low poly dinosaur, ps2 graphics, low resolution video game --ar 2:3 --v 6.0** - <@1002308909979156490> (fast)",
+          "hash": "8a3d0f37-b541-4009-88c1-b81bcbcbdcd6",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1257349758163353630/volvner_A_low_poly_dinosaur_ps2_graphics_low_resolution_video_g_8a3d0f37-b541-4009-88c1-b81bcbcbdcd6.png?ex=668415b6&is=6682c436&hm=08ffdff8bfac2fd32da86e269cac31dee69ec71ca00396a7b976ece06d905607&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1257349758163353630/volvner_A_low_poly_dinosaur_ps2_graphics_low_resolution_video_g_8a3d0f37-b541-4009-88c1-b81bcbcbdcd6.png?ex=668415b6&is=6682c436&hm=08ffdff8bfac2fd32da86e269cac31dee69ec71ca00396a7b976ece06d905607&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U1",
+              "custom": "MJ::JOB::upsample::1::8a3d0f37-b541-4009-88c1-b81bcbcbdcd6"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U2",
+              "custom": "MJ::JOB::upsample::2::8a3d0f37-b541-4009-88c1-b81bcbcbdcd6"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U3",
+              "custom": "MJ::JOB::upsample::3::8a3d0f37-b541-4009-88c1-b81bcbcbdcd6"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U4",
+              "custom": "MJ::JOB::upsample::4::8a3d0f37-b541-4009-88c1-b81bcbcbdcd6"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "🔄",
+              "custom": "MJ::JOB::reroll::0::8a3d0f37-b541-4009-88c1-b81bcbcbdcd6::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V1",
+              "custom": "MJ::JOB::variation::1::8a3d0f37-b541-4009-88c1-b81bcbcbdcd6"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V2",
+              "custom": "MJ::JOB::variation::2::8a3d0f37-b541-4009-88c1-b81bcbcbdcd6"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V3",
+              "custom": "MJ::JOB::variation::3::8a3d0f37-b541-4009-88c1-b81bcbcbdcd6"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V4",
+              "custom": "MJ::JOB::variation::4::8a3d0f37-b541-4009-88c1-b81bcbcbdcd6"
+            }
+          ],
+          "width": 1792,
+          "height": 2688
+        },
+        "style": "none",
+        "caption": "A low poly dinosaur, ps2 graphics, low resolution video game",
+        "prompt": " A low poly dinosaur, ps2 graphics, low resolution video game --ar 2:3",
+        "secVarLabel": "Orientation"
+      },
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1719845748/vjwxa3uo4ddz5x24tmqo.png",
+          "publicId": "vjwxa3uo4ddz5x24tmqo"
+        },
+        "productId": "gid://shopify/ProductVariant/49092155605276",
+        "isGrid": true,
+        "ff": "ts",
+        "size": "2XL",
+        "secVar": {
+          "id": "ts31",
+          "label": "Red",
+          "ar": "1:1",
+          "grid": true
+        },
+        "meta": {
+          "id": "1257348942568362075",
+          "flags": 0,
+          "content": "**die cut sticker, decal, contour cut, pitch black background, realistic, photograph, 35mm, dslr, Count the aliens. too many legs --v 6.0** - <@1002308909979156490> (fast)",
+          "hash": "2be0c261-11de-48c0-8de8-e817811763b3",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1257348941591220255/volvner_die_cut_sticker_decal_contour_cut_pitch_black_backgroun_2be0c261-11de-48c0-8de8-e817811763b3.png?ex=668414f4&is=6682c374&hm=342d47facbd35c01e3c418a31fc11b15cc0519f01797a1654a54c9ca43908cf4&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1257348941591220255/volvner_die_cut_sticker_decal_contour_cut_pitch_black_backgroun_2be0c261-11de-48c0-8de8-e817811763b3.png?ex=668414f4&is=6682c374&hm=342d47facbd35c01e3c418a31fc11b15cc0519f01797a1654a54c9ca43908cf4&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U1",
+              "custom": "MJ::JOB::upsample::1::2be0c261-11de-48c0-8de8-e817811763b3"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U2",
+              "custom": "MJ::JOB::upsample::2::2be0c261-11de-48c0-8de8-e817811763b3"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U3",
+              "custom": "MJ::JOB::upsample::3::2be0c261-11de-48c0-8de8-e817811763b3"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U4",
+              "custom": "MJ::JOB::upsample::4::2be0c261-11de-48c0-8de8-e817811763b3"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "🔄",
+              "custom": "MJ::JOB::reroll::0::2be0c261-11de-48c0-8de8-e817811763b3::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V1",
+              "custom": "MJ::JOB::variation::1::2be0c261-11de-48c0-8de8-e817811763b3"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V2",
+              "custom": "MJ::JOB::variation::2::2be0c261-11de-48c0-8de8-e817811763b3"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V3",
+              "custom": "MJ::JOB::variation::3::2be0c261-11de-48c0-8de8-e817811763b3"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V4",
+              "custom": "MJ::JOB::variation::4::2be0c261-11de-48c0-8de8-e817811763b3"
+            }
+          ],
+          "width": 2048,
+          "height": 2048
+        },
+        "style": "realistic",
+        "caption": "Count the aliens. too many legs",
+        "prompt": "die cut sticker, decal, contour cut, pitch black background,   realistic, photograph, 35mm, dslr, Count the aliens. too many legs",
+        "secVarLabel": "Color"
+      },
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1719845482/hvoewjqjaskrdy1r1zdn.png",
+          "publicId": "hvoewjqjaskrdy1r1zdn"
+        },
+        "productId": "gid://shopify/ProductVariant/49092105273628",
+        "isGrid": true,
+        "ff": "dp",
+        "size": "18\"x24\"",
+        "secVar": {
+          "id": "dp5",
+          "label": "Vertical",
+          "ar": "3:4",
+          "grid": true
+        },
+        "meta": {
+          "id": "1257347822777270397",
+          "flags": 0,
+          "content": "**realistic, photograph, 35mm, dslr, IT WAS A UFO --ar 3:4 --v 6.0** - <@1002308909979156490> (fast)",
+          "hash": "79046453-38fe-4e38-80e8-39ebbcd05d78",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1257347822370689034/volvner_realistic_photograph_35mm_dslr_IT_WAS_A_UFO_79046453-38fe-4e38-80e8-39ebbcd05d78.png?ex=668413e9&is=6682c269&hm=a957990ff54b450102d36f47546f60930ce0d914b84412538dc78a81c13d2fab&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1257347822370689034/volvner_realistic_photograph_35mm_dslr_IT_WAS_A_UFO_79046453-38fe-4e38-80e8-39ebbcd05d78.png?ex=668413e9&is=6682c269&hm=a957990ff54b450102d36f47546f60930ce0d914b84412538dc78a81c13d2fab&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U1",
+              "custom": "MJ::JOB::upsample::1::79046453-38fe-4e38-80e8-39ebbcd05d78"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U2",
+              "custom": "MJ::JOB::upsample::2::79046453-38fe-4e38-80e8-39ebbcd05d78"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U3",
+              "custom": "MJ::JOB::upsample::3::79046453-38fe-4e38-80e8-39ebbcd05d78"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U4",
+              "custom": "MJ::JOB::upsample::4::79046453-38fe-4e38-80e8-39ebbcd05d78"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "🔄",
+              "custom": "MJ::JOB::reroll::0::79046453-38fe-4e38-80e8-39ebbcd05d78::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V1",
+              "custom": "MJ::JOB::variation::1::79046453-38fe-4e38-80e8-39ebbcd05d78"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V2",
+              "custom": "MJ::JOB::variation::2::79046453-38fe-4e38-80e8-39ebbcd05d78"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V3",
+              "custom": "MJ::JOB::variation::3::79046453-38fe-4e38-80e8-39ebbcd05d78"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V4",
+              "custom": "MJ::JOB::variation::4::79046453-38fe-4e38-80e8-39ebbcd05d78"
+            }
+          ],
+          "width": 1856,
+          "height": 2464
+        },
+        "style": "realistic",
+        "caption": "IT WAS A UFO",
+        "prompt": " realistic, photograph, 35mm, dslr, IT WAS A UFO --ar 3:4",
+        "secVarLabel": "Orientation"
+      },
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1719845088/ry7txnfzhm6o6hiotvok.png",
+          "publicId": "ry7txnfzhm6o6hiotvok"
+        },
+        "productId": "gid://shopify/ProductVariant/49092170219804",
+        "isGrid": true,
+        "ff": "mb",
+        "size": "21\"x11\" XL",
+        "secVar": {
+          "id": "mb2",
+          "label": "21\"x11\"",
+          "ar": "21:11",
+          "grid": true
+        },
+        "meta": {
+          "id": "1257346172951986217",
+          "flags": 0,
+          "content": "**realistic, photograph, 35mm, dslr, What happened to Steve? --ar 21:11 --v 6.0** - <@1002308909979156490> (fast)",
+          "hash": "71a0c199-687c-4b8b-9b43-33e22c186040",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1257346172385886238/volvner_realistic_photograph_35mm_dslr_What_happened_to_Steve_71a0c199-687c-4b8b-9b43-33e22c186040.png?ex=6684125f&is=6682c0df&hm=9c9bd813b3def01492ea3f3626371b4a1ed469b01b9491964d3140aa453489aa&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1257346172385886238/volvner_realistic_photograph_35mm_dslr_What_happened_to_Steve_71a0c199-687c-4b8b-9b43-33e22c186040.png?ex=6684125f&is=6682c0df&hm=9c9bd813b3def01492ea3f3626371b4a1ed469b01b9491964d3140aa453489aa&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U1",
+              "custom": "MJ::JOB::upsample::1::71a0c199-687c-4b8b-9b43-33e22c186040"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U2",
+              "custom": "MJ::JOB::upsample::2::71a0c199-687c-4b8b-9b43-33e22c186040"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U3",
+              "custom": "MJ::JOB::upsample::3::71a0c199-687c-4b8b-9b43-33e22c186040"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U4",
+              "custom": "MJ::JOB::upsample::4::71a0c199-687c-4b8b-9b43-33e22c186040"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "🔄",
+              "custom": "MJ::JOB::reroll::0::71a0c199-687c-4b8b-9b43-33e22c186040::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V1",
+              "custom": "MJ::JOB::variation::1::71a0c199-687c-4b8b-9b43-33e22c186040"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V2",
+              "custom": "MJ::JOB::variation::2::71a0c199-687c-4b8b-9b43-33e22c186040"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V3",
+              "custom": "MJ::JOB::variation::3::71a0c199-687c-4b8b-9b43-33e22c186040"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V4",
+              "custom": "MJ::JOB::variation::4::71a0c199-687c-4b8b-9b43-33e22c186040"
+            }
+          ],
+          "width": 3040,
+          "height": 1600
+        },
+        "style": "realistic",
+        "caption": "What happened to Steve?",
+        "prompt": " realistic, photograph, 35mm, dslr, What happened to Steve? --ar 21:11",
+        "secVarLabel": "none"
+      },
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1719844809/fb8xz1pqjkosotml20xa.png",
+          "publicId": "fb8xz1pqjkosotml20xa"
+        },
+        "meta": {
+          "id": "1257344999310495786",
+          "flags": 0,
+          "content": "**die cut sticker, decal, contour cut, pitch black background, realistic, photograph, 35mm, dslr, a sentient sharpie marker --v 6.0** - Variations (Strong) by <@1002308909979156490> (fast)",
+          "hash": "618fc88f-69fa-40be-9990-3126286bdaee",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1257344998878216272/volvner_die_cut_sticker_decal_contour_cut_pitch_black_backgroun_618fc88f-69fa-40be-9990-3126286bdaee.png?ex=66841148&is=6682bfc8&hm=0649ff09a4b1163c1760ecf74917d017c904b58c06e0a955a0df5d18cbd6cf2d&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1257344998878216272/volvner_die_cut_sticker_decal_contour_cut_pitch_black_backgroun_618fc88f-69fa-40be-9990-3126286bdaee.png?ex=66841148&is=6682bfc8&hm=0649ff09a4b1163c1760ecf74917d017c904b58c06e0a955a0df5d18cbd6cf2d&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U1",
+              "custom": "MJ::JOB::upsample::1::618fc88f-69fa-40be-9990-3126286bdaee"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U2",
+              "custom": "MJ::JOB::upsample::2::618fc88f-69fa-40be-9990-3126286bdaee"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U3",
+              "custom": "MJ::JOB::upsample::3::618fc88f-69fa-40be-9990-3126286bdaee"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U4",
+              "custom": "MJ::JOB::upsample::4::618fc88f-69fa-40be-9990-3126286bdaee"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "🔄",
+              "custom": "MJ::JOB::reroll::0::618fc88f-69fa-40be-9990-3126286bdaee::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V1",
+              "custom": "MJ::JOB::variation::1::618fc88f-69fa-40be-9990-3126286bdaee"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V2",
+              "custom": "MJ::JOB::variation::2::618fc88f-69fa-40be-9990-3126286bdaee"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V3",
+              "custom": "MJ::JOB::variation::3::618fc88f-69fa-40be-9990-3126286bdaee"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V4",
+              "custom": "MJ::JOB::variation::4::618fc88f-69fa-40be-9990-3126286bdaee"
+            }
+          ],
+          "width": 2048,
+          "height": 2048
+        },
+        "productId": "gid://shopify/ProductVariant/49092050747676",
+        "isGrid": true,
+        "ff": "de",
+        "size": "12\"",
+        "secVar": {
+          "id": "de8",
+          "label": "12\"",
+          "ar": "1:1",
+          "grid": true
+        },
+        "secVarLabel": "none",
+        "caption": "a sentient sharpie marker",
+        "prompt": "die cut sticker, decal, contour cut, pitch black background,   realistic, photograph, 35mm, dslr, a sentient sharpie marker",
+        "style": "realistic"
+      },
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1719844041/n29g5fdy3mynlmkk8kbg.png",
+          "publicId": "n29g5fdy3mynlmkk8kbg"
+        },
+        "productId": "gid://shopify/ProductVariant/49092005069084",
+        "isGrid": true,
+        "ff": "ba",
+        "size": "3'x5'",
+        "secVar": {
+          "id": "ba6",
+          "label": "3'x5'",
+          "ar": "5:3",
+          "grid": true
+        },
+        "meta": {
+          "id": "1257341781717024850",
+          "flags": 0,
+          "content": "**realistic, photograph, 35mm, dslr, The one and only legendary Gumbert --ar 5:3 --v 6.0** - <@1002308909979156490> (fast)",
+          "hash": "6c9ce3fc-9b28-4237-a4a2-08d53ea88891",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1257341781259849811/volvner_realistic_photograph_35mm_dslr_The_one_and_only_legenda_6c9ce3fc-9b28-4237-a4a2-08d53ea88891.png?ex=66840e48&is=6682bcc8&hm=fa2a6c9d874b3878a7caae6a43fdc9e06c5d0a92f49c8e4bffcff6b9a51b3c5b&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1257341781259849811/volvner_realistic_photograph_35mm_dslr_The_one_and_only_legenda_6c9ce3fc-9b28-4237-a4a2-08d53ea88891.png?ex=66840e48&is=6682bcc8&hm=fa2a6c9d874b3878a7caae6a43fdc9e06c5d0a92f49c8e4bffcff6b9a51b3c5b&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U1",
+              "custom": "MJ::JOB::upsample::1::6c9ce3fc-9b28-4237-a4a2-08d53ea88891"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U2",
+              "custom": "MJ::JOB::upsample::2::6c9ce3fc-9b28-4237-a4a2-08d53ea88891"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U3",
+              "custom": "MJ::JOB::upsample::3::6c9ce3fc-9b28-4237-a4a2-08d53ea88891"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U4",
+              "custom": "MJ::JOB::upsample::4::6c9ce3fc-9b28-4237-a4a2-08d53ea88891"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "🔄",
+              "custom": "MJ::JOB::reroll::0::6c9ce3fc-9b28-4237-a4a2-08d53ea88891::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V1",
+              "custom": "MJ::JOB::variation::1::6c9ce3fc-9b28-4237-a4a2-08d53ea88891"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V2",
+              "custom": "MJ::JOB::variation::2::6c9ce3fc-9b28-4237-a4a2-08d53ea88891"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V3",
+              "custom": "MJ::JOB::variation::3::6c9ce3fc-9b28-4237-a4a2-08d53ea88891"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V4",
+              "custom": "MJ::JOB::variation::4::6c9ce3fc-9b28-4237-a4a2-08d53ea88891"
+            }
+          ],
+          "width": 2848,
+          "height": 1696
+        },
+        "style": "realistic",
+        "caption": "The  one and only legendary Gumbert",
+        "prompt": " realistic, photograph, 35mm, dslr, The  one and only legendary Gumbert --ar 5:3",
+        "secVarLabel": "none"
+      },
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1719843886/liage9hsavodelazer9j.png",
+          "publicId": "liage9hsavodelazer9j"
+        },
+        "meta": {
+          "id": "1257341129028796468",
+          "flags": 0,
+          "content": "**die cut sticker, decal, contour cut, pitch black background, realistic, photograph, 35mm, dslr, a sentient sharpie marker --v 6.0** - Variations (Strong) by <@1002308909979156490> (fast)",
+          "hash": "b817a95e-d22e-4abf-aeed-43fda2e9baa3",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1257341128785657906/volvner_die_cut_sticker_decal_contour_cut_pitch_black_backgroun_b817a95e-d22e-4abf-aeed-43fda2e9baa3.png?ex=66840dad&is=6682bc2d&hm=49a2ef49dea21897bc4786d7d737b60822f82c214325de36418775863b8210c5&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1257341128785657906/volvner_die_cut_sticker_decal_contour_cut_pitch_black_backgroun_b817a95e-d22e-4abf-aeed-43fda2e9baa3.png?ex=66840dad&is=6682bc2d&hm=49a2ef49dea21897bc4786d7d737b60822f82c214325de36418775863b8210c5&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U1",
+              "custom": "MJ::JOB::upsample::1::b817a95e-d22e-4abf-aeed-43fda2e9baa3"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U2",
+              "custom": "MJ::JOB::upsample::2::b817a95e-d22e-4abf-aeed-43fda2e9baa3"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U3",
+              "custom": "MJ::JOB::upsample::3::b817a95e-d22e-4abf-aeed-43fda2e9baa3"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U4",
+              "custom": "MJ::JOB::upsample::4::b817a95e-d22e-4abf-aeed-43fda2e9baa3"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "🔄",
+              "custom": "MJ::JOB::reroll::0::b817a95e-d22e-4abf-aeed-43fda2e9baa3::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V1",
+              "custom": "MJ::JOB::variation::1::b817a95e-d22e-4abf-aeed-43fda2e9baa3"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V2",
+              "custom": "MJ::JOB::variation::2::b817a95e-d22e-4abf-aeed-43fda2e9baa3"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V3",
+              "custom": "MJ::JOB::variation::3::b817a95e-d22e-4abf-aeed-43fda2e9baa3"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V4",
+              "custom": "MJ::JOB::variation::4::b817a95e-d22e-4abf-aeed-43fda2e9baa3"
+            }
+          ],
+          "width": 2048,
+          "height": 2048
+        },
+        "productId": "gid://shopify/ProductVariant/49092050747676",
+        "isGrid": true,
+        "ff": "de",
+        "size": "12\"",
+        "secVar": {
+          "id": "de8",
+          "label": "12\"",
+          "ar": "1:1",
+          "grid": true
+        },
+        "secVarLabel": "none",
+        "caption": "a sentient sharpie marker",
+        "prompt": "die cut sticker, decal, contour cut, pitch black background,   realistic, photograph, 35mm, dslr, a sentient sharpie marker",
+        "style": "realistic"
+      },
+      {
+        "imgData": {
+          "url": "https://res.cloudinary.com/dkxssdk96/image/upload/v1719843759/fys8szwwzgtctdmauhcm.png",
+          "publicId": "fys8szwwzgtctdmauhcm"
+        },
+        "productId": "gid://shopify/ProductVariant/49092050747676",
+        "isGrid": true,
+        "ff": "de",
+        "size": "12\"",
+        "secVar": {
+          "id": "de8",
+          "label": "12\"",
+          "ar": "1:1",
+          "grid": true
+        },
+        "meta": {
+          "id": "1257340597065486468",
+          "flags": 0,
+          "content": "**die cut sticker, decal, contour cut, pitch black background, realistic, photograph, 35mm, dslr, a sentient sharpie marker --v 6.0** - <@1002308909979156490> (fast)",
+          "hash": "108b0479-9336-44af-bcc9-821145e1cb9f",
+          "progress": "done",
+          "uri": "https://cdn.discordapp.com/attachments/1220010490999078986/1257340596608040970/volvner_die_cut_sticker_decal_contour_cut_pitch_black_backgroun_108b0479-9336-44af-bcc9-821145e1cb9f.png?ex=66840d2e&is=6682bbae&hm=36090327e4bca02c0a68b5c39b081934bdde21bdc59e2a38df96a1802e13829a&",
+          "proxy_url": "https://media.discordapp.net/attachments/1220010490999078986/1257340596608040970/volvner_die_cut_sticker_decal_contour_cut_pitch_black_backgroun_108b0479-9336-44af-bcc9-821145e1cb9f.png?ex=66840d2e&is=6682bbae&hm=36090327e4bca02c0a68b5c39b081934bdde21bdc59e2a38df96a1802e13829a&",
+          "options": [
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U1",
+              "custom": "MJ::JOB::upsample::1::108b0479-9336-44af-bcc9-821145e1cb9f"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U2",
+              "custom": "MJ::JOB::upsample::2::108b0479-9336-44af-bcc9-821145e1cb9f"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U3",
+              "custom": "MJ::JOB::upsample::3::108b0479-9336-44af-bcc9-821145e1cb9f"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "U4",
+              "custom": "MJ::JOB::upsample::4::108b0479-9336-44af-bcc9-821145e1cb9f"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "🔄",
+              "custom": "MJ::JOB::reroll::0::108b0479-9336-44af-bcc9-821145e1cb9f::SOLO"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V1",
+              "custom": "MJ::JOB::variation::1::108b0479-9336-44af-bcc9-821145e1cb9f"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V2",
+              "custom": "MJ::JOB::variation::2::108b0479-9336-44af-bcc9-821145e1cb9f"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V3",
+              "custom": "MJ::JOB::variation::3::108b0479-9336-44af-bcc9-821145e1cb9f"
+            },
+            {
+              "type": 2,
+              "style": 2,
+              "label": "V4",
+              "custom": "MJ::JOB::variation::4::108b0479-9336-44af-bcc9-821145e1cb9f"
+            }
+          ],
+          "width": 2048,
+          "height": 2048
+        },
+        "style": "realistic",
+        "caption": "a sentient sharpie marker",
+        "prompt": "die cut sticker, decal, contour cut, pitch black background,   realistic, photograph, 35mm, dslr, a sentient sharpie marker",
+        "secVarLabel": "none"
+      },
+      {
+        "caption": "",
+        "ff": "",
+        "imgData": {
+          "publicId": "",
+          "url": ""
+        },
+        "isGrid": false,
+        "meta": {
+          "id": "",
+          "flags": 0,
+          "content": "",
+          "hash": "",
+          "progress": "",
+          "uri": "",
+          "proxy_url": "",
+          "options": [
+            {
+              "type": 0,
+              "style": 0,
+              "label": "",
+              "custom": ""
+            }
+          ],
+          "width": 0,
+          "height": 0
+        },
+        "productId": "",
+        "prompt": "",
+        "secVar": {
+          "ar": "",
+          "grid": false,
+          "id": "",
+          "label": ""
+        },
+        "size": "",
+        "style": "",
+        "secVarLabel": ""
+      }
+    ],
+    "dependents": [
+      "promptHistoryAtom"
+    ]
+  },
+  "promptHistoryAtom": {
+    "dependents": []
+  },
+  "wsMessageAtom": {
+    "value": {
+      "event": "",
+      "data": "",
+      "id": ""
+    },
+    "dependents": []
+  },
+  "wsIdAtom": {
+    "value": "1fa7a389-2402-4483-984e-ade01cd8e65c",
+    "dependents": []
+  },
+  "productAtom": {
+    "value": {
+      "handle": "ai-designed-digital-print",
+      "title": "AI Designed Digital Print",
+      "options": [
+        {
+          "id": "gid://shopify/ProductOption/11865950617884",
+          "name": "Size",
+          "values": [
+            "11\"x14\"",
+            "16\"x20\"",
+            "18\"x24\"",
+            "24\"x36\""
+          ]
+        },
+        {
+          "id": "gid://shopify/ProductOption/11865950650652",
+          "name": "Orientation",
+          "values": [
+            "Vertical",
+            "Horizontal"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/49092105109788",
+              "title": "11\"x14\" / Vertical",
+              "selectedOptions": [
+                {
+                  "name": "Size",
+                  "value": "11\"x14\""
+                },
+                {
+                  "name": "Orientation",
+                  "value": "Vertical"
+                }
+              ],
+              "price": {
+                "amount": "20.0"
+              },
+              "metafields": [
+                {
+                  "id": "gid://shopify/Metafield/35805012328732",
+                  "key": "isgrid",
+                  "value": "true"
+                },
+                {
+                  "id": "gid://shopify/Metafield/35805012295964",
+                  "key": "aspectratio",
+                  "value": "4:5"
+                },
+                {
+                  "id": "gid://shopify/Metafield/35805012263196",
+                  "key": "idcode",
+                  "value": "dp1"
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/49092105142556",
+              "title": "11\"x14\" / Horizontal",
+              "selectedOptions": [
+                {
+                  "name": "Size",
+                  "value": "11\"x14\""
+                },
+                {
+                  "name": "Orientation",
+                  "value": "Horizontal"
+                }
+              ],
+              "price": {
+                "amount": "20.0"
+              },
+              "metafields": [
+                {
+                  "id": "gid://shopify/Metafield/35805012787484",
+                  "key": "isgrid",
+                  "value": "true"
+                },
+                {
+                  "id": "gid://shopify/Metafield/35805012754716",
+                  "key": "aspectratio",
+                  "value": "5:4"
+                },
+                {
+                  "id": "gid://shopify/Metafield/35805012721948",
+                  "key": "idcode",
+                  "value": "dp2"
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/49092105175324",
+              "title": "16\"x20\" / Vertical",
+              "selectedOptions": [
+                {
+                  "name": "Size",
+                  "value": "16\"x20\""
+                },
+                {
+                  "name": "Orientation",
+                  "value": "Vertical"
+                }
+              ],
+              "price": {
+                "amount": "24.0"
+              },
+              "metafields": [
+                {
+                  "id": "gid://shopify/Metafield/35805013082396",
+                  "key": "isgrid",
+                  "value": "true"
+                },
+                {
+                  "id": "gid://shopify/Metafield/35805013049628",
+                  "key": "aspectratio",
+                  "value": "4:5"
+                },
+                {
+                  "id": "gid://shopify/Metafield/35805013016860",
+                  "key": "idcode",
+                  "value": "dp3"
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/49092105240860",
+              "title": "16\"x20\" / Horizontal",
+              "selectedOptions": [
+                {
+                  "name": "Size",
+                  "value": "16\"x20\""
+                },
+                {
+                  "name": "Orientation",
+                  "value": "Horizontal"
+                }
+              ],
+              "price": {
+                "amount": "24.0"
+              },
+              "metafields": [
+                {
+                  "id": "gid://shopify/Metafield/35805013213468",
+                  "key": "isgrid",
+                  "value": "true"
+                },
+                {
+                  "id": "gid://shopify/Metafield/35805013180700",
+                  "key": "aspectratio",
+                  "value": "5:4"
+                },
+                {
+                  "id": "gid://shopify/Metafield/35805013147932",
+                  "key": "idcode",
+                  "value": "dp4"
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/49092105273628",
+              "title": "18\"x24\" / Vertical",
+              "selectedOptions": [
+                {
+                  "name": "Size",
+                  "value": "18\"x24\""
+                },
+                {
+                  "name": "Orientation",
+                  "value": "Vertical"
+                }
+              ],
+              "price": {
+                "amount": "28.0"
+              },
+              "metafields": [
+                {
+                  "id": "gid://shopify/Metafield/35805013311772",
+                  "key": "isgrid",
+                  "value": "true"
+                },
+                {
+                  "id": "gid://shopify/Metafield/35805013279004",
+                  "key": "aspectratio",
+                  "value": "3:4"
+                },
+                {
+                  "id": "gid://shopify/Metafield/35805013246236",
+                  "key": "idcode",
+                  "value": "dp5"
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/49092105306396",
+              "title": "18\"x24\" / Horizontal",
+              "selectedOptions": [
+                {
+                  "name": "Size",
+                  "value": "18\"x24\""
+                },
+                {
+                  "name": "Orientation",
+                  "value": "Horizontal"
+                }
+              ],
+              "price": {
+                "amount": "28.0"
+              },
+              "metafields": [
+                {
+                  "id": "gid://shopify/Metafield/35805013475612",
+                  "key": "isgrid",
+                  "value": "true"
+                },
+                {
+                  "id": "gid://shopify/Metafield/35805013442844",
+                  "key": "aspectratio",
+                  "value": "4:3"
+                },
+                {
+                  "id": "gid://shopify/Metafield/35805013410076",
+                  "key": "idcode",
+                  "value": "dp6"
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/49092105339164",
+              "title": "24\"x36\" / Vertical",
+              "selectedOptions": [
+                {
+                  "name": "Size",
+                  "value": "24\"x36\""
+                },
+                {
+                  "name": "Orientation",
+                  "value": "Vertical"
+                }
+              ],
+              "price": {
+                "amount": "32.0"
+              },
+              "metafields": [
+                {
+                  "id": "gid://shopify/Metafield/35805013639452",
+                  "key": "isgrid",
+                  "value": "true"
+                },
+                {
+                  "id": "gid://shopify/Metafield/35805013606684",
+                  "key": "aspectratio",
+                  "value": "2:3"
+                },
+                {
+                  "id": "gid://shopify/Metafield/35805013573916",
+                  "key": "idcode",
+                  "value": "dp7"
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/49092105371932",
+              "title": "24\"x36\" / Horizontal",
+              "selectedOptions": [
+                {
+                  "name": "Size",
+                  "value": "24\"x36\""
+                },
+                {
+                  "name": "Orientation",
+                  "value": "Horizontal"
+                }
+              ],
+              "price": {
+                "amount": "32.0"
+              },
+              "metafields": [
+                {
+                  "id": "gid://shopify/Metafield/35805013737756",
+                  "key": "isgrid",
+                  "value": "true"
+                },
+                {
+                  "id": "gid://shopify/Metafield/35805013704988",
+                  "key": "aspectratio",
+                  "value": "3:2"
+                },
+                {
+                  "id": "gid://shopify/Metafield/35805013672220",
+                  "key": "idcode",
+                  "value": "dp8"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "id": "gid://shopify/Product/9472394199324"
+    },
+    "dependents": []
+  },
+  "sizeFilteredAtom": {
+    "value": [
+      null,
+      null
+    ],
+    "dependents": []
+  },
+  "isGridAtom": {
+    "value": true,
+    "dependents": []
+  },
+  "selectedVariantAtom": {
+    "dependents": []
+  },
+  "generateErrorAtom": {
+    "value": {
+      "error": false,
+      "message": ""
+    },
+    "dependents": []
+  },
+  "atom32": {
+    "value": true,
+    "dependents": []
+  },
+  "atom36": {
+    "value": {
+      "genCount": 1,
+      "isCd": false,
+      "genTimes": [
+        1720459734652,
+        1719853532753,
+        1719853456765,
+        1719845901467,
+        1
+      ]
+    },
+    "dependents": [
+      "atom37"
+    ]
+  },
+  "atom37": {
+    "dependents": []
+  },
+  "atom19": {
+    "value": true,
+    "dependents": []
+  },
+  "imageArrayAtom": {
+    "value": [
+      {
+        "id": 0,
+        "label": "topleft",
+        "image": {
+          "publicID": "",
+          "gravity": "north_west",
+          "productId": ""
+        }
+      },
+      {
+        "id": 1,
+        "label": "topright",
+        "image": {
+          "publicID": "",
+          "gravity": "north_east",
+          "productId": ""
+        }
+      },
+      {
+        "id": 2,
+        "label": "btmleft",
+        "image": {
+          "publicID": "",
+          "gravity": "south_west",
+          "productId": ""
+        }
+      },
+      {
+        "id": 3,
+        "label": "btmright",
+        "image": {
+          "publicID": "",
+          "gravity": "south_east",
+          "productId": ""
+        }
+      }
+    ],
+    "dependents": []
+  },
+  "selectedImageAtom": {
+    "value": {
+      "img": {
+        "id": 0,
+        "label": "",
+        "image": {}
+      },
+      "index": 0
+    },
+    "dependents": []
+  },
+  "atom33": {
+    "value": false,
+    "dependents": []
+  },
+  "shopAtom": {
+    "value": {
+      "id": "gid://shopify/Shop/83070058780",
+      "name": "Ink Monkey",
+      "primaryDomain": {
+        "url": "https://ink-monkey.com"
+      }
+    },
+    "dependents": []
+  },
+  "atom40": {
+    "value": {
+      "email": "",
+      "firstName": "",
+      "id": "",
+      "phone": "",
+      "lastName": "",
+      "acceptsMarketing": false,
+      "displayName": ""
+    },
+    "dependents": [
+      "atom41"
+    ]
+  },
+  "atom41": {
+    "dependents": []
+  },
+  "atom38": {
+    "value": {
+      "accessToken": "",
+      "expiresAt": ""
+    },
+    "dependents": [
+      "atom39"
+    ]
+  },
+  "atom39": {
+    "dependents": []
+  },
+  "atom31": {
+    "value": "0%",
+    "dependents": []
+  },
+  "upscaleAndAddAtom": {
+    "value": {
+      "cart": false,
+      "wi": false
+    },
+    "dependents": []
+  },
+  "atom29": {
+    "value": {
+      "cartId": "gid://shopify/Cart/Z2NwLXVzLWNlbnRyYWwxOjAxSjI5S00wWDg0WkRWWVRNTlpFNkRYUkdI?key=424770b43159b18433efa2e825edfec0",
+      "hasCart": true
+    },
+    "dependents": [
+      "atom30"
+    ]
+  },
+  "atom30": {
+    "dependents": []
+  },
+  "atom22": {
+    "value": false,
+    "dependents": []
+  }
+}

@@ -1,4 +1,5 @@
 import toast from 'react-hot-toast'
+import { useRouter } from 'next/navigation'
 import { useAtom } from 'jotai'
 import { useCooldown } from '@/app/hooks/useCooldown'
 import {
@@ -33,6 +34,8 @@ export function useGenerate() {
  const [generateError, setGenerateError] = useAtom(generateErrorAtom)
  const [isLoading, setIsLoading] = useAtom(isLoadingAtom)
  const { checkCooldown } = useCooldown()
+
+ const router = useRouter()
 
  const windowSecVar = {
   id: 'wi1',
@@ -70,7 +73,7 @@ export function useGenerate() {
   return messageData
  }
 
- const handleGenerate = () => {
+ const handleGenerate = async () => {
   if (!prompt) {
    toast.error('Please enter a prompt', { position: 'top-left' })
    setGenerateError({ error: true, message: 'Please enter a prompt' })
@@ -91,8 +94,9 @@ export function useGenerate() {
   if (localSelectedVariant) {
    setSelectedVariant(localSelectedVariant.node)
   }
-  setWsMessage({ event: 'generate', data: JSON.stringify(messageData), id: wsId })
-  setPrompt('')
+  router.push('?modal=recs')
+  // setWsMessage({ event: 'generate', data: JSON.stringify(messageData), id: wsId })
+  // setPrompt('')
  }
  return { handleGenerate, isLoading }
 }

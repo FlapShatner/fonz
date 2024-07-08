@@ -1,8 +1,10 @@
 import type { VariantType } from './types/product-types'
-
+import type { Product } from './storefront-api/types'
 import { decalPrompt } from './data/style-options'
 import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
+import { getNouns } from './lib/compromise'
+import { getProductsByTag } from './storefront-api/products'
 
 export function cn(...inputs: any[]) {
  return twMerge(clsx(inputs))
@@ -87,4 +89,30 @@ export function extractProductId(string: string): string {
  const parts = string.split('/')
  // Return the last part
  return parts[parts.length - 1]
+}
+
+export async function getRecs(queryObj: { userQuery: string; productType: string }) {
+ const { userQuery, productType } = queryObj
+ console.log('userQuery:', userQuery)
+ const nouns: () => Promise<string[]> = async () => {
+  const result: string[] = await getNouns({ userQuery })
+  console.log('nouns:', result)
+  return result
+ }
+ const nounsArr = await nouns()
+ function createSearchQuery(nounsArr: string[], productType: string) {
+  const tagPart = nounsArr.map((noun) => `(tag:${noun})`).join(' OR ')
+  const query = `${tagPart} AND (product_type:${productType})`
+  console.log(query)
+  return query
+ }
+ const recs = async () => {
+  const query = createSearchQuery(nounsArr, productType)
+  const products = await getProductsByTag(query)
+  const prodArray: Product[] = products.edges
+  console.log(prodArray)
+  return prodArray
+ }
+
+ return await recs()
 }

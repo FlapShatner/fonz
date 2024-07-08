@@ -1,5 +1,5 @@
 import { client } from '../lib/storefront-api-client'
-import { productQuery, productVariantQuery } from '../storefront-api/queries'
+import { getProductsByTagQuery, productQuery, productVariantQuery } from '../storefront-api/queries'
 
 export const getProduct = async (handle: string) => {
  const { data, errors, extensions } = await client.request(productQuery, {
@@ -36,4 +36,20 @@ export const getProductVariant = async (id: string) => {
  }
  //  console.log('data:', data)
  return await data.node
+}
+
+export const getProductsByTag = async (query: string) => {
+ const { data, errors, extensions } = await client.request(getProductsByTagQuery, {
+  variables: {
+   query: query,
+  },
+  apiVersion: '2024-04',
+ })
+
+ if (errors) {
+  console.log('errors:', errors)
+  throw new Error(errors.message)
+ }
+ //  console.log('data:', data)
+ return await data.products
 }

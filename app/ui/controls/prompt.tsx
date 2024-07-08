@@ -1,5 +1,6 @@
 import React from 'react'
 import { useBreakPoints } from '@/app/hooks/useBreakPoints'
+import { useRouter } from 'next/navigation'
 import { cn } from '@/app/utils'
 import Paste from '@/app/icons/paste'
 import { useAtom } from 'jotai'
@@ -15,8 +16,12 @@ function Prompt() {
  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
   setPrompt(e.target.value)
  }
+ const router = useRouter()
  const handlePaste = () => {
   setPrompt(promptHistory[0].caption)
+ }
+ const handleSubmit = async () => {
+  handleGenerate()
  }
  const isDisabled = generated.productId != ''
  return (
@@ -26,7 +31,7 @@ function Prompt() {
     onKeyDown={(e) => {
      if (e.key === 'Enter') {
       e.preventDefault()
-      handleGenerate()
+      handleSubmit()
      }
     }}
     onChange={(e) => handleChange(e)}

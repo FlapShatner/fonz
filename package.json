@@ -15,6 +15,7 @@
   "@shopify/hydrogen-react": "^2024.4.1",
   "@shopify/storefront-api-client": "^0.3.4",
   "clsx": "^2.1.1",
+  "compromise": "^14.13.0",
   "jotai": "^2.8.0",
   "jotai-devtools": "^0.9.1",
   "next": "14.2.3",

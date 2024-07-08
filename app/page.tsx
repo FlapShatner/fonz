@@ -7,13 +7,14 @@ import { Toaster } from 'react-hot-toast'
 import { useAtomsDebugValue } from 'jotai-devtools'
 import { useWS } from './hooks/useWS'
 import { useAtom } from 'jotai'
+import RecsModal from './ui/recs/recs-modal'
 import { shopAtom, customerAccessTokenAtom, customerAtom } from './state/atoms'
-export default function Home() {
+export default function Home({ params, searchParams }: { params: { slug: string }; searchParams: { [key: string]: string | string[] | undefined } }) {
  const [url, setUrl] = useState<string>('')
  const [shop, setShop] = useAtom(shopAtom)
  const [customer, setCustomer] = useAtom(customerAtom)
  const [customerAccessToken, setCustomerAccessToken] = useAtom(customerAccessTokenAtom)
-
+ const { modal } = searchParams
  useWS()
  useEffect(() => {
   const fetchShop = async () => {
@@ -40,6 +41,7 @@ export default function Home() {
    <Toaster />
    <FonzApp />
    <DebugAtoms />
+   {modal === 'recs' && <RecsModal />}
   </main>
  )
 }

@@ -1,0 +1,738 @@
+{
+  "node": {
+    "id": "gid://shopify/Product/8879343173916",
+    "handle": "copy-of-shetland-sheepdog-puppy-decal",
+    "availableForSale": true,
+    "title": "Doberman Pinscher Puppy - Decal - Customizable",
+    "description": "description",
+    "options": [
+      {
+        "id": "gid://shopify/ProductOption/11168922239260",
+        "name": "Size",
+        "values": [
+          "3in",
+          "4in",
+          "5in",
+          "6in",
+          "7in",
+          "8in",
+          "10in",
+          "12in",
+          "15in",
+          "18in"
+        ]
+      },
+      {
+        "id": "gid://shopify/ProductOption/11168922272028",
+        "name": "Personalization",
+        "values": [
+          "None",
+          "Name",
+          "Business"
+        ]
+      }
+    ],
+    "productType": "Vinyl Decal",
+    "priceRange": {
+      "maxVariantPrice": {
+        "amount": "53.99",
+        "currencyCode": "USD"
+      },
+      "minVariantPrice": {
+        "amount": "4.49",
+        "currencyCode": "USD"
+      }
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295357878556",
+            "title": "3in / None",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "3in"
+              },
+              {
+                "name": "Personalization",
+                "value": "None"
+              }
+            ],
+            "price": {
+              "amount": "4.49",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295357911324",
+            "title": "3in / Name",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "3in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Name"
+              }
+            ],
+            "price": {
+              "amount": "10.99",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295357944092",
+            "title": "3in / Business",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "3in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Business"
+              }
+            ],
+            "price": {
+              "amount": "34.49",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295357976860",
+            "title": "4in / None",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "4in"
+              },
+              {
+                "name": "Personalization",
+                "value": "None"
+              }
+            ],
+            "price": {
+              "amount": "5.99",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358009628",
+            "title": "4in / Name",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "4in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Name"
+              }
+            ],
+            "price": {
+              "amount": "11.49",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358042396",
+            "title": "4in / Business",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "4in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Business"
+              }
+            ],
+            "price": {
+              "amount": "35.49",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358075164",
+            "title": "5in / None",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "5in"
+              },
+              {
+                "name": "Personalization",
+                "value": "None"
+              }
+            ],
+            "price": {
+              "amount": "6.99",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358107932",
+            "title": "5in / Name",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "5in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Name"
+              }
+            ],
+            "price": {
+              "amount": "12.49",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358140700",
+            "title": "5in / Business",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "5in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Business"
+              }
+            ],
+            "price": {
+              "amount": "36.49",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358173468",
+            "title": "6in / None",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "6in"
+              },
+              {
+                "name": "Personalization",
+                "value": "None"
+              }
+            ],
+            "price": {
+              "amount": "8.99",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358206236",
+            "title": "6in / Name",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "6in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Name"
+              }
+            ],
+            "price": {
+              "amount": "14.49",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358239004",
+            "title": "6in / Business",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "6in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Business"
+              }
+            ],
+            "price": {
+              "amount": "38.49",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358271772",
+            "title": "7in / None",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "7in"
+              },
+              {
+                "name": "Personalization",
+                "value": "None"
+              }
+            ],
+            "price": {
+              "amount": "9.99",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358304540",
+            "title": "7in / Name",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "7in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Name"
+              }
+            ],
+            "price": {
+              "amount": "15.49",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358337308",
+            "title": "7in / Business",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "7in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Business"
+              }
+            ],
+            "price": {
+              "amount": "39.49",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358370076",
+            "title": "8in / None",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "8in"
+              },
+              {
+                "name": "Personalization",
+                "value": "None"
+              }
+            ],
+            "price": {
+              "amount": "10.99",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358402844",
+            "title": "8in / Name",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "8in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Name"
+              }
+            ],
+            "price": {
+              "amount": "16.49",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358435612",
+            "title": "8in / Business",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "8in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Business"
+              }
+            ],
+            "price": {
+              "amount": "40.49",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358468380",
+            "title": "10in / None",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "10in"
+              },
+              {
+                "name": "Personalization",
+                "value": "None"
+              }
+            ],
+            "price": {
+              "amount": "10.99",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358501148",
+            "title": "10in / Name",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "10in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Name"
+              }
+            ],
+            "price": {
+              "amount": "18.49",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358533916",
+            "title": "10in / Business",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "10in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Business"
+              }
+            ],
+            "price": {
+              "amount": "42.49",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358566684",
+            "title": "12in / None",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "12in"
+              },
+              {
+                "name": "Personalization",
+                "value": "None"
+              }
+            ],
+            "price": {
+              "amount": "14.99",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358599452",
+            "title": "12in / Name",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "12in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Name"
+              }
+            ],
+            "price": {
+              "amount": "20.49",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358632220",
+            "title": "12in / Business",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "12in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Business"
+              }
+            ],
+            "price": {
+              "amount": "44.49",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358664988",
+            "title": "15in / None",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "15in"
+              },
+              {
+                "name": "Personalization",
+                "value": "None"
+              }
+            ],
+            "price": {
+              "amount": "17.99",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358697756",
+            "title": "15in / Name",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "15in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Name"
+              }
+            ],
+            "price": {
+              "amount": "23.99",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358730524",
+            "title": "15in / Business",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "15in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Business"
+              }
+            ],
+            "price": {
+              "amount": "47.99",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358763292",
+            "title": "18in / None",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "18in"
+              },
+              {
+                "name": "Personalization",
+                "value": "None"
+              }
+            ],
+            "price": {
+              "amount": "23.99",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358796060",
+            "title": "18in / Name",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "18in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Name"
+              }
+            ],
+            "price": {
+              "amount": "29.99",
+              "currencyCode": "USD"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/47295358828828",
+            "title": "18in / Business",
+            "availableForSale": true,
+            "selectedOptions": [
+              {
+                "name": "Size",
+                "value": "18in"
+              },
+              {
+                "name": "Personalization",
+                "value": "Business"
+              }
+            ],
+            "price": {
+              "amount": "53.99",
+              "currencyCode": "USD"
+            }
+          }
+        }
+      ]
+    },
+    "featuredImage": {
+      "url": "https://cdn.shopify.com/s/files/1/0830/7005/8780/files/2350-Doberman-Pinscher-Puppy-Decal.jpg?v=1700591057",
+      "altText": null,
+      "width": 1800,
+      "height": 1800
+    },
+    "images": {
+      "edges": [
+        {
+          "node": {
+            "url": "https://cdn.shopify.com/s/files/1/0830/7005/8780/files/2350-Doberman-Pinscher-Puppy-Decal.jpg?v=1700591057",
+            "altText": null,
+            "width": 1800,
+            "height": 1800
+          }
+        },
+        {
+          "node": {
+            "url": "https://cdn.shopify.com/s/files/1/0830/7005/8780/files/2350-Doberman-Pinscher-Puppy-Custom-Name-Decal-2.jpg?v=1700592094",
+            "altText": null,
+            "width": 1800,
+            "height": 1800
+          }
+        },
+        {
+          "node": {
+            "url": "https://cdn.shopify.com/s/files/1/0830/7005/8780/files/Puppy-Bulldog-by-cup-Chuck_e62b4653-5824-4bfb-9ba7-d68b7ab30e1b.jpg?v=1701122051",
+            "altText": null,
+            "width": 2048,
+            "height": 2048
+          }
+        },
+        {
+          "node": {
+            "url": "https://cdn.shopify.com/s/files/1/0830/7005/8780/files/Puppy-in-red-water-bowl-w-decal_ac036802-3fa3-4b08-9956-f9cd69cc7533.jpg?v=1701122051",
+            "altText": null,
+            "width": 2048,
+            "height": 2048
+          }
+        }
+      ]
+    },
+    "tags": [
+      "Adorable",
+      "Cute",
+      "Doberman",
+      "Dobi",
+      "Dog",
+      "Dogs",
+      "Happy",
+      "Pincher",
+      "Pinscher",
+      "Playful",
+      "Puppy",
+      "Sweet"
+    ],
+    "updatedAt": "2024-06-20T15:54:28Z"
+  }
+}

@@ -2,6 +2,7 @@ import { atom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 import { Generated, CldImageType, SelectedImageType } from '../types/image-types'
 import { Secondary, Variant } from '../data/options'
+import { Product } from '../storefront-api/types'
 
 export const viewOpenAtom = atom(false)
 
@@ -401,3 +402,6 @@ export const newCustomerAtom = atom<NewCustomer>({
 export const formTypeAtom = atom('signIn')
 
 export const sentVerificationAtom = atom({ sent: false, message: '' })
+
+export const recsAtom = atom<Product[]>([])
+recsAtom.debugLabel = 'recsAtom'
