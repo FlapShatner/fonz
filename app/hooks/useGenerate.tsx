@@ -95,7 +95,7 @@ export function useGenerate() {
    setSelectedVariant(localSelectedVariant.node)
   }
   router.push('?modal=recs')
-  // setWsMessage({ event: 'generate', data: JSON.stringify(messageData), id: wsId })
+  setWsMessage({ event: 'generate', data: JSON.stringify(messageData), id: wsId })
   // setPrompt('')
  }
  return { handleGenerate, isLoading }

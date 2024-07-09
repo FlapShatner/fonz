@@ -10,12 +10,13 @@ function RecsItem(product: Product) {
  const prod = product.node
  const url = `${shop.primaryDomain.url}/products/${prod.handle}`
  return (
-  <a
-   key={prod.id}
-   rel='noopener noreferrer'
-   target='_blank'
-   href={url}>
-   <div className='w-[200px] h-full flex flex-col relative'>
+  <div className='w-[200px]  h-full flex flex-col relative'>
+   <a
+    className='w-[200px]'
+    key={prod.id}
+    rel='noopener noreferrer'
+    target='_blank'
+    href={url}>
     <Image
      className='object-cover'
      style={{
@@ -37,8 +38,8 @@ function RecsItem(product: Product) {
       In stock
      </div>
     </div>
-   </div>
-  </a>
+   </a>
+  </div>
  )
 }
 

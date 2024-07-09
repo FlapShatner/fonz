@@ -8,14 +8,7 @@ import RecsItem from './recs-item'
 import { promptAtom, selectedFFAtom, recsAtom } from '@/app/state/atoms'
 import { cn, getRecs } from '@/app/utils'
 import Spinner from '../spinner/spinner'
-
-const Loader = () => {
- return (
-  <div className='w-[200px] h-[200px] flex justify-center items-center border-2 rounded-md border-accent-tr'>
-   <Spinner />
-  </div>
- )
-}
+import RecsCarousel from './recs-carousel'
 
 function RecsModal() {
  const router = useRouter()
@@ -40,26 +33,19 @@ function RecsModal() {
  }, [])
  const heading = 'While you wait, here are some other designs you might like!'
  const note = 'Products will open in a new tab'
+ if (!prompt) return null
  return (
   <>
    {modal && (
     <dialog className='fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center'>
      <div
       ref={ref}
-      className={cn('bg-bg-tertiary m-auto p-8 pt-2 relative text-white rounded-lg max-w-[900px]')}>
+      className={cn('bg-bg-tertiary m-auto p-8 pt-4 relative text-white rounded-lg max-w-[90vw]')}>
       <div className='text-xl font-semibold'>{heading}</div>
       <div className='text-sm text-txt-secondary'>{note}</div>
-      <div className='flex gap-8 justify-start pt-8 m-auto max-w-[880px] overflow-x-scroll'>
-       {recs.map((rec) => (
-        <Suspense
-         fallback={<Loader />}
-         key={rec.node.id}>
-         <RecsItem {...rec} />
-        </Suspense>
-       ))}
-      </div>
+      <RecsCarousel />
       <div
-       className='cursor-pointer'
+       className='cursor-pointer w-max ml-auto'
        onClick={() => router.push(pathname)}>
        <RecsClose>Close</RecsClose>
       </div>
