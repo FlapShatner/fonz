@@ -6,7 +6,7 @@ function StoreBtn() {
  return (
   <a
    className='cursor-pointer flex items-center text-sm text-accent'
-   href={shopUrl}>
+   href={'/'}>
    <Chevron className='w-4 h-4  text-accent' />
    Back to Store
   </a>

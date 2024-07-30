@@ -1,10 +1,9 @@
-const useProxy = true
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
- assetPrefix: useProxy ? '/fonz/' : '',
+ basePath: '/fonz',
  experimental: {
   missingSuspenseWithCSRBailout: false,
+  manualClientBasePath: true,
  },
  transpilePackages: ['jotai-devtools'],
  images: {

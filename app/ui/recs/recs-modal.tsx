@@ -20,7 +20,7 @@ function RecsModal() {
  const modal = searchParams.get('modal') === 'recs'
  const ref = useRef(null)
  useOnClickOutside(ref, () => {
-  router.push(pathname)
+  router.push('/fonz')
  })
  useEffect(() => {
   const fetchRecs = async () => {
@@ -28,6 +28,9 @@ function RecsModal() {
    console.log('recs', recs)
    //  console.log('prompt:', prompt)
    setRecs(recs)
+   if (recs.length === 0) {
+    router.push('/fonz')
+   }
   }
   fetchRecs()
  }, [])
@@ -46,7 +49,7 @@ function RecsModal() {
       <RecsCarousel />
       <div
        className='cursor-pointer w-max ml-auto'
-       onClick={() => router.push(pathname)}>
+       onClick={() => router.push('/fonz')}>
        <RecsClose>Close</RecsClose>
       </div>
      </div>

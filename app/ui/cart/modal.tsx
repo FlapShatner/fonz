@@ -22,7 +22,7 @@ function Modal() {
  const modal = searchParams.get('modal') === 'cart'
  const pathname = usePathname()
  useOnClickOutside(ref, () => {
-  router.push(pathname)
+  router.push('/fonz')
  })
 
  useEffect(() => {
@@ -79,7 +79,7 @@ function Modal() {
        )}
       </div>
       <div className='flex gap-4 justify-end'>
-       <div onClick={() => router.push(pathname)}>
+       <div onClick={() => router.push('/fonz')}>
         <CartButton>Close</CartButton>
        </div>
        <a
