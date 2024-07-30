@@ -1,5 +1,8 @@
+const useProxy = process.env.NEXT_PUBLIC_USE_PROXY !== undefined
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+ assetPrefix: useProxy ? '/fonz/' : '',
  experimental: {
   missingSuspenseWithCSRBailout: false,
  },
