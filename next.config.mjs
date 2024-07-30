@@ -1,4 +1,4 @@
-const useProxy = process.env.NEXT_PUBLIC_USE_PROXY !== undefined
+const useProxy = true
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
