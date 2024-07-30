@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
  basePath: '/fonz',
+ trailingSlash: true,
  experimental: {
   missingSuspenseWithCSRBailout: false,
   manualClientBasePath: true,
