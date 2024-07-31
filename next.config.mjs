@@ -1,14 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
  basePath: '/fonz',
- async rewrites() {
-  return [
-   {
-    source: '/fonz/:path*',
-    destination: 'http://localhost:3001/fonz/:path*',
-   },
-  ]
- },
+
  trailingSlash: false,
  experimental: {
   missingSuspenseWithCSRBailout: false,
